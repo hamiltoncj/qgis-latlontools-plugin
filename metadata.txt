@@ -1,0 +1,33 @@
+[general]
+name=Lat Lon Tools
+qgisMinimumVersion=3.4
+description=Tools to capture and zoom to coordinates using decimal, DMS, WKT, GeoJSON, MGRS, UTM, UPS, Geohash, H3, Maidenhead grid, Plus Codes, and ECEF formats. Provides external map support, point digitizing tools, coordinate conversion tools, and conversion functions.
+version=3.7.0
+author=C Hamilton
+email=adenaculture@gmail.com
+about=
+    Lat Lon Tools makes it easy to capture, zoom to coordinates, and interact with other on-line mapping tools. It adds MGRS, Standard UTM, and Plus Codes support to QGIS. When working with Google Earth, Google Maps or other on-line mapping tools, coordinates are specified in the order of 'Latitude, Longitude'. By default Lat Lon Tools uses the standard Google Map format, but is very flexible and can use virtually any projection and coordinate format for input and output. The plugin has the following tools.
+    1) Capture/Display coordinates to the clipboard (in any projection) when the user clicks on the map. This includes DMS, UTM, UPS, Geohash, MGRS, H3, Maidenhead grid, and Plus Codes.
+    2) Capture the bounding box of the canvas.
+    3) Zoom to and highlight a point on the map using coordinates from any projection, including MGRS, UTM, UPS, Geohash, H3, Maidenhead grid, and Plus Codes, and can format the coordinates in decimal, DMS, WKT POINT, or GeoJSON notation.
+    4) Digitizing service to add points to a layer. It supports all the "Zoom to" input formats.
+    5) Launch and display an external map based on the coordinate clicked on. Supported maps include Open Street Map, Google, Bing, MapQuest, Mapillary, and Google Earth.
+    6) Use a list of points for rapid zooming created from a file, direct input, or captured from the map. Create a point layer from these locations.
+    7) MGRS conversion routines that converts a layer with an MGRS field into a point layer, and creates an MGRS field from the point layer.
+    8) Plus Code conversion routines that converts a layer with a Plus Code field into a point layer, and creates an Plus Code field from the point layer.
+    9) Convert a point layer geometry into a textual representation of that geometry within a field.
+    10) Convert a layer containing a coordinate field or fields into a point layer.
+    11) Convert a layer's geometry into a WTK, EWTK, or JSON string of its geometry and adding it to a new attribute field. Convert an attribute field containing WKT coordinates into new layers.
+    12) Coordinate conversion dialog.
+    13) Conversion functions for the field calculator
+tracker=https://github.com/hamiltoncj/qgis-latlontools-plugin/issues
+repository=https://github.com/hamiltoncj/qgis-latlontools-plugin
+homepage=https://github.com/hamiltoncj/qgis-latlontools-plugin/#readme
+tags=coordinate,capture,latitude,longitude,epsg:4326,4326,wgs84,utm,ups,dms,zoom,move to,crs,wkt,ewkt,point,mgrs,usng,osm,google,bing,mapillary,openstreetmap,digitizing,digitize,geojson,json,processing,conversion,plus codes,canvas,bounding box,google earth,geohash,maidenhead grid,amateur radio grid,function,functions,expression,ecef,earth-centered,earth-fixed,h3
+category=Plugins
+icon=icon.png
+hasProcessingProvider=yes
+experimental=False
+deprecated=False
+changelog=
+    3.7.0 - Move repo
