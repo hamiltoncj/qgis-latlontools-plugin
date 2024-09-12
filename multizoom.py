@@ -62,6 +62,7 @@ class MultiZoomWidget(QDockWidget, FORM_CLASS):
         self.clearAllButton.setIcon(QIcon(':/images/themes/default/mActionDeselectAll.svg'))
         self.createLayerButton.setIcon(QIcon(':/images/themes/default/mActionNewVectorLayer.svg'))
         self.optionsButton.setIcon(QIcon(':/images/themes/default/mActionOptions.svg'))
+        self.clearMarkersButton.setIcon(QIcon(':/images/themes/default/mIconClearText.svg'))
 
         self.openButton.clicked.connect(self.openDialog)
         self.saveButton.clicked.connect(self.saveDialog)
@@ -71,6 +72,7 @@ class MultiZoomWidget(QDockWidget, FORM_CLASS):
         self.clearAllButton.clicked.connect(self.clearAll)
         self.createLayerButton.clicked.connect(self.createLayer)
         self.optionsButton.clicked.connect(self.showSettings)
+        self.clearMarkersButton.clicked.connect(self.clearMarkers)
         self.showAllCheckBox.stateChanged.connect(self.updateDisplayedMarkers)
         self.dirname = ''
         self.maxResults = 5000
@@ -184,6 +186,14 @@ class MultiZoomWidget(QDockWidget, FORM_CLASS):
             self.removeMarkers()
             self.resultsTable.setRowCount(0)
             self.resultsTable.blockSignals(False)
+
+    def clearMarkers(self):
+        if self.showAllCheckBox.checkState():
+            self.showAllCheckBox.setChecked(False)
+        self.resultsTable.blockSignals(True)
+        self.resultsTable.clearSelection()
+        self.resultsTable.blockSignals(False)
+        self.updateDisplayedMarkers()
 
     def showSettings(self):
         self.settings.showTab(3)

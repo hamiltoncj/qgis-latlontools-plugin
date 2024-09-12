@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="zh_CN" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
 <context>
     <name>@default</name>
     <message>
@@ -28,42 +29,42 @@
         <translation>多点定位</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="113"/>
+        <location filename="../latLonTools.py" line="114"/>
         <source>Copy Canvas Extent</source>
         <translation>复制画布范围</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="117"/>
+        <location filename="../latLonTools.py" line="119"/>
         <source>Copy Selected Area Extent</source>
         <translation>复制选中区域范围</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="122"/>
+        <location filename="../latLonTools.py" line="125"/>
         <source>Copy Layer Extent</source>
         <translation>复制图层范围</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="126"/>
+        <location filename="../latLonTools.py" line="130"/>
         <source>Copy Selected Features Extent</source>
         <translation>复制选中要素范围</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="131"/>
+        <location filename="../latLonTools.py" line="135"/>
         <source>Copy Extents to Clipboard</source>
         <translation>复制范围至剪贴板</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="146"/>
+        <location filename="../latLonTools.py" line="150"/>
         <source>Coordinate Conversion</source>
         <translation>坐标转换</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="155"/>
+        <location filename="../latLonTools.py" line="160"/>
         <source>Fields to point layer</source>
         <translation>由字段创建点图层</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="158"/>
+        <location filename="../latLonTools.py" line="164"/>
         <source>Point layer to fields</source>
         <translation>添加坐标字段至点图层</translation>
     </message>
@@ -88,52 +89,52 @@
         <translation>添加MGRS字段至点图层</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="178"/>
+        <location filename="../latLonTools.py" line="191"/>
         <source>ECEF to Lat, Lon, Altitude</source>
         <translation>由ECERF创建点图层</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="180"/>
+        <location filename="../latLonTools.py" line="194"/>
         <source>Lat, Lon, Altitude to ECEF</source>
         <translation>由点图层生成ECEF属性表</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="182"/>
+        <location filename="../latLonTools.py" line="197"/>
         <source>Conversions</source>
         <translation>转换</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="188"/>
+        <location filename="../latLonTools.py" line="204"/>
         <source>Lat Lon Digitize</source>
         <translation>输入坐标</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="197"/>
+        <location filename="../latLonTools.py" line="213"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="199"/>
+        <location filename="../latLonTools.py" line="215"/>
         <source>Lat Lon Tools Settings</source>
         <translation>Lat Lon Tools 设置</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="206"/>
+        <location filename="../latLonTools.py" line="222"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="317"/>
+        <location filename="../latLonTools.py" line="335"/>
         <source>This layer has no features - A bounding box cannot be calculated.</source>
         <translation>图层中无要素,bbox无法计算.</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="348"/>
+        <location filename="../latLonTools.py" line="366"/>
         <source>copied to the clipboard</source>
         <translation>已复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="322"/>
+        <location filename="../latLonTools.py" line="340"/>
         <source>No features were selected.</source>
         <translation>未选中要素.</translation>
     </message>
@@ -383,52 +384,52 @@
         <translation>选择QML样式文件</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="98"/>
+        <location filename="../multizoom.py" line="100"/>
         <source>Enter coordinate (&apos;lat,lon,...)</source>
         <translation>输入坐标(纬度,经度)</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="100"/>
+        <location filename="../multizoom.py" line="102"/>
         <source>Enter coordinate (&apos;lon,lat,...)</source>
         <translation>输入坐标(经度,纬度)</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="102"/>
+        <location filename="../multizoom.py" line="104"/>
         <source>Enter coordinate (&apos;mgrs,...)</source>
         <translation>输入坐标(mgrs,...)</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="104"/>
+        <location filename="../multizoom.py" line="106"/>
         <source>Enter coordinate (&apos;Plus code,...)</source>
         <translation>输入坐标(Plus codes,...)</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="106"/>
+        <location filename="../multizoom.py" line="108"/>
         <source>Enter coordinate (&apos;Standard UTM,...)</source>
         <translation>输入坐标(Standard UTM,...)</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="111"/>
+        <location filename="../multizoom.py" line="113"/>
         <source>Enter coordinate</source>
         <translation>输入坐标</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="177"/>
+        <location filename="../multizoom.py" line="179"/>
         <source>Are your sure you want to delete all locations?</source>
         <translation>确认删除全部点？</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="293"/>
+        <location filename="../multizoom.py" line="303"/>
         <source>Are your sure you want to delete the selected locations?</source>
         <translation>确认删除选中的点？</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="378"/>
+        <location filename="../multizoom.py" line="388"/>
         <source>Invalid Coordinate.</source>
         <translation>无效的坐标.</translation>
     </message>
     <message>
-        <location filename="../multizoom.py" line="382"/>
+        <location filename="../multizoom.py" line="392"/>
         <source>Invalid Coordinate. Perhaps comma separators between fields were not used.</source>
         <translation>无效的坐标. 字段之间可能没有使用逗号分隔符。</translation>
     </message>
@@ -724,13 +725,13 @@
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>D&#xc2;&#xb0;M&apos;S&quot;</source>
-        <translation>D°M&apos;S&quot;</translation>
+        <source>DÂ°M'S&quot;</source>
+        <translation type="obsolete">D°M'S&quot;</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>D&#xc2;&#xb0;M.MM&apos;</source>
-        <translation>D°M.MM&apos;</translation>
+        <source>DÂ°M.MM'</source>
+        <translation type="obsolete">D°M.MM'</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
@@ -739,13 +740,13 @@
     </message>
     <message>
         <location filename="../geom2field.py" line="138"/>
-        <source>Add space between D&#xc2;&#xb0; M&apos; S&quot; and D&#xc2;&#xb0; M.MM&apos; numbers</source>
-        <translation>在度分秒数字间添加空格</translation>
+        <source>Add space between DÂ° M' S&quot; and DÂ° M.MM' numbers</source>
+        <translation type="obsolete">在度分秒数字间添加空格</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="145"/>
-        <source>Pad D&#xc2;&#xb0;M&apos;S&quot; and D&#xc2;&#xb0;M.MM&apos; coordinates with leading zeros</source>
-        <translation>度分秒坐标添加前导零</translation>
+        <source>Pad DÂ°M'S&quot; and DÂ°M.MM' coordinates with leading zeros</source>
+        <translation type="obsolete">度分秒坐标添加前导零</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="152"/>
@@ -978,7 +979,7 @@
         <translation>H3</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="161"/>
+        <location filename="../latLonTools.py" line="168"/>
         <source>Geometry to WKT/JSON</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1020,6 +1021,26 @@
     <message>
         <location filename="../wkt2layers.py" line="89"/>
         <source>A String attribute field needs to be selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="130"/>
+        <source>D°M'S&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="130"/>
+        <source>D°M.MM'</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="138"/>
+        <source>Add space between D° M' S&quot; and D° M.MM' numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="145"/>
+        <source>Pad D°M'S&quot; and D°M.MM' coordinates with leading zeros</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1182,7 +1203,7 @@
         <translation>打开坐标列表文件</translation>
     </message>
     <message>
-        <location filename="../ui/multiZoomDialog.ui" line="161"/>
+        <location filename="../ui/multiZoomDialog.ui" line="188"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -1227,9 +1248,14 @@
         <translation>地图取点</translation>
     </message>
     <message>
-        <location filename="../ui/multiZoomDialog.ui" line="176"/>
+        <location filename="../ui/multiZoomDialog.ui" line="178"/>
         <source>Show all markers</source>
         <translation>显示所有点位标记</translation>
+    </message>
+    <message>
+        <location filename="../ui/multiZoomDialog.ui" line="185"/>
+        <source>Clear Markers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

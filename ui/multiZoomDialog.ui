@@ -171,11 +171,25 @@
      <widget class="QTableWidget" name="resultsTable"/>
     </item>
     <item>
-     <widget class="QCheckBox" name="showAllCheckBox">
-      <property name="text">
-       <string>Show all markers</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="showAllCheckBox">
+        <property name="text">
+         <string>Show all markers</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="clearMarkersButton">
+        <property name="toolTip">
+         <string>Clear Markers</string>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
