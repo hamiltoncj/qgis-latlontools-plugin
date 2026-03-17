@@ -725,13 +725,13 @@
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>DÂ°M&apos;S&quot;</source>
-        <translation type="obsolete">D°M&apos;S&quot;</translation>
+        <source>DÂ°M'S&quot;</source>
+        <translation type="obsolete">D°M'S&quot;</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>DÂ°M.MM&apos;</source>
-        <translation type="obsolete">D°M.MM&apos;</translation>
+        <source>DÂ°M.MM'</source>
+        <translation type="obsolete">D°M.MM'</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
@@ -740,12 +740,12 @@
     </message>
     <message>
         <location filename="../geom2field.py" line="138"/>
-        <source>Add space between DÂ° M&apos; S&quot; and DÂ° M.MM&apos; numbers</source>
+        <source>Add space between DÂ° M' S&quot; and DÂ° M.MM' numbers</source>
         <translation type="obsolete">在度分秒数字间添加空格</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="145"/>
-        <source>Pad DÂ°M&apos;S&quot; and DÂ°M.MM&apos; coordinates with leading zeros</source>
+        <source>Pad DÂ°M'S&quot; and DÂ°M.MM' coordinates with leading zeros</source>
         <translation type="obsolete">度分秒坐标添加前导零</translation>
     </message>
     <message>
@@ -1025,22 +1025,22 @@
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>D°M&apos;S&quot;</source>
+        <source>D°M'S&quot;</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="130"/>
-        <source>D°M.MM&apos;</source>
+        <source>D°M.MM'</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="138"/>
-        <source>Add space between D° M&apos; S&quot; and D° M.MM&apos; numbers</source>
+        <source>Add space between D° M' S&quot; and D° M.MM' numbers</source>
         <translation>在度分秒数字间添加空格</translation>
     </message>
     <message>
         <location filename="../geom2field.py" line="145"/>
-        <source>Pad D°M&apos;S&quot; and D°M.MM&apos; coordinates with leading zeros</source>
+        <source>Pad D°M'S&quot; and D°M.MM' coordinates with leading zeros</source>
         <translation>度分秒坐标添加前导零</translation>
     </message>
 </context>
