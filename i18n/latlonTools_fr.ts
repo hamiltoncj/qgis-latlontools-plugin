@@ -2,1019 +2,1083 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
-    <name>@default</name>
+    <name></name>
     <message>
-        <location filename="../latLonTools.py" line="60"/>
-        <source>Lat Lon Tools Toolbar</source>
-        <translation>Barre d'outils Lat Lon Tools</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="69"/>
-        <source>Copy/Display Coordinate</source>
-        <translation>Copier/Afficher les coordonnées</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="78"/>
-        <source>Show in External Map</source>
-        <translation>Afficher sur la carte externe</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="87"/>
-        <source>Zoom To Coordinate</source>
-        <translation>Aller à des coordonnées</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="99"/>
-        <source>Multi-location Zoom</source>
-        <translation>Zoom multi-emplacements</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="114"/>
-        <source>Copy Canvas Extent</source>
-        <translation>Copier l'emprise du canevas</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="119"/>
-        <source>Copy Selected Area Extent</source>
-        <translation>Copier l'emprise d'une zone sélectionnée</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="125"/>
-        <source>Copy Layer Extent</source>
-        <translation>Copier l'emprise de la couche</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="130"/>
-        <source>Copy Selected Features Extent</source>
-        <translation>Copier l'emprise des entités sélectionnées</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="135"/>
-        <source>Copy Extents to Clipboard</source>
-        <translation>Copier des emprises dans le presse-papier</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="150"/>
-        <source>Coordinate Conversion</source>
-        <translation>Conversion de coordonnées</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="160"/>
-        <source>Fields to point layer</source>
-        <translation>Attributs vers couche de ponctuels</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="164"/>
-        <source>Point layer to fields</source>
-        <translation>Couche de ponctuels vers attributs</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="231"/>
-        <source>Plus Codes to point layer</source>
-        <translation>Plus Codes vers couche de ponctuels</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="129"/>
-        <source>Point layer to Plus Codes</source>
-        <translation>Couche de ponctuels vers Plus Codes</translation>
-    </message>
-    <message>
-        <location filename="../mgrstogeom.py" line="111"/>
-        <source>MGRS to point layer</source>
-        <translation>MGRS vers couche de ponctuels</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="123"/>
-        <source>Point layer to MGRS</source>
-        <translation>Couche de ponctuels vers MGRS</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="191"/>
-        <source>ECEF to Lat, Lon, Altitude</source>
-        <translation>ECEF vers Lat, Lon, Altitude</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="194"/>
-        <source>Lat, Lon, Altitude to ECEF</source>
-        <translation>Lat, Lon, Altitude vers ECEF</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="197"/>
-        <source>Conversions</source>
-        <translation>Conversions</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="204"/>
-        <source>Lat Lon Digitize</source>
-        <translation>Ajouter un ponctuel à des coordonnées</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="213"/>
-        <source>Settings</source>
-        <translation>Paramètres</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="215"/>
-        <source>Lat Lon Tools Settings</source>
-        <translation>Paramètres Lat Lon Tools</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="222"/>
-        <source>Help</source>
-        <translation>Aide</translation>
-    </message>
-    <message>
+        <location filename="../captureExtent.py" line="88"/>
+        <location filename="../coordinateConverter.py" line="38"/>
+        <location filename="../copyLatLonTool.py" line="311"/>
+        <location filename="../latLonTools.py" line="310"/>
         <location filename="../latLonTools.py" line="335"/>
-        <source>This layer has no features - A bounding box cannot be calculated.</source>
-        <translation>Cette couche n'a pas d'entités - Aucune boîte englobante ne peut être calculée.</translation>
-    </message>
-    <message>
-        <location filename="../latLonTools.py" line="366"/>
+        <location filename="../latLonTools.py" line="348"/>
         <source>copied to the clipboard</source>
-        <translation>copiée dans le presse-papier</translation>
+        <translation type="unfinished">copiée dans le presse-papier</translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="340"/>
-        <source>No features were selected.</source>
-        <translation>Aucune entité n'a été sélectionnée.</translation>
+        <location filename="../coordinateConverter.py" line="36"/>
+        <source>Invalid</source>
+        <translation type="unfinished">Incorrect</translation>
+    </message>
+    <message>
+        <location filename="../coordinateConverter.py" line="61"/>
+        <location filename="../digitizer.py" line="43"/>
+        <source>Y, X (Lat, Lon) Order</source>
+        <translation type="unfinished">Y, X (Lat, Lon)</translation>
+    </message>
+    <message>
+        <location filename="../coordinateConverter.py" line="64"/>
+        <location filename="../digitizer.py" line="46"/>
+        <source>X, Y (Lon, Lat) Order</source>
+        <translation type="unfinished">X, Y (Lon, Lat)</translation>
     </message>
     <message>
         <location filename="../copyLatLonTool.py" line="217"/>
         <source>Out of bounds</source>
-        <translation>En dehors des limites</translation>
+        <translation type="unfinished">En dehors des limites</translation>
     </message>
     <message>
         <location filename="../copyLatLonTool.py" line="311"/>
         <source>coordinate</source>
-        <translation>coordonnée</translation>
+        <translation type="unfinished">coordonnée</translation>
     </message>
     <message>
         <location filename="../copyLatLonTool.py" line="313"/>
         <source>Invalid coordinate:</source>
-        <translation>Coordonnées incorrectes : </translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="122"/>
-        <source>Enter MGRS Coordinate</source>
-        <translation>Entrer des coordonnées MGRS</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="124"/>
-        <source>Enter Plus Codes</source>
-        <translation>Entrer un Plus Codes</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="126"/>
-        <source>Enter Geohash</source>
-        <translation>Entrer un Geohash</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="128"/>
-        <source>Enter H3 geohash</source>
-        <translation>Entrer un geohash H3</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="130"/>
-        <source>Enter Standard UTM</source>
-        <translation>Entrer des coordonnées UTM standard</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="132"/>
-        <source>Enter Maidenhead Grid</source>
-        <translation>Entrer des coordonnées de grille Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="135"/>
-        <source>Enter &apos;Latitude, Longitude&apos;</source>
-        <translation>Entrer 'Latitude, Longitude'</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="137"/>
-        <source>Enter &apos;Longitude, Latitude&apos;</source>
-        <translation>Entrer 'Longitude, Latitude'</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="149"/>
-        <source>Enter</source>
-        <translation>Entrer</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="193"/>
-        <source>Invalid H3 Coordinate</source>
-        <translation>Coordonnées H3 incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="305"/>
-        <source>Invalid Coordinates</source>
-        <translation>Coordonnées incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="222"/>
-        <source>Invalid GeoJSON Geometry</source>
-        <translation>Géométrie GeoJSON incorrecte</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="329"/>
-        <source>Invalid Coordinate</source>
-        <translation>Coordonnées incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="261"/>
-        <source>WGS 84 (Latitude &amp; Longitude)</source>
-        <translation>WGS 84 (Latitude &amp; Longitude)</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="61"/>
-        <source>Project CRS</source>
-        <translation>SCR du projet</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="63"/>
-        <source>Custom CRS</source>
-        <translation>SCR personnalisé</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="65"/>
-        <source>MGRS</source>
-        <translation>MGRS</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="252"/>
-        <source>Plus Codes (Open Location Code)</source>
-        <translation>Plus Codes (Open Location Code)</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="69"/>
-        <source>Standard UTM</source>
-        <translation>UTM standard</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="71"/>
-        <source>Geohash</source>
-        <translation>Geohash</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="228"/>
-        <source>Maidenhead Grid Locator</source>
-        <translation>Grille Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="228"/>
-        <source>UPS</source>
-        <translation>UPS</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="228"/>
-        <source>GEOREF</source>
-        <translation>GEOREF</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="230"/>
-        <source>Decimal Degrees</source>
-        <translation>Degrés décimaux</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="231"/>
-        <source>Normal Coordinate</source>
-        <translation>Coordonnées standard</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="274"/>
-        <source>Lat, Lon (Y,X) - Google Map Order</source>
-        <translation>Lat, Lon (Y,X) - Ordre Google Maps</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="274"/>
-        <source>Lon, Lat (X,Y) Order</source>
-        <translation>Lon, Lat (X,Y)</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="271"/>
-        <source>Comma</source>
-        <translation>Virgule</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="271"/>
-        <source>Comma Space</source>
-        <translation>Virgule espace</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="271"/>
-        <source>Space</source>
-        <translation>Espace</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="271"/>
-        <source>Tab</source>
-        <translation>Tabulation</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="271"/>
-        <source>Other</source>
-        <translation>Autre</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="242"/>
-        <source>WGS 84 (Latitude &amp; Longitude) / Auto Detect Format</source>
-        <translation>WGS 84 (Latitude &amp; Longitude) / Détection automatique du format</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="73"/>
-        <source>Maidenhead Grid</source>
-        <translation>Grille Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="256"/>
-        <source>Default</source>
-        <translation>Défaut</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="256"/>
-        <source>Labeled</source>
-        <translation>Étiqueté</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="256"/>
-        <source>Custom</source>
-        <translation>Personnalisé</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;minX,minY,maxX,maxY (W,S,E,N)&quot; - Using the selected delimiter</source>
-        <translation>&quot;minX,minY,maxX,maxY (O,S,E,N)&quot; - Utilise le séparateur sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;minX,maxX,minY,maxY (W,E,S,N)&quot; - Using the selected delimiter</source>
-        <translation>&quot;minX,maxX,minY,maxY (O,E,S,N)&quot; - Utilise le séparateur sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;minY,minX,maxY,maxX (S,W,N,E)&quot; - Using the selected delimiter</source>
-        <translation>&quot;minY,minX,maxY,maxX (S,O,N,E)&quot; - Utilise le séparateur sélectionné</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygon format</source>
-        <translation>&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygone</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Alternate polgyon format</source>
-        <translation>&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Polgyone autre format</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>WKT Polygon</source>
-        <translation>Polygone WKT</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</source>
-        <translation>&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="262"/>
-        <source>&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</source>
-        <translation>&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</translation>
-    </message>
-    <message>
-        <location filename="../settings.py" line="612"/>
-        <source>Input QML Style File</source>
-        <translation>Fichier de style QML</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="100"/>
-        <source>Enter coordinate (&apos;lat,lon,...)</source>
-        <translation>Entrer des coordonnées (lat,lon,...)</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="102"/>
-        <source>Enter coordinate (&apos;lon,lat,...)</source>
-        <translation>Entrer des coordonnées (lon,lat,...)</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="104"/>
-        <source>Enter coordinate (&apos;mgrs,...)</source>
-        <translation>Entrer des coordonnées (MGRS,...)</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="106"/>
-        <source>Enter coordinate (&apos;Plus code,...)</source>
-        <translation>Entrer des coordonnées (Plus Code,...)</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="108"/>
-        <source>Enter coordinate (&apos;Standard UTM,...)</source>
-        <translation>Entrer des coordonnées (UTM standard,...)</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="113"/>
-        <source>Enter coordinate</source>
-        <translation>Entrer des coordonnées</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="179"/>
-        <source>Are your sure you want to delete all locations?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer toutes les coordonnées ?</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="303"/>
-        <source>Are your sure you want to delete the selected locations?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer les coordonnées sélectionnées ?</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="388"/>
-        <source>Invalid Coordinate.</source>
-        <translation>Coordonnées incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../multizoom.py" line="392"/>
-        <source>Invalid Coordinate. Perhaps comma separators between fields were not used.</source>
-        <translation>Coordonnées incorrectes. Les séparateurs virgule n'ont peut-être pas été utilisés.</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="43"/>
-        <source>Input point vector layer</source>
-        <translation>Couche vecteur ponctuelle en entrée</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="49"/>
-        <source>Output MGRS field name</source>
-        <translation>Nom de l'attribut MGRS en sortie</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="55"/>
-        <source>MGRS Precision</source>
-        <translation>Précision MGRS</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="65"/>
-        <source>Output layer</source>
-        <translation>Couche de sortie</translation>
-    </message>
-    <message>
-        <location filename="../tomgrs.py" line="79"/>
-        <source>MGRS Field Name must be unique. There is already a field named</source>
-        <translation>Le nom de l'attribut MGRS doit être unique. Il existe déjà un attribut nommé</translation>
-    </message>
-    <message>
-        <location filename="../wkt2layers.py" line="44"/>
-        <source>Input vector layer or table</source>
-        <translation>Couche vecteur ou table en entrée</translation>
-    </message>
-    <message>
-        <location filename="../mgrstogeom.py" line="49"/>
-        <source>Field containing MGRS coordinate</source>
-        <translation>Attribut contenant les coordonnées MGRS</translation>
-    </message>
-    <message>
-        <location filename="../mgrstogeom.py" line="67"/>
-        <source>Select an MGRS field to process</source>
-        <translation>Sélectionner un attribut MGRS à traiter</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="219"/>
-        <source>out of</source>
-        <translation>sur</translation>
-    </message>
-    <message>
-        <location filename="../mgrstogeom.py" line="99"/>
-        <source>features contained MGRS coordinates</source>
-        <translation>entités contenaient des coordonnées MGRS</translation>
-    </message>
-    <message>
-        <location filename="../digitizer.py" line="43"/>
-        <source>Y, X (Lat, Lon) Order</source>
-        <translation>Y, X (Lat, Lon)</translation>
-    </message>
-    <message>
-        <location filename="../digitizer.py" line="46"/>
-        <source>X, Y (Lon, Lat) Order</source>
-        <translation>X, Y (Lon, Lat)</translation>
+        <translation type="unfinished">Coordonnées incorrectes : </translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="55"/>
         <source>WGS 84 (latitude &amp; longitude)</source>
-        <translation>WGS 84 (latitude &amp; longitude)</translation>
+        <translation type="unfinished">WGS 84 (latitude &amp; longitude)</translation>
+    </message>
+    <message>
+        <location filename="../digitizer.py" line="58"/>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="80"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../settings.py" line="252"/>
+        <location filename="../zoomToLatLon.py" line="64"/>
+        <source>MGRS</source>
+        <translation type="unfinished">MGRS</translation>
+    </message>
+    <message>
+        <location filename="../digitizer.py" line="61"/>
+        <location filename="../geom2field.py" line="119"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../settings.py" line="252"/>
+        <location filename="../settings.py" line="261"/>
+        <location filename="../zoomToLatLon.py" line="60"/>
+        <source>Project CRS</source>
+        <translation type="unfinished">SCR du projet</translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="64"/>
         <source>Specify CRS</source>
-        <translation>Spécifier le SCR</translation>
+        <translation type="unfinished">Spécifier le SCR</translation>
     </message>
     <message>
-        <location filename="../zoomToLatLon.py" line="67"/>
+        <location filename="../digitizer.py" line="67"/>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="81"/>
+        <location filename="../zoomToLatLon.py" line="66"/>
         <source>Plus Codes</source>
-        <translation>Plus Codes</translation>
+        <translation type="unfinished">Plus Codes</translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="70"/>
         <source>UTM</source>
-        <translation>UTM</translation>
+        <translation type="unfinished">UTM</translation>
+    </message>
+    <message>
+        <location filename="../digitizer.py" line="108"/>
+        <location filename="../digitizer.py" line="119"/>
+        <location filename="../digitizer.py" line="156"/>
+        <location filename="../field2geom.py" line="214"/>
+        <location filename="../field2geom.py" line="223"/>
+        <location filename="../zoomToLatLon.py" line="216"/>
+        <location filename="../zoomToLatLon.py" line="269"/>
+        <location filename="../zoomToLatLon.py" line="288"/>
+        <location filename="../zoomToLatLon.py" line="303"/>
+        <source>Invalid Coordinates</source>
+        <translation type="unfinished">Coordonnées incorrectes</translation>
+    </message>
+    <message>
+        <location filename="../digitizer.py" line="112"/>
+        <location filename="../zoomToLatLon.py" line="220"/>
+        <source>Invalid GeoJSON Geometry</source>
+        <translation type="unfinished">Géométrie GeoJSON incorrecte</translation>
+    </message>
+    <message>
+        <location filename="../digitizer.py" line="165"/>
+        <location filename="../zoomToLatLon.py" line="327"/>
+        <source>Invalid Coordinate</source>
+        <translation type="unfinished">Coordonnées incorrectes</translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="181"/>
         <source>Input Coordinate: MGRS</source>
-        <translation>Format des coordonnées : MGRS </translation>
+        <translation type="unfinished">Format des coordonnées : MGRS </translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="184"/>
         <source>Input Coordinate: Plus Codes</source>
-        <translation>Format des coordonnées : Plus Codes</translation>
+        <translation type="unfinished">Format des coordonnées : Plus Codes</translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="187"/>
         <source>Input Coordinate: UTM</source>
-        <translation>Format des coordonnées : UTM</translation>
+        <translation type="unfinished">Format des coordonnées : UTM</translation>
     </message>
     <message>
-        <location filename="../digitizer.py" line="191"/>
+        <location filename="../digitizer.py" line="192"/>
         <source>Lat, Lon</source>
-        <translation>Lat, Lon</translation>
+        <translation type="unfinished">Lat, Lon</translation>
     </message>
     <message>
-        <location filename="../digitizer.py" line="193"/>
+        <location filename="../digitizer.py" line="194"/>
         <source>Lon, Lat</source>
-        <translation>Lon, Lat</translation>
+        <translation type="unfinished">Lon, Lat</translation>
     </message>
     <message>
-        <location filename="../digitizer.py" line="197"/>
+        <location filename="../digitizer.py" line="198"/>
         <source>Y, X</source>
-        <translation>Y, X</translation>
+        <translation type="unfinished">Y, X</translation>
     </message>
     <message>
-        <location filename="../digitizer.py" line="199"/>
+        <location filename="../digitizer.py" line="200"/>
         <source>X, Y</source>
-        <translation>X,Y</translation>
+        <translation type="unfinished">X,Y</translation>
     </message>
     <message>
         <location filename="../digitizer.py" line="204"/>
         <source>Coordinate Order</source>
-        <translation>Ordre des coordonnées</translation>
+        <translation type="unfinished">Ordre des coordonnées</translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>Output coordinate format</source>
-        <translation>Format des coordonnées en sortie</translation>
+        <location filename="../ecef.py" line="52"/>
+        <location filename="../geom2field.py" line="70"/>
+        <location filename="../pluscodes.py" line="51"/>
+        <location filename="../tomgrs.py" line="46"/>
+        <source>Input point vector layer</source>
+        <translation type="unfinished">Couche vecteur ponctuelle en entrée</translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>Coordinates in 2 fields</source>
-        <translation>Coordonnées dans 2 attributs</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>Coordinates in 1 field</source>
-        <translation>Coordonnées dans 1 attribut</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>GeoJSON</source>
-        <translation>GeoJSON</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>WKT</source>
-        <translation>WKT</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="73"/>
-        <source>Maidenhead grid locator</source>
-        <translation>Grille Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="86"/>
-        <source>Name for the field containing both coordinates, or the Y (latitude) coordinate</source>
-        <translation>Nom de l'attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="93"/>
-        <source>Name of the field containing the X (longitude) portion of the coordinate</source>
-        <translation>Nom de l'attribut contenant la coordonnée X (longitude)</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="100"/>
-        <source>Coordinate order when using 1 field</source>
-        <translation>Ordre des coordonnées si utilisation d'un seul attribut</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="100"/>
-        <source>Lat,Lon (Y,X) - Google map order</source>
-        <translation>Lat, Lon (Y,X) - Google map</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="100"/>
-        <source>Lon,Lat (X,Y) order</source>
-        <translation>Lon, Lat (X,Y)</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="108"/>
-        <source>Delimiter between coordinates when using 1 field</source>
-        <translation>Séparateur des coordonnées si utilisation d'un seul attribut</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="115"/>
-        <source>Output CRS of coordinates added to a field</source>
-        <translation>SCR de sortie des coordonnées ajoutées dans un attribut</translation>
-    </message>
-    <message>
-        <location filename="../zoomToLatLon.py" line="59"/>
-        <source>WGS 84</source>
-        <translation>WGS 84</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="115"/>
-        <source>Layer CRS</source>
-        <translation>SCR de la couche</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="123"/>
-        <source>Custom CRS for coordinates added to a field</source>
-        <translation>SCR personnalisé pour les coordonnées ajoutées dans un attribut</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>Select Decimal or DMS degrees for WGS 84 numbers</source>
-        <translation>Sélectionner le format pour les coordonnées WGS 84 (degrés décimaux, DMS)</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>Decimal degrees</source>
-        <translation>Degrés décimaux</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>DÂ°M'S&quot;</source>
-        <translation type="obsolete">D°M'S&quot;</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>DÂ°M.MM'</source>
-        <translation type="obsolete">D°M.MM'</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>DDMMSS</source>
-        <translation>DDMMSS</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="138"/>
-        <source>Add space between DÂ° M' S&quot; and DÂ° M.MM' numbers</source>
-        <translation type="obsolete">Ajouter une espace entre les valeurs D° M' S&quot; et D° M.MM'</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="145"/>
-        <source>Pad DÂ°M'S&quot; and DÂ°M.MM' coordinates with leading zeros</source>
-        <translation type="obsolete">Compléter les coordonnées DÂ°M'S&quot; et DÂ°M.MM' avec des zéros non significatif en début de valeur</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="152"/>
-        <source>Decimal number precision</source>
-        <translation>Précision pour les valeurs décimales</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="161"/>
-        <source>DMS / Degrees Minutes / UTM precision</source>
-        <translation>Précision pour les coordonnées DMS / Degrés Minutes / UTM</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="60"/>
-        <source>Plus Codes length</source>
-        <translation>Longueur des Plus Codes</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="180"/>
-        <source>Geohash precision</source>
-        <translation>Précision GeoHash</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="190"/>
-        <source>Maidenhead grid locator precision</source>
-        <translation>Précision grille Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="200"/>
-        <source>UPS precision</source>
-        <translation>Précision UPS</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="210"/>
-        <source>GEOREF precision</source>
-        <translation>Précision GEOREF</translation>
-    </message>
-    <message>
-        <location filename="../geom2field.py" line="265"/>
-        <source>Field names must be unique. There is already a field named</source>
-        <translation>Les noms d'attributs doivent être uniques. Il existe déjà un attribut nommé</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="54"/>
-        <source>Input point vector layer or table</source>
-        <translation>Couche vecteur ponctuelle en entrée</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="60"/>
-        <source>Coordinate format found in the first field</source>
-        <translation>Format de la coordonnée dans le premier attribut</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="60"/>
-        <source>Latitude (Y)</source>
-        <translation>Latitude (Y)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="60"/>
-        <source>Latitude (Y), Longitude (X)</source>
-        <translation>Latitude (Y), Longitude (X)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="60"/>
-        <source>Longitude (X), Latitude (Y)</source>
-        <translation>Longitude (X), Latitude (Y)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="72"/>
-        <source>Select a field containing both coordinates or the Y (latitude) coordinate</source>
-        <translation>Sélectionner un attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="80"/>
-        <source>Select a field containing the X or longitude coordinate if applicable</source>
-        <translation>Si concerné, sélectionner un attribut contenant la coordonnée X (longitude)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="88"/>
-        <source>Input CRS - Not applicable to MGRS, Plus Codes, Geohash, UTM, &amp; Maidenhead</source>
-        <translation>SCR en entrée - Non applicable pour MGRS, Plus Codes, GeoHsh, UTM &amp; Maidenhead</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="109"/>
-        <source>Select an attribute field containing a coordinate</source>
-        <translation>Sélectionner un attribut contenant une coordonnée</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="114"/>
-        <source>Select an attribute field containing an X or longitude coordinate</source>
-        <translation>Sélectionner un attribut contenant une coordonnée X (longitude)</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="123"/>
-        <source>Attribute field containing Y or latitude must either be a numeric or string field.</source>
-        <translation>L'attribut contenant la coordonnée Y (latitude) doit être de type numérique ou texte</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="130"/>
-        <source>Attribute field containing X or longitude must either be a numeric or string field.</source>
-        <translation>L'attribut contenant la coordonnée X (longitude) doit être de type numérique ou texte</translation>
-    </message>
-    <message>
-        <location filename="../field2geom.py" line="264"/>
-        <source>features were invalid</source>
-        <translation>entités sont invalides</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="54"/>
-        <source>Plus Codes field name</source>
-        <translation>Nom de l'attribut Plus Codes</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="84"/>
-        <source>Plus Codes Field Name must be unique. There is already a field named</source>
-        <translation>Le nom de l'attribut Plus Codes doit être unique. Il existe déjà un attribut nommé</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="167"/>
-        <source>Field containing Plus Code coordinate</source>
-        <translation>Attribut contenant le Plus Code</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="185"/>
-        <source>Select a Plus Codes field to process</source>
-        <translation>Sélectionner un attribut Plus Code à traiter</translation>
-    </message>
-    <message>
-        <location filename="../pluscodes.py" line="219"/>
-        <source>features contained Plus Codes coordinates</source>
-        <translation>entités contenaient des Plus Codes</translation>
-    </message>
-    <message>
-        <location filename="../utm.py" line="47"/>
-        <source>Invalid UTM Coordinate</source>
-        <translation>Coordonnées UTM incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../utm.py" line="71"/>
-        <source>Invalid longitude</source>
-        <translation>Longitude incorrecte</translation>
-    </message>
-    <message>
-        <location filename="../utm.py" line="73"/>
-        <source>Invalid latitude</source>
-        <translation>Latitude incorrecte</translation>
-    </message>
-    <message>
-        <location filename="../coordinateConverter.py" line="35"/>
-        <source>Invalid</source>
-        <translation>Incorrect</translation>
-    </message>
-    <message>
-        <location filename="../ups.py" line="37"/>
-        <source>Invalid UPS Coordinate</source>
-        <translation>Coordonnées UPS incorrectes</translation>
-    </message>
-    <message>
-        <location filename="../ecef.py" line="55"/>
+        <location filename="../ecef.py" line="58"/>
         <source>Extract altitude from Z geometry (must be meters) if available</source>
-        <translation>Extraire l'altitude de la géométrie Z (obligatoirement en mètres), si disponible</translation>
+        <translation type="unfinished">Extraire l&apos;altitude de la géométrie Z (obligatoirement en mètres), si disponible</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="62"/>
+        <location filename="../ecef.py" line="65"/>
         <source>Altitude attribute</source>
-        <translation>Attribut pour l'altitude</translation>
+        <translation type="unfinished">Attribut pour l&apos;altitude</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="70"/>
+        <location filename="../ecef.py" line="73"/>
         <source>Default altitude in meters when not otherwise specified</source>
-        <translation>Altitude en mètres par défaut si non spécifiée par ailleurs</translation>
+        <translation type="unfinished">Altitude en mètres par défaut si non spécifiée par ailleurs</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="78"/>
+        <location filename="../ecef.py" line="81"/>
         <source>Output X attribute name</source>
-        <translation>Nom de l'attribut en sortie pour X</translation>
+        <translation type="unfinished">Nom de l&apos;attribut en sortie pour X</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="84"/>
+        <location filename="../ecef.py" line="87"/>
         <source>Output Y attribute name</source>
-        <translation>Nom de l'attribut en sortie pour Y</translation>
+        <translation type="unfinished">Nom de l&apos;attribut en sortie pour Y</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="90"/>
+        <location filename="../ecef.py" line="93"/>
         <source>Output Z attribute name</source>
-        <translation>Nom de l'attribut en sortie pour Z</translation>
+        <translation type="unfinished">Nom de l&apos;attribut en sortie pour Z</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="202"/>
+        <location filename="../ecef.py" line="99"/>
+        <location filename="../field2geom.py" line="98"/>
+        <location filename="../geom2field.py" line="223"/>
+        <location filename="../geom2wkt.py" line="48"/>
+        <location filename="../mgrstogeom.py" line="60"/>
+        <location filename="../pluscodes.py" line="73"/>
+        <location filename="../pluscodes.py" line="178"/>
+        <location filename="../tomgrs.py" line="68"/>
+        <source>Output layer</source>
+        <translation type="unfinished">Couche de sortie</translation>
+    </message>
+    <message>
+        <location filename="../ecef.py" line="169"/>
+        <location filename="../latLonTools.py" line="180"/>
+        <source>Lat, Lon, Altitude to ECEF</source>
+        <translation type="unfinished">Lat, Lon, Altitude vers ECEF</translation>
+    </message>
+    <message>
+        <location filename="../ecef.py" line="205"/>
         <source>Input layer</source>
-        <translation>Couche en entrée</translation>
+        <translation type="unfinished">Couche en entrée</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="208"/>
+        <location filename="../ecef.py" line="211"/>
         <source>ECEF X attribute (meters)</source>
-        <translation>Attribut ECEF X (en mètres)</translation>
+        <translation type="unfinished">Attribut ECEF X (en mètres)</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="216"/>
+        <location filename="../ecef.py" line="219"/>
         <source>ECEF Y attribute (meters)</source>
-        <translation>Attribut ECEF Y (en mètres)</translation>
+        <translation type="unfinished">Attribut ECEF Y (en mètres)</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="224"/>
+        <location filename="../ecef.py" line="227"/>
         <source>ECEF Z attribute (meters)</source>
-        <translation>Attribut ECEF Z (en mètres)</translation>
+        <translation type="unfinished">Attribut ECEF Z (en mètres)</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="232"/>
+        <location filename="../ecef.py" line="235"/>
         <source>Add altitude to the output attribute table</source>
-        <translation>Ajouter un attribut pour l'altitude dans la couche de sortie</translation>
+        <translation type="unfinished">Ajouter un attribut pour l&apos;altitude dans la couche de sortie</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="239"/>
+        <location filename="../ecef.py" line="242"/>
         <source>Output altitude attribute name</source>
-        <translation>Nom de l'attribut pour l'altitude</translation>
+        <translation type="unfinished">Nom de l&apos;attribut pour l&apos;altitude</translation>
     </message>
     <message>
-        <location filename="../ecef.py" line="246"/>
+        <location filename="../ecef.py" line="249"/>
         <source>Output pointZ layer</source>
-        <translation>Couche pointZ en sortie</translation>
+        <translation type="unfinished">Couche pointZ en sortie</translation>
     </message>
     <message>
         <location filename="../ecef.py" line="264"/>
         <source>Altitude attribute name must be unique</source>
-        <translation>Le nom de l'attribut pour l'altitude doit être unique</translation>
+        <translation type="unfinished">Le nom de l&apos;attribut pour l&apos;altitude doit être unique</translation>
     </message>
     <message>
-        <location filename="../showOnMapTool.py" line="90"/>
-        <source>Viewing Coordinate</source>
-        <translation>Affichage des coordonnées</translation>
+        <location filename="../ecef.py" line="305"/>
+        <location filename="../latLonTools.py" line="178"/>
+        <source>ECEF to Lat, Lon, Altitude</source>
+        <translation type="unfinished">ECEF vers Lat, Lon, Altitude</translation>
     </message>
     <message>
-        <location filename="../showOnMapTool.py" line="85"/>
-        <source>in Google Earth</source>
-        <translation>dans Google Earth</translation>
+        <location filename="../field2geom.py" line="57"/>
+        <source>Input point vector layer or table</source>
+        <translation type="unfinished">Couche vecteur ponctuelle en entrée</translation>
     </message>
     <message>
-        <location filename="../showOnMapTool.py" line="90"/>
-        <source>in external map</source>
-        <translation>dans la carte externe</translation>
+        <location filename="../field2geom.py" line="63"/>
+        <source>Coordinate format found in the first field</source>
+        <translation type="unfinished">Format de la coordonnée dans le premier attribut</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="14"/>
-        <source>OSM</source>
-        <translation>OSM</translation>
+        <location filename="../field2geom.py" line="65"/>
+        <source>Latitude (Y)</source>
+        <translation type="unfinished">Latitude (Y)</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="15"/>
-        <source>Google Map</source>
-        <translation>Google Maps</translation>
+        <location filename="../field2geom.py" line="66"/>
+        <source>Latitude (Y), Longitude (X)</source>
+        <translation type="unfinished">Latitude (Y), Longitude (X)</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="16"/>
-        <source>Google Aerial</source>
-        <translation>Google Aerial</translation>
+        <location filename="../field2geom.py" line="67"/>
+        <source>Longitude (X), Latitude (Y)</source>
+        <translation type="unfinished">Longitude (X), Latitude (Y)</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="17"/>
-        <source>Bing Map</source>
-        <translation>Bing Maps</translation>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="81"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../zoomToLatLon.py" line="70"/>
+        <source>Geohash</source>
+        <translation type="unfinished">Geohash</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="18"/>
-        <source>Bing Aerial</source>
-        <translation>Bing Aerial</translation>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="81"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../settings.py" line="252"/>
+        <location filename="../zoomToLatLon.py" line="68"/>
+        <source>Standard UTM</source>
+        <translation type="unfinished">UTM standard</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="19"/>
-        <source>MapQuest Map</source>
-        <translation>MapQuest Map</translation>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="82"/>
+        <source>Maidenhead grid locator</source>
+        <translation type="unfinished">Grille Maidenhead</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="20"/>
-        <source>MapQuest Aerial</source>
-        <translation>MapQuest Aerial</translation>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="82"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <source>UPS</source>
+        <translation type="unfinished">UPS</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="21"/>
-        <source>Mapillary Street</source>
-        <translation>Mapillary Street</translation>
+        <location filename="../field2geom.py" line="68"/>
+        <location filename="../geom2field.py" line="82"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <source>GEOREF</source>
+        <translation type="unfinished">GEOREF</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="22"/>
-        <source>Mapillary Aerial</source>
-        <translation>Mapillary Aerial</translation>
+        <location filename="../field2geom.py" line="75"/>
+        <source>Select a field containing both coordinates or the Y (latitude) coordinate</source>
+        <translation type="unfinished">Sélectionner un attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="23"/>
-        <source>iD Editor ESRI World Imagery</source>
-        <translation>Éditeur iD ESRI World Imagery</translation>
+        <location filename="../field2geom.py" line="83"/>
+        <source>Select a field containing the X or longitude coordinate if applicable</source>
+        <translation type="unfinished">Si concerné, sélectionner un attribut contenant la coordonnée X (longitude)</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="24"/>
-        <source>iD Editor OpenTopoMap</source>
-        <translation>Éditeur iD OpenTopoMap</translation>
+        <location filename="../field2geom.py" line="91"/>
+        <source>Input CRS - Not applicable to MGRS, Plus Codes, Geohash, UTM, &amp; Maidenhead</source>
+        <translation type="unfinished">SCR en entrée - Non applicable pour MGRS, Plus Codes, GeoHsh, UTM &amp; Maidenhead</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="25"/>
-        <source>Google Earth Web</source>
-        <translation>Google Earth Web</translation>
+        <location filename="../field2geom.py" line="110"/>
+        <source>Select an attribute field containing a coordinate</source>
+        <translation type="unfinished">Sélectionner un attribut contenant une coordonnée</translation>
     </message>
     <message>
-        <location filename="../mapProviders.py" line="26"/>
-        <source>Panoramax</source>
-        <translation>Panoramax</translation>
+        <location filename="../field2geom.py" line="115"/>
+        <source>Select an attribute field containing an X or longitude coordinate</source>
+        <translation type="unfinished">Sélectionner un attribut contenant une coordonnée X (longitude)</translation>
     </message>
     <message>
-        <location filename="../zoomToLatLon.py" line="76"/>
-        <source>H3</source>
+        <location filename="../field2geom.py" line="124"/>
+        <source>Attribute field containing Y or latitude must either be a numeric or string field.</source>
+        <translation type="unfinished">L&apos;attribut contenant la coordonnée Y (latitude) doit être de type numérique ou texte</translation>
+    </message>
+    <message>
+        <location filename="../field2geom.py" line="131"/>
+        <source>Attribute field containing X or longitude must either be a numeric or string field.</source>
+        <translation type="unfinished">L&apos;attribut contenant la coordonnée X (longitude) doit être de type numérique ou texte</translation>
+    </message>
+    <message>
+        <location filename="../field2geom.py" line="264"/>
+        <location filename="../mgrstogeom.py" line="99"/>
+        <location filename="../pluscodes.py" line="219"/>
+        <source>out of</source>
+        <translation type="unfinished">sur</translation>
+    </message>
+    <message>
+        <location filename="../field2geom.py" line="265"/>
+        <source>features were invalid</source>
+        <translation type="unfinished">entités sont invalides</translation>
+    </message>
+    <message>
+        <location filename="../field2geom.py" line="279"/>
+        <location filename="../latLonTools.py" line="155"/>
+        <source>Fields to point layer</source>
+        <translation type="unfinished">Attributs vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="76"/>
+        <source>Output coordinate format</source>
+        <translation type="unfinished">Format des coordonnées en sortie</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="78"/>
+        <source>Coordinates in 2 fields</source>
+        <translation type="unfinished">Coordonnées dans 2 attributs</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="79"/>
+        <source>Coordinates in 1 field</source>
+        <translation type="unfinished">Coordonnées dans 1 attribut</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="80"/>
+        <source>GeoJSON</source>
+        <translation type="unfinished">GeoJSON</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="80"/>
+        <source>WKT</source>
+        <translation type="unfinished">WKT</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="89"/>
+        <source>Name for the field containing both coordinates, or the Y (latitude) coordinate</source>
+        <translation type="unfinished">Nom de l&apos;attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="96"/>
+        <source>Name of the field containing the X (longitude) portion of the coordinate</source>
+        <translation type="unfinished">Nom de l&apos;attribut contenant la coordonnée X (longitude)</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="103"/>
+        <source>Coordinate order when using 1 field</source>
+        <translation type="unfinished">Ordre des coordonnées si utilisation d&apos;un seul attribut</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="104"/>
+        <source>Lat,Lon (Y,X) - Google map order</source>
+        <translation type="unfinished">Lat, Lon (Y,X) - Google map</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="104"/>
+        <source>Lon,Lat (X,Y) order</source>
+        <translation type="unfinished">Lon, Lat (X,Y)</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="111"/>
+        <source>Delimiter between coordinates when using 1 field</source>
+        <translation type="unfinished">Séparateur des coordonnées si utilisation d&apos;un seul attribut</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="118"/>
+        <source>Output CRS of coordinates added to a field</source>
+        <translation type="unfinished">SCR de sortie des coordonnées ajoutées dans un attribut</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="119"/>
+        <location filename="../zoomToLatLon.py" line="58"/>
+        <source>WGS 84</source>
+        <translation type="unfinished">WGS 84</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="119"/>
+        <source>Layer CRS</source>
+        <translation type="unfinished">SCR de la couche</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="119"/>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../settings.py" line="252"/>
+        <location filename="../zoomToLatLon.py" line="62"/>
+        <source>Custom CRS</source>
+        <translation type="unfinished">SCR personnalisé</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="126"/>
+        <source>Custom CRS for coordinates added to a field</source>
+        <translation type="unfinished">SCR personnalisé pour les coordonnées ajoutées dans un attribut</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="133"/>
+        <source>Select Decimal or DMS degrees for WGS 84 numbers</source>
+        <translation type="unfinished">Sélectionner le format pour les coordonnées WGS 84 (degrés décimaux, DMS)</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="134"/>
+        <source>Decimal degrees</source>
+        <translation type="unfinished">Degrés décimaux</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="134"/>
+        <source>D°M&apos;S&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../latLonTools.py" line="168"/>
+        <location filename="../geom2field.py" line="134"/>
+        <source>D°M.MM&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="134"/>
+        <source>DDMMSS</source>
+        <translation type="unfinished">DDMMSS</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="141"/>
+        <source>Add space between D° M&apos; S&quot; and D° M.MM&apos; numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="148"/>
+        <source>Pad D°M&apos;S&quot; and D°M.MM&apos; coordinates with leading zeros</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="155"/>
+        <source>Decimal number precision</source>
+        <translation type="unfinished">Précision pour les valeurs décimales</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="164"/>
+        <source>DMS / Degrees Minutes / UTM precision</source>
+        <translation type="unfinished">Précision pour les coordonnées DMS / Degrés Minutes / UTM</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="173"/>
+        <location filename="../pluscodes.py" line="63"/>
+        <source>Plus Codes length</source>
+        <translation type="unfinished">Longueur des Plus Codes</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="183"/>
+        <source>Geohash precision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="193"/>
+        <source>Maidenhead grid locator precision</source>
+        <translation type="unfinished">Précision grille Maidenhead</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="203"/>
+        <source>UPS precision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="213"/>
+        <source>GEOREF precision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="260"/>
+        <location filename="../geom2field.py" line="265"/>
+        <source>Field names must be unique. There is already a field named</source>
+        <translation type="unfinished">Les noms d&apos;attributs doivent être uniques. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <location filename="../geom2field.py" line="365"/>
+        <location filename="../latLonTools.py" line="158"/>
+        <source>Point layer to fields</source>
+        <translation type="unfinished">Couche de ponctuels vers attributs</translation>
+    </message>
+    <message>
+        <location filename="../geom2wkt.py" line="45"/>
+        <location filename="../latLonTools.py" line="161"/>
         <source>Geometry to WKT/JSON</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geom2wkt.py" line="86"/>
+        <location filename="../geom2wkt.py" line="89"/>
         <source>Output format type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="197"/>
+        <location filename="../latLonTools.py" line="58"/>
+        <location filename="../latLonTools.py" line="60"/>
+        <source>Lat Lon Tools Toolbar</source>
+        <translation type="unfinished">Barre d&apos;outils Lat Lon Tools</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="69"/>
+        <source>Copy/Display Coordinate</source>
+        <translation type="unfinished">Copier/Afficher les coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="78"/>
+        <source>Show in External Map</source>
+        <translation type="unfinished">Afficher sur la carte externe</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="87"/>
+        <source>Zoom To Coordinate</source>
+        <translation type="unfinished">Aller à des coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="99"/>
+        <source>Multi-location Zoom</source>
+        <translation type="unfinished">Zoom multi-emplacements</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="113"/>
+        <source>Copy Canvas Extent</source>
+        <translation type="unfinished">Copier l&apos;emprise du canevas</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="117"/>
+        <source>Copy Selected Area Extent</source>
+        <translation type="unfinished">Copier l&apos;emprise d&apos;une zone sélectionnée</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="122"/>
+        <source>Copy Layer Extent</source>
+        <translation type="unfinished">Copier l&apos;emprise de la couche</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="126"/>
+        <source>Copy Selected Features Extent</source>
+        <translation type="unfinished">Copier l&apos;emprise des entités sélectionnées</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="131"/>
+        <source>Copy Extents to Clipboard</source>
+        <translation type="unfinished">Copier des emprises dans le presse-papier</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="146"/>
+        <source>Coordinate Conversion</source>
+        <translation type="unfinished">Conversion de coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="164"/>
+        <location filename="../wkt2layers.py" line="199"/>
         <source>WKT attribute to layers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="50"/>
+        <location filename="../latLonTools.py" line="167"/>
+        <location filename="../pluscodes.py" line="233"/>
+        <source>Plus Codes to point layer</source>
+        <translation type="unfinished">Plus Codes vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="169"/>
+        <location filename="../pluscodes.py" line="131"/>
+        <source>Point layer to Plus Codes</source>
+        <translation type="unfinished">Couche de ponctuels vers Plus Codes</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="172"/>
+        <location filename="../mgrstogeom.py" line="113"/>
+        <source>MGRS to point layer</source>
+        <translation type="unfinished">MGRS vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="175"/>
+        <location filename="../tomgrs.py" line="125"/>
+        <source>Point layer to MGRS</source>
+        <translation type="unfinished">Couche de ponctuels vers MGRS</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="182"/>
+        <source>Conversions</source>
+        <translation type="unfinished">Conversions</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="188"/>
+        <source>Lat Lon Digitize</source>
+        <translation type="unfinished">Ajouter un ponctuel à des coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="197"/>
+        <source>Settings</source>
+        <translation type="unfinished">Paramètres</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="199"/>
+        <source>Lat Lon Tools Settings</source>
+        <translation type="unfinished">Paramètres Lat Lon Tools</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="206"/>
+        <source>Help</source>
+        <translation type="unfinished">Aide</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="298"/>
+        <location filename="../latLonTools.py" line="317"/>
+        <source>This layer has no features - A bounding box cannot be calculated.</source>
+        <translation type="unfinished">Cette couche n&apos;a pas d&apos;entités - Aucune boîte englobante ne peut être calculée.</translation>
+    </message>
+    <message>
+        <location filename="../latLonTools.py" line="322"/>
+        <source>No features were selected.</source>
+        <translation type="unfinished">Aucune entité n&apos;a été sélectionnée.</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="14"/>
+        <source>OSM</source>
+        <translation type="unfinished">OSM</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="15"/>
+        <source>Google Map</source>
+        <translation type="unfinished">Google Maps</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="16"/>
+        <source>Google Aerial</source>
+        <translation type="unfinished">Google Aerial</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="17"/>
+        <source>Bing Map</source>
+        <translation type="unfinished">Bing Maps</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="18"/>
+        <source>Bing Aerial</source>
+        <translation type="unfinished">Bing Aerial</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="19"/>
+        <source>MapQuest Map</source>
+        <translation type="unfinished">MapQuest Map</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="20"/>
+        <source>MapQuest Aerial</source>
+        <translation type="unfinished">MapQuest Aerial</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="21"/>
+        <source>Mapillary Street</source>
+        <translation type="unfinished">Mapillary Street</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="22"/>
+        <source>Mapillary Aerial</source>
+        <translation type="unfinished">Mapillary Aerial</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="23"/>
+        <source>iD Editor ESRI World Imagery</source>
+        <translation type="unfinished">Éditeur iD ESRI World Imagery</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="24"/>
+        <source>iD Editor OpenTopoMap</source>
+        <translation type="unfinished">Éditeur iD OpenTopoMap</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="25"/>
+        <source>Google Earth Web</source>
+        <translation type="unfinished">Google Earth Web</translation>
+    </message>
+    <message>
+        <location filename="../mapProviders.py" line="26"/>
+        <source>Panoramax</source>
+        <translation type="unfinished">Panoramax</translation>
+    </message>
+    <message>
+        <location filename="../mgrstogeom.py" line="46"/>
+        <location filename="../pluscodes.py" line="164"/>
+        <location filename="../wkt2layers.py" line="47"/>
+        <source>Input vector layer or table</source>
+        <translation type="unfinished">Couche vecteur ou table en entrée</translation>
+    </message>
+    <message>
+        <location filename="../mgrstogeom.py" line="52"/>
+        <source>Field containing MGRS coordinate</source>
+        <translation type="unfinished">Attribut contenant les coordonnées MGRS</translation>
+    </message>
+    <message>
+        <location filename="../mgrstogeom.py" line="68"/>
+        <source>Select an MGRS field to process</source>
+        <translation type="unfinished">Sélectionner un attribut MGRS à traiter</translation>
+    </message>
+    <message>
+        <location filename="../mgrstogeom.py" line="99"/>
+        <source>features contained MGRS coordinates</source>
+        <translation type="unfinished">entités contenaient des coordonnées MGRS</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="100"/>
+        <source>Enter coordinate (&apos;lat,lon,...)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="102"/>
+        <source>Enter coordinate (&apos;lon,lat,...)</source>
+        <translation type="unfinished">Entrer des coordonnées (lon,lat,...)</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="104"/>
+        <source>Enter coordinate (&apos;mgrs,...)</source>
+        <translation type="unfinished">Entrer des coordonnées (MGRS,...)</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="106"/>
+        <source>Enter coordinate (&apos;Plus code,...)</source>
+        <translation type="unfinished">Entrer des coordonnées (Plus Code,...)</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="108"/>
+        <source>Enter coordinate (&apos;Standard UTM,...)</source>
+        <translation type="unfinished">Entrer des coordonnées (UTM standard,...)</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="111"/>
+        <location filename="../multizoom.py" line="113"/>
+        <source>Enter coordinate</source>
+        <translation type="unfinished">Entrer des coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="181"/>
+        <source>Are your sure you want to delete all locations?</source>
+        <translation type="unfinished">Êtes-vous sûr de vouloir supprimer toutes les coordonnées ?</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="305"/>
+        <source>Are your sure you want to delete the selected locations?</source>
+        <translation type="unfinished">Êtes-vous sûr de vouloir supprimer les coordonnées sélectionnées ?</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="362"/>
+        <location filename="../multizoom.py" line="388"/>
+        <source>Invalid Coordinate.</source>
+        <translation type="unfinished">Coordonnées incorrectes</translation>
+    </message>
+    <message>
+        <location filename="../multizoom.py" line="392"/>
+        <source>Invalid Coordinate. Perhaps comma separators between fields were not used.</source>
+        <translation type="unfinished">Coordonnées incorrectes. Les séparateurs virgule n&apos;ont peut-être pas été utilisés.</translation>
+    </message>
+    <message>
+        <location filename="../pluscodes.py" line="57"/>
+        <source>Plus Codes field name</source>
+        <translation type="unfinished">Nom de l&apos;attribut Plus Codes</translation>
+    </message>
+    <message>
+        <location filename="../pluscodes.py" line="84"/>
+        <source>Plus Codes Field Name must be unique. There is already a field named</source>
+        <translation type="unfinished">Le nom de l&apos;attribut Plus Codes doit être unique. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <location filename="../pluscodes.py" line="170"/>
+        <source>Field containing Plus Code coordinate</source>
+        <translation type="unfinished">Attribut contenant le Plus Code</translation>
+    </message>
+    <message>
+        <location filename="../pluscodes.py" line="186"/>
+        <source>Select a Plus Codes field to process</source>
+        <translation type="unfinished">Sélectionner un attribut Plus Code à traiter</translation>
+    </message>
+    <message>
+        <location filename="../pluscodes.py" line="219"/>
+        <source>features contained Plus Codes coordinates</source>
+        <translation type="unfinished">entités contenaient des Plus Codes</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="252"/>
+        <location filename="../settings.py" line="261"/>
+        <source>WGS 84 (Latitude &amp; Longitude)</source>
+        <translation type="unfinished">WGS 84 (Latitude &amp; Longitude)</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../settings.py" line="252"/>
+        <source>Plus Codes (Open Location Code)</source>
+        <translation type="unfinished">Plus Codes (Open Location Code)</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="226"/>
+        <location filename="../settings.py" line="228"/>
+        <source>Maidenhead Grid Locator</source>
+        <translation type="unfinished">Grille Maidenhead</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="230"/>
+        <source>Decimal Degrees</source>
+        <translation type="unfinished">Degrés décimaux</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="231"/>
+        <source>Normal Coordinate</source>
+        <translation type="unfinished">Coordonnées standard</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="232"/>
+        <location filename="../settings.py" line="244"/>
+        <location filename="../settings.py" line="257"/>
+        <location filename="../settings.py" line="274"/>
+        <source>Lat, Lon (Y,X) - Google Map Order</source>
+        <translation type="unfinished">Lat, Lon (Y,X) - Ordre Google Maps</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="232"/>
+        <location filename="../settings.py" line="244"/>
+        <location filename="../settings.py" line="257"/>
+        <location filename="../settings.py" line="274"/>
+        <source>Lon, Lat (X,Y) Order</source>
+        <translation type="unfinished">Lon, Lat (X,Y)</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="233"/>
+        <location filename="../settings.py" line="271"/>
+        <source>Comma</source>
+        <translation type="unfinished">Virgule</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="233"/>
+        <location filename="../settings.py" line="271"/>
+        <source>Comma Space</source>
+        <translation type="unfinished">Virgule espace</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="233"/>
+        <location filename="../settings.py" line="271"/>
+        <source>Space</source>
+        <translation type="unfinished">Espace</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="233"/>
+        <location filename="../settings.py" line="271"/>
+        <source>Tab</source>
+        <translation type="unfinished">Tabulation</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="233"/>
+        <location filename="../settings.py" line="271"/>
+        <source>Other</source>
+        <translation type="unfinished">Autre</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <source>WGS 84 (Latitude &amp; Longitude) / Auto Detect Format</source>
+        <translation type="unfinished">WGS 84 (Latitude &amp; Longitude) / Détection automatique du format</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="240"/>
+        <location filename="../settings.py" line="242"/>
+        <location filename="../zoomToLatLon.py" line="72"/>
+        <source>Maidenhead Grid</source>
+        <translation type="unfinished">Grille Maidenhead</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="256"/>
+        <source>Default</source>
+        <translation type="unfinished">Défaut</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="256"/>
+        <source>Labeled</source>
+        <translation type="unfinished">Étiqueté</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="256"/>
+        <source>Custom</source>
+        <translation type="unfinished">Personnalisé</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="263"/>
+        <source>&quot;minX,minY,maxX,maxY (W,S,E,N)&quot; - Using the selected delimiter</source>
+        <translation type="unfinished">&quot;minX,minY,maxX,maxY (O,S,E,N)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="264"/>
+        <source>&quot;minX,maxX,minY,maxY (W,E,S,N)&quot; - Using the selected delimiter</source>
+        <translation type="unfinished">&quot;minX,maxX,minY,maxY (O,E,S,N)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="265"/>
+        <source>&quot;minY,minX,maxY,maxX (S,W,N,E)&quot; - Using the selected delimiter</source>
+        <translation type="unfinished">&quot;minY,minX,maxY,maxX (S,O,N,E)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="266"/>
+        <source>&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygon format</source>
+        <translation type="unfinished">&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygone</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="267"/>
+        <source>&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Alternate polgyon format</source>
+        <translation type="unfinished">&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Polgyone autre format</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="268"/>
+        <source>WKT Polygon</source>
+        <translation type="unfinished">Polygone WKT</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="269"/>
+        <source>&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</source>
+        <translation type="unfinished">&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="270"/>
+        <source>&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</source>
+        <translation type="unfinished">&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</translation>
+    </message>
+    <message>
+        <location filename="../settings.py" line="613"/>
+        <source>Input QML Style File</source>
+        <translation type="unfinished">Fichier de style QML</translation>
+    </message>
+    <message>
+        <location filename="../showOnMapTool.py" line="85"/>
+        <location filename="../showOnMapTool.py" line="90"/>
+        <source>Viewing Coordinate</source>
+        <translation type="unfinished">Affichage des coordonnées</translation>
+    </message>
+    <message>
+        <location filename="../showOnMapTool.py" line="85"/>
+        <source>in Google Earth</source>
+        <translation type="unfinished">dans Google Earth</translation>
+    </message>
+    <message>
+        <location filename="../showOnMapTool.py" line="90"/>
+        <source>in external map</source>
+        <translation type="unfinished">dans la carte externe</translation>
+    </message>
+    <message>
+        <location filename="../tomgrs.py" line="52"/>
+        <source>Output MGRS field name</source>
+        <translation type="unfinished">Nom de l&apos;attribut MGRS en sortie</translation>
+    </message>
+    <message>
+        <location filename="../tomgrs.py" line="58"/>
+        <source>MGRS Precision</source>
+        <translation type="unfinished">Précision MGRS</translation>
+    </message>
+    <message>
+        <location filename="../tomgrs.py" line="79"/>
+        <source>MGRS Field Name must be unique. There is already a field named</source>
+        <translation type="unfinished">Le nom de l&apos;attribut MGRS doit être unique. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <location filename="../ups.py" line="37"/>
+        <source>Invalid UPS Coordinate</source>
+        <translation type="unfinished">Coordonnées UPS incorrectes</translation>
+    </message>
+    <message>
+        <location filename="../utm.py" line="27"/>
+        <location filename="../utm.py" line="30"/>
+        <location filename="../utm.py" line="44"/>
+        <location filename="../utm.py" line="47"/>
+        <source>Invalid UTM Coordinate</source>
+        <translation type="unfinished">Coordonnées UTM incorrectes</translation>
+    </message>
+    <message>
+        <location filename="../utm.py" line="71"/>
+        <source>Invalid longitude</source>
+        <translation type="unfinished">Longitude incorrecte</translation>
+    </message>
+    <message>
+        <location filename="../utm.py" line="73"/>
+        <source>Invalid latitude</source>
+        <translation type="unfinished">Latitude incorrecte</translation>
+    </message>
+    <message>
+        <location filename="../wkt2layers.py" line="53"/>
         <source>Select a WKT coordinate field</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="58"/>
+        <location filename="../wkt2layers.py" line="61"/>
         <source>WKT CRS (Usually EPSG:4326)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="65"/>
+        <location filename="../wkt2layers.py" line="68"/>
         <source>Output point layer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="71"/>
+        <location filename="../wkt2layers.py" line="74"/>
         <source>Output line layer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../wkt2layers.py" line="77"/>
+        <location filename="../wkt2layers.py" line="80"/>
         <source>Output polygon layer</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1024,29 +1088,847 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>D°M'S&quot;</source>
+        <location filename="../zoomToLatLon.py" line="75"/>
+        <source>H3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="130"/>
-        <source>D°M.MM'</source>
-        <translation type="unfinished"></translation>
+        <location filename="../zoomToLatLon.py" line="121"/>
+        <source>Enter MGRS Coordinate</source>
+        <translation type="unfinished">Entrer des coordonnées MGRS</translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="138"/>
-        <source>Add space between D° M' S&quot; and D° M.MM' numbers</source>
-        <translation type="unfinished"></translation>
+        <location filename="../zoomToLatLon.py" line="123"/>
+        <source>Enter Plus Codes</source>
+        <translation type="unfinished">Entrer un Plus Codes</translation>
     </message>
     <message>
-        <location filename="../geom2field.py" line="145"/>
-        <source>Pad D°M'S&quot; and D°M.MM' coordinates with leading zeros</source>
-        <translation type="unfinished"></translation>
+        <location filename="../zoomToLatLon.py" line="125"/>
+        <source>Enter Geohash</source>
+        <translation type="unfinished">Entrer un Geohash</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="127"/>
+        <source>Enter H3 geohash</source>
+        <translation type="unfinished">Entrer un geohash H3</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="129"/>
+        <source>Enter Standard UTM</source>
+        <translation type="unfinished">Entrer des coordonnées UTM standard</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="131"/>
+        <source>Enter Maidenhead Grid</source>
+        <translation type="unfinished">Entrer des coordonnées de grille Maidenhead</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="134"/>
+        <source>Enter &apos;Latitude, Longitude&apos;</source>
+        <translation type="unfinished">Entrer &apos;Latitude, Longitude&apos;</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="136"/>
+        <source>Enter &apos;Longitude, Latitude&apos;</source>
+        <translation type="unfinished">Entrer &apos;Longitude, Latitude&apos;</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="140"/>
+        <location filename="../zoomToLatLon.py" line="142"/>
+        <location filename="../zoomToLatLon.py" line="146"/>
+        <location filename="../zoomToLatLon.py" line="148"/>
+        <source>Enter</source>
+        <translation type="unfinished">Entrer</translation>
+    </message>
+    <message>
+        <location filename="../zoomToLatLon.py" line="192"/>
+        <source>Invalid H3 Coordinate</source>
+        <translation type="unfinished">Coordonnées H3 incorrectes</translation>
+    </message>
+</context>
+<context>
+    <name>@default</name>
+    <message>
+        <source>Lat Lon Tools Toolbar</source>
+        <translation type="vanished">Barre d&apos;outils Lat Lon Tools</translation>
+    </message>
+    <message>
+        <source>Copy/Display Coordinate</source>
+        <translation type="vanished">Copier/Afficher les coordonnées</translation>
+    </message>
+    <message>
+        <source>Show in External Map</source>
+        <translation type="vanished">Afficher sur la carte externe</translation>
+    </message>
+    <message>
+        <source>Zoom To Coordinate</source>
+        <translation type="vanished">Aller à des coordonnées</translation>
+    </message>
+    <message>
+        <source>Multi-location Zoom</source>
+        <translation type="vanished">Zoom multi-emplacements</translation>
+    </message>
+    <message>
+        <source>Copy Canvas Extent</source>
+        <translation type="vanished">Copier l&apos;emprise du canevas</translation>
+    </message>
+    <message>
+        <source>Copy Selected Area Extent</source>
+        <translation type="vanished">Copier l&apos;emprise d&apos;une zone sélectionnée</translation>
+    </message>
+    <message>
+        <source>Copy Layer Extent</source>
+        <translation type="vanished">Copier l&apos;emprise de la couche</translation>
+    </message>
+    <message>
+        <source>Copy Selected Features Extent</source>
+        <translation type="vanished">Copier l&apos;emprise des entités sélectionnées</translation>
+    </message>
+    <message>
+        <source>Copy Extents to Clipboard</source>
+        <translation type="vanished">Copier des emprises dans le presse-papier</translation>
+    </message>
+    <message>
+        <source>Coordinate Conversion</source>
+        <translation type="vanished">Conversion de coordonnées</translation>
+    </message>
+    <message>
+        <source>Fields to point layer</source>
+        <translation type="vanished">Attributs vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <source>Point layer to fields</source>
+        <translation type="vanished">Couche de ponctuels vers attributs</translation>
+    </message>
+    <message>
+        <source>Plus Codes to point layer</source>
+        <translation type="vanished">Plus Codes vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <source>Point layer to Plus Codes</source>
+        <translation type="vanished">Couche de ponctuels vers Plus Codes</translation>
+    </message>
+    <message>
+        <source>MGRS to point layer</source>
+        <translation type="vanished">MGRS vers couche de ponctuels</translation>
+    </message>
+    <message>
+        <source>Point layer to MGRS</source>
+        <translation type="vanished">Couche de ponctuels vers MGRS</translation>
+    </message>
+    <message>
+        <source>ECEF to Lat, Lon, Altitude</source>
+        <translation type="vanished">ECEF vers Lat, Lon, Altitude</translation>
+    </message>
+    <message>
+        <source>Lat, Lon, Altitude to ECEF</source>
+        <translation type="vanished">Lat, Lon, Altitude vers ECEF</translation>
+    </message>
+    <message>
+        <source>Conversions</source>
+        <translation type="vanished">Conversions</translation>
+    </message>
+    <message>
+        <source>Lat Lon Digitize</source>
+        <translation type="vanished">Ajouter un ponctuel à des coordonnées</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Paramètres</translation>
+    </message>
+    <message>
+        <source>Lat Lon Tools Settings</source>
+        <translation type="vanished">Paramètres Lat Lon Tools</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="vanished">Aide</translation>
+    </message>
+    <message>
+        <source>This layer has no features - A bounding box cannot be calculated.</source>
+        <translation type="vanished">Cette couche n&apos;a pas d&apos;entités - Aucune boîte englobante ne peut être calculée.</translation>
+    </message>
+    <message>
+        <source>copied to the clipboard</source>
+        <translation type="vanished">copiée dans le presse-papier</translation>
+    </message>
+    <message>
+        <source>No features were selected.</source>
+        <translation type="vanished">Aucune entité n&apos;a été sélectionnée.</translation>
+    </message>
+    <message>
+        <source>Out of bounds</source>
+        <translation type="vanished">En dehors des limites</translation>
+    </message>
+    <message>
+        <source>coordinate</source>
+        <translation type="vanished">coordonnée</translation>
+    </message>
+    <message>
+        <source>Invalid coordinate:</source>
+        <translation type="vanished">Coordonnées incorrectes : </translation>
+    </message>
+    <message>
+        <source>Enter MGRS Coordinate</source>
+        <translation type="vanished">Entrer des coordonnées MGRS</translation>
+    </message>
+    <message>
+        <source>Enter Plus Codes</source>
+        <translation type="vanished">Entrer un Plus Codes</translation>
+    </message>
+    <message>
+        <source>Enter Geohash</source>
+        <translation type="vanished">Entrer un Geohash</translation>
+    </message>
+    <message>
+        <source>Enter H3 geohash</source>
+        <translation type="vanished">Entrer un geohash H3</translation>
+    </message>
+    <message>
+        <source>Enter Standard UTM</source>
+        <translation type="vanished">Entrer des coordonnées UTM standard</translation>
+    </message>
+    <message>
+        <source>Enter Maidenhead Grid</source>
+        <translation type="vanished">Entrer des coordonnées de grille Maidenhead</translation>
+    </message>
+    <message>
+        <source>Enter &apos;Latitude, Longitude&apos;</source>
+        <translation type="vanished">Entrer &apos;Latitude, Longitude&apos;</translation>
+    </message>
+    <message>
+        <source>Enter &apos;Longitude, Latitude&apos;</source>
+        <translation type="vanished">Entrer &apos;Longitude, Latitude&apos;</translation>
+    </message>
+    <message>
+        <source>Enter</source>
+        <translation type="vanished">Entrer</translation>
+    </message>
+    <message>
+        <source>Invalid H3 Coordinate</source>
+        <translation type="vanished">Coordonnées H3 incorrectes</translation>
+    </message>
+    <message>
+        <source>Invalid Coordinates</source>
+        <translation type="vanished">Coordonnées incorrectes</translation>
+    </message>
+    <message>
+        <source>Invalid GeoJSON Geometry</source>
+        <translation type="vanished">Géométrie GeoJSON incorrecte</translation>
+    </message>
+    <message>
+        <source>Invalid Coordinate</source>
+        <translation type="vanished">Coordonnées incorrectes</translation>
+    </message>
+    <message>
+        <source>WGS 84 (Latitude &amp; Longitude)</source>
+        <translation type="vanished">WGS 84 (Latitude &amp; Longitude)</translation>
+    </message>
+    <message>
+        <source>Project CRS</source>
+        <translation type="vanished">SCR du projet</translation>
+    </message>
+    <message>
+        <source>Custom CRS</source>
+        <translation type="vanished">SCR personnalisé</translation>
+    </message>
+    <message>
+        <source>MGRS</source>
+        <translation type="vanished">MGRS</translation>
+    </message>
+    <message>
+        <source>Plus Codes (Open Location Code)</source>
+        <translation type="vanished">Plus Codes (Open Location Code)</translation>
+    </message>
+    <message>
+        <source>Standard UTM</source>
+        <translation type="vanished">UTM standard</translation>
+    </message>
+    <message>
+        <source>Geohash</source>
+        <translation type="vanished">Geohash</translation>
+    </message>
+    <message>
+        <source>Maidenhead Grid Locator</source>
+        <translation type="vanished">Grille Maidenhead</translation>
+    </message>
+    <message>
+        <source>UPS</source>
+        <translation type="vanished">UPS</translation>
+    </message>
+    <message>
+        <source>GEOREF</source>
+        <translation type="vanished">GEOREF</translation>
+    </message>
+    <message>
+        <source>Decimal Degrees</source>
+        <translation type="vanished">Degrés décimaux</translation>
+    </message>
+    <message>
+        <source>Normal Coordinate</source>
+        <translation type="vanished">Coordonnées standard</translation>
+    </message>
+    <message>
+        <source>Lat, Lon (Y,X) - Google Map Order</source>
+        <translation type="vanished">Lat, Lon (Y,X) - Ordre Google Maps</translation>
+    </message>
+    <message>
+        <source>Lon, Lat (X,Y) Order</source>
+        <translation type="vanished">Lon, Lat (X,Y)</translation>
+    </message>
+    <message>
+        <source>Comma</source>
+        <translation type="vanished">Virgule</translation>
+    </message>
+    <message>
+        <source>Comma Space</source>
+        <translation type="vanished">Virgule espace</translation>
+    </message>
+    <message>
+        <source>Space</source>
+        <translation type="vanished">Espace</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="vanished">Tabulation</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="vanished">Autre</translation>
+    </message>
+    <message>
+        <source>WGS 84 (Latitude &amp; Longitude) / Auto Detect Format</source>
+        <translation type="vanished">WGS 84 (Latitude &amp; Longitude) / Détection automatique du format</translation>
+    </message>
+    <message>
+        <source>Maidenhead Grid</source>
+        <translation type="vanished">Grille Maidenhead</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="vanished">Défaut</translation>
+    </message>
+    <message>
+        <source>Labeled</source>
+        <translation type="vanished">Étiqueté</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="vanished">Personnalisé</translation>
+    </message>
+    <message>
+        <source>&quot;minX,minY,maxX,maxY (W,S,E,N)&quot; - Using the selected delimiter</source>
+        <translation type="vanished">&quot;minX,minY,maxX,maxY (O,S,E,N)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <source>&quot;minX,maxX,minY,maxY (W,E,S,N)&quot; - Using the selected delimiter</source>
+        <translation type="vanished">&quot;minX,maxX,minY,maxY (O,E,S,N)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <source>&quot;minY,minX,maxY,maxX (S,W,N,E)&quot; - Using the selected delimiter</source>
+        <translation type="vanished">&quot;minY,minX,maxY,maxX (S,O,N,E)&quot; - Utilise le séparateur sélectionné</translation>
+    </message>
+    <message>
+        <source>&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygon format</source>
+        <translation type="vanished">&quot;x1 y1,x2 y2,x3 y3,x4 y4,x1 y1&quot; - Polygone</translation>
+    </message>
+    <message>
+        <source>&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Alternate polgyon format</source>
+        <translation type="vanished">&quot;x1,y1 x2,y2 x3,y3 x4,y4 x1,y1&quot; - Polgyone autre format</translation>
+    </message>
+    <message>
+        <source>WKT Polygon</source>
+        <translation type="vanished">Polygone WKT</translation>
+    </message>
+    <message>
+        <source>&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</source>
+        <translation type="vanished">&quot;bbox: [minX, minY, maxX, maxY]&quot; - MapProxy</translation>
+    </message>
+    <message>
+        <source>&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</source>
+        <translation type="vanished">&quot;bbox=minX,minY,maxX,maxY&quot; - GeoServer WFS, WMS</translation>
+    </message>
+    <message>
+        <source>Input QML Style File</source>
+        <translation type="vanished">Fichier de style QML</translation>
+    </message>
+    <message>
+        <source>Enter coordinate (&apos;lat,lon,...)</source>
+        <translation type="vanished">Entrer des coordonnées (lat,lon,...)</translation>
+    </message>
+    <message>
+        <source>Enter coordinate (&apos;lon,lat,...)</source>
+        <translation type="vanished">Entrer des coordonnées (lon,lat,...)</translation>
+    </message>
+    <message>
+        <source>Enter coordinate (&apos;mgrs,...)</source>
+        <translation type="vanished">Entrer des coordonnées (MGRS,...)</translation>
+    </message>
+    <message>
+        <source>Enter coordinate (&apos;Plus code,...)</source>
+        <translation type="vanished">Entrer des coordonnées (Plus Code,...)</translation>
+    </message>
+    <message>
+        <source>Enter coordinate (&apos;Standard UTM,...)</source>
+        <translation type="vanished">Entrer des coordonnées (UTM standard,...)</translation>
+    </message>
+    <message>
+        <source>Enter coordinate</source>
+        <translation type="vanished">Entrer des coordonnées</translation>
+    </message>
+    <message>
+        <source>Are your sure you want to delete all locations?</source>
+        <translation type="vanished">Êtes-vous sûr de vouloir supprimer toutes les coordonnées ?</translation>
+    </message>
+    <message>
+        <source>Are your sure you want to delete the selected locations?</source>
+        <translation type="vanished">Êtes-vous sûr de vouloir supprimer les coordonnées sélectionnées ?</translation>
+    </message>
+    <message>
+        <source>Invalid Coordinate.</source>
+        <translation type="vanished">Coordonnées incorrectes</translation>
+    </message>
+    <message>
+        <source>Invalid Coordinate. Perhaps comma separators between fields were not used.</source>
+        <translation type="vanished">Coordonnées incorrectes. Les séparateurs virgule n&apos;ont peut-être pas été utilisés.</translation>
+    </message>
+    <message>
+        <source>Input point vector layer</source>
+        <translation type="vanished">Couche vecteur ponctuelle en entrée</translation>
+    </message>
+    <message>
+        <source>Output MGRS field name</source>
+        <translation type="vanished">Nom de l&apos;attribut MGRS en sortie</translation>
+    </message>
+    <message>
+        <source>MGRS Precision</source>
+        <translation type="vanished">Précision MGRS</translation>
+    </message>
+    <message>
+        <source>Output layer</source>
+        <translation type="vanished">Couche de sortie</translation>
+    </message>
+    <message>
+        <source>MGRS Field Name must be unique. There is already a field named</source>
+        <translation type="vanished">Le nom de l&apos;attribut MGRS doit être unique. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <source>Input vector layer or table</source>
+        <translation type="vanished">Couche vecteur ou table en entrée</translation>
+    </message>
+    <message>
+        <source>Field containing MGRS coordinate</source>
+        <translation type="vanished">Attribut contenant les coordonnées MGRS</translation>
+    </message>
+    <message>
+        <source>Select an MGRS field to process</source>
+        <translation type="vanished">Sélectionner un attribut MGRS à traiter</translation>
+    </message>
+    <message>
+        <source>out of</source>
+        <translation type="vanished">sur</translation>
+    </message>
+    <message>
+        <source>features contained MGRS coordinates</source>
+        <translation type="vanished">entités contenaient des coordonnées MGRS</translation>
+    </message>
+    <message>
+        <source>Y, X (Lat, Lon) Order</source>
+        <translation type="vanished">Y, X (Lat, Lon)</translation>
+    </message>
+    <message>
+        <source>X, Y (Lon, Lat) Order</source>
+        <translation type="vanished">X, Y (Lon, Lat)</translation>
+    </message>
+    <message>
+        <source>WGS 84 (latitude &amp; longitude)</source>
+        <translation type="vanished">WGS 84 (latitude &amp; longitude)</translation>
+    </message>
+    <message>
+        <source>Specify CRS</source>
+        <translation type="vanished">Spécifier le SCR</translation>
+    </message>
+    <message>
+        <source>Plus Codes</source>
+        <translation type="vanished">Plus Codes</translation>
+    </message>
+    <message>
+        <source>UTM</source>
+        <translation type="vanished">UTM</translation>
+    </message>
+    <message>
+        <source>Input Coordinate: MGRS</source>
+        <translation type="vanished">Format des coordonnées : MGRS </translation>
+    </message>
+    <message>
+        <source>Input Coordinate: Plus Codes</source>
+        <translation type="vanished">Format des coordonnées : Plus Codes</translation>
+    </message>
+    <message>
+        <source>Input Coordinate: UTM</source>
+        <translation type="vanished">Format des coordonnées : UTM</translation>
+    </message>
+    <message>
+        <source>Lat, Lon</source>
+        <translation type="vanished">Lat, Lon</translation>
+    </message>
+    <message>
+        <source>Lon, Lat</source>
+        <translation type="vanished">Lon, Lat</translation>
+    </message>
+    <message>
+        <source>Y, X</source>
+        <translation type="vanished">Y, X</translation>
+    </message>
+    <message>
+        <source>X, Y</source>
+        <translation type="vanished">X,Y</translation>
+    </message>
+    <message>
+        <source>Coordinate Order</source>
+        <translation type="vanished">Ordre des coordonnées</translation>
+    </message>
+    <message>
+        <source>Output coordinate format</source>
+        <translation type="vanished">Format des coordonnées en sortie</translation>
+    </message>
+    <message>
+        <source>Coordinates in 2 fields</source>
+        <translation type="vanished">Coordonnées dans 2 attributs</translation>
+    </message>
+    <message>
+        <source>Coordinates in 1 field</source>
+        <translation type="vanished">Coordonnées dans 1 attribut</translation>
+    </message>
+    <message>
+        <source>GeoJSON</source>
+        <translation type="vanished">GeoJSON</translation>
+    </message>
+    <message>
+        <source>WKT</source>
+        <translation type="vanished">WKT</translation>
+    </message>
+    <message>
+        <source>Maidenhead grid locator</source>
+        <translation type="vanished">Grille Maidenhead</translation>
+    </message>
+    <message>
+        <source>Name for the field containing both coordinates, or the Y (latitude) coordinate</source>
+        <translation type="vanished">Nom de l&apos;attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
+    </message>
+    <message>
+        <source>Name of the field containing the X (longitude) portion of the coordinate</source>
+        <translation type="vanished">Nom de l&apos;attribut contenant la coordonnée X (longitude)</translation>
+    </message>
+    <message>
+        <source>Coordinate order when using 1 field</source>
+        <translation type="vanished">Ordre des coordonnées si utilisation d&apos;un seul attribut</translation>
+    </message>
+    <message>
+        <source>Lat,Lon (Y,X) - Google map order</source>
+        <translation type="vanished">Lat, Lon (Y,X) - Google map</translation>
+    </message>
+    <message>
+        <source>Lon,Lat (X,Y) order</source>
+        <translation type="vanished">Lon, Lat (X,Y)</translation>
+    </message>
+    <message>
+        <source>Delimiter between coordinates when using 1 field</source>
+        <translation type="vanished">Séparateur des coordonnées si utilisation d&apos;un seul attribut</translation>
+    </message>
+    <message>
+        <source>Output CRS of coordinates added to a field</source>
+        <translation type="vanished">SCR de sortie des coordonnées ajoutées dans un attribut</translation>
+    </message>
+    <message>
+        <source>WGS 84</source>
+        <translation type="vanished">WGS 84</translation>
+    </message>
+    <message>
+        <source>Layer CRS</source>
+        <translation type="vanished">SCR de la couche</translation>
+    </message>
+    <message>
+        <source>Custom CRS for coordinates added to a field</source>
+        <translation type="vanished">SCR personnalisé pour les coordonnées ajoutées dans un attribut</translation>
+    </message>
+    <message>
+        <source>Select Decimal or DMS degrees for WGS 84 numbers</source>
+        <translation type="vanished">Sélectionner le format pour les coordonnées WGS 84 (degrés décimaux, DMS)</translation>
+    </message>
+    <message>
+        <source>Decimal degrees</source>
+        <translation type="vanished">Degrés décimaux</translation>
+    </message>
+    <message>
+        <source>DÂ°M&apos;S&quot;</source>
+        <translation type="obsolete">D°M&apos;S&quot;</translation>
+    </message>
+    <message>
+        <source>DÂ°M.MM&apos;</source>
+        <translation type="obsolete">D°M.MM&apos;</translation>
+    </message>
+    <message>
+        <source>DDMMSS</source>
+        <translation type="vanished">DDMMSS</translation>
+    </message>
+    <message>
+        <source>Add space between DÂ° M&apos; S&quot; and DÂ° M.MM&apos; numbers</source>
+        <translation type="obsolete">Ajouter une espace entre les valeurs D° M&apos; S&quot; et D° M.MM&apos;</translation>
+    </message>
+    <message>
+        <source>Pad DÂ°M&apos;S&quot; and DÂ°M.MM&apos; coordinates with leading zeros</source>
+        <translation type="obsolete">Compléter les coordonnées DÂ°M&apos;S&quot; et DÂ°M.MM&apos; avec des zéros non significatif en début de valeur</translation>
+    </message>
+    <message>
+        <source>Decimal number precision</source>
+        <translation type="vanished">Précision pour les valeurs décimales</translation>
+    </message>
+    <message>
+        <source>DMS / Degrees Minutes / UTM precision</source>
+        <translation type="vanished">Précision pour les coordonnées DMS / Degrés Minutes / UTM</translation>
+    </message>
+    <message>
+        <source>Plus Codes length</source>
+        <translation type="vanished">Longueur des Plus Codes</translation>
+    </message>
+    <message>
+        <source>Geohash precision</source>
+        <translation type="vanished">Précision GeoHash</translation>
+    </message>
+    <message>
+        <source>Maidenhead grid locator precision</source>
+        <translation type="vanished">Précision grille Maidenhead</translation>
+    </message>
+    <message>
+        <source>UPS precision</source>
+        <translation type="vanished">Précision UPS</translation>
+    </message>
+    <message>
+        <source>GEOREF precision</source>
+        <translation type="vanished">Précision GEOREF</translation>
+    </message>
+    <message>
+        <source>Field names must be unique. There is already a field named</source>
+        <translation type="vanished">Les noms d&apos;attributs doivent être uniques. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <source>Input point vector layer or table</source>
+        <translation type="vanished">Couche vecteur ponctuelle en entrée</translation>
+    </message>
+    <message>
+        <source>Coordinate format found in the first field</source>
+        <translation type="vanished">Format de la coordonnée dans le premier attribut</translation>
+    </message>
+    <message>
+        <source>Latitude (Y)</source>
+        <translation type="vanished">Latitude (Y)</translation>
+    </message>
+    <message>
+        <source>Latitude (Y), Longitude (X)</source>
+        <translation type="vanished">Latitude (Y), Longitude (X)</translation>
+    </message>
+    <message>
+        <source>Longitude (X), Latitude (Y)</source>
+        <translation type="vanished">Longitude (X), Latitude (Y)</translation>
+    </message>
+    <message>
+        <source>Select a field containing both coordinates or the Y (latitude) coordinate</source>
+        <translation type="vanished">Sélectionner un attribut contenant les coordonnées ou seulement la coordonnée Y (latitude)</translation>
+    </message>
+    <message>
+        <source>Select a field containing the X or longitude coordinate if applicable</source>
+        <translation type="vanished">Si concerné, sélectionner un attribut contenant la coordonnée X (longitude)</translation>
+    </message>
+    <message>
+        <source>Input CRS - Not applicable to MGRS, Plus Codes, Geohash, UTM, &amp; Maidenhead</source>
+        <translation type="vanished">SCR en entrée - Non applicable pour MGRS, Plus Codes, GeoHsh, UTM &amp; Maidenhead</translation>
+    </message>
+    <message>
+        <source>Select an attribute field containing a coordinate</source>
+        <translation type="vanished">Sélectionner un attribut contenant une coordonnée</translation>
+    </message>
+    <message>
+        <source>Select an attribute field containing an X or longitude coordinate</source>
+        <translation type="vanished">Sélectionner un attribut contenant une coordonnée X (longitude)</translation>
+    </message>
+    <message>
+        <source>Attribute field containing Y or latitude must either be a numeric or string field.</source>
+        <translation type="vanished">L&apos;attribut contenant la coordonnée Y (latitude) doit être de type numérique ou texte</translation>
+    </message>
+    <message>
+        <source>Attribute field containing X or longitude must either be a numeric or string field.</source>
+        <translation type="vanished">L&apos;attribut contenant la coordonnée X (longitude) doit être de type numérique ou texte</translation>
+    </message>
+    <message>
+        <source>features were invalid</source>
+        <translation type="vanished">entités sont invalides</translation>
+    </message>
+    <message>
+        <source>Plus Codes field name</source>
+        <translation type="vanished">Nom de l&apos;attribut Plus Codes</translation>
+    </message>
+    <message>
+        <source>Plus Codes Field Name must be unique. There is already a field named</source>
+        <translation type="vanished">Le nom de l&apos;attribut Plus Codes doit être unique. Il existe déjà un attribut nommé</translation>
+    </message>
+    <message>
+        <source>Field containing Plus Code coordinate</source>
+        <translation type="vanished">Attribut contenant le Plus Code</translation>
+    </message>
+    <message>
+        <source>Select a Plus Codes field to process</source>
+        <translation type="vanished">Sélectionner un attribut Plus Code à traiter</translation>
+    </message>
+    <message>
+        <source>features contained Plus Codes coordinates</source>
+        <translation type="vanished">entités contenaient des Plus Codes</translation>
+    </message>
+    <message>
+        <source>Invalid UTM Coordinate</source>
+        <translation type="vanished">Coordonnées UTM incorrectes</translation>
+    </message>
+    <message>
+        <source>Invalid longitude</source>
+        <translation type="vanished">Longitude incorrecte</translation>
+    </message>
+    <message>
+        <source>Invalid latitude</source>
+        <translation type="vanished">Latitude incorrecte</translation>
+    </message>
+    <message>
+        <source>Invalid</source>
+        <translation type="vanished">Incorrect</translation>
+    </message>
+    <message>
+        <source>Invalid UPS Coordinate</source>
+        <translation type="vanished">Coordonnées UPS incorrectes</translation>
+    </message>
+    <message>
+        <source>Extract altitude from Z geometry (must be meters) if available</source>
+        <translation type="vanished">Extraire l&apos;altitude de la géométrie Z (obligatoirement en mètres), si disponible</translation>
+    </message>
+    <message>
+        <source>Altitude attribute</source>
+        <translation type="vanished">Attribut pour l&apos;altitude</translation>
+    </message>
+    <message>
+        <source>Default altitude in meters when not otherwise specified</source>
+        <translation type="vanished">Altitude en mètres par défaut si non spécifiée par ailleurs</translation>
+    </message>
+    <message>
+        <source>Output X attribute name</source>
+        <translation type="vanished">Nom de l&apos;attribut en sortie pour X</translation>
+    </message>
+    <message>
+        <source>Output Y attribute name</source>
+        <translation type="vanished">Nom de l&apos;attribut en sortie pour Y</translation>
+    </message>
+    <message>
+        <source>Output Z attribute name</source>
+        <translation type="vanished">Nom de l&apos;attribut en sortie pour Z</translation>
+    </message>
+    <message>
+        <source>Input layer</source>
+        <translation type="vanished">Couche en entrée</translation>
+    </message>
+    <message>
+        <source>ECEF X attribute (meters)</source>
+        <translation type="vanished">Attribut ECEF X (en mètres)</translation>
+    </message>
+    <message>
+        <source>ECEF Y attribute (meters)</source>
+        <translation type="vanished">Attribut ECEF Y (en mètres)</translation>
+    </message>
+    <message>
+        <source>ECEF Z attribute (meters)</source>
+        <translation type="vanished">Attribut ECEF Z (en mètres)</translation>
+    </message>
+    <message>
+        <source>Add altitude to the output attribute table</source>
+        <translation type="vanished">Ajouter un attribut pour l&apos;altitude dans la couche de sortie</translation>
+    </message>
+    <message>
+        <source>Output altitude attribute name</source>
+        <translation type="vanished">Nom de l&apos;attribut pour l&apos;altitude</translation>
+    </message>
+    <message>
+        <source>Output pointZ layer</source>
+        <translation type="vanished">Couche pointZ en sortie</translation>
+    </message>
+    <message>
+        <source>Altitude attribute name must be unique</source>
+        <translation type="vanished">Le nom de l&apos;attribut pour l&apos;altitude doit être unique</translation>
+    </message>
+    <message>
+        <source>Viewing Coordinate</source>
+        <translation type="vanished">Affichage des coordonnées</translation>
+    </message>
+    <message>
+        <source>in Google Earth</source>
+        <translation type="vanished">dans Google Earth</translation>
+    </message>
+    <message>
+        <source>in external map</source>
+        <translation type="vanished">dans la carte externe</translation>
+    </message>
+    <message>
+        <source>OSM</source>
+        <translation type="vanished">OSM</translation>
+    </message>
+    <message>
+        <source>Google Map</source>
+        <translation type="vanished">Google Maps</translation>
+    </message>
+    <message>
+        <source>Google Aerial</source>
+        <translation type="vanished">Google Aerial</translation>
+    </message>
+    <message>
+        <source>Bing Map</source>
+        <translation type="vanished">Bing Maps</translation>
+    </message>
+    <message>
+        <source>Bing Aerial</source>
+        <translation type="vanished">Bing Aerial</translation>
+    </message>
+    <message>
+        <source>MapQuest Map</source>
+        <translation type="vanished">MapQuest Map</translation>
+    </message>
+    <message>
+        <source>MapQuest Aerial</source>
+        <translation type="vanished">MapQuest Aerial</translation>
+    </message>
+    <message>
+        <source>Mapillary Street</source>
+        <translation type="vanished">Mapillary Street</translation>
+    </message>
+    <message>
+        <source>Mapillary Aerial</source>
+        <translation type="vanished">Mapillary Aerial</translation>
+    </message>
+    <message>
+        <source>iD Editor ESRI World Imagery</source>
+        <translation type="vanished">Éditeur iD ESRI World Imagery</translation>
+    </message>
+    <message>
+        <source>iD Editor OpenTopoMap</source>
+        <translation type="vanished">Éditeur iD OpenTopoMap</translation>
+    </message>
+    <message>
+        <source>Google Earth Web</source>
+        <translation type="vanished">Google Earth Web</translation>
+    </message>
+    <message>
+        <source>Panoramax</source>
+        <translation type="vanished">Panoramax</translation>
     </message>
 </context>
 <context>
     <name>AddFeatureDialog</name>
     <message>
+        <location filename="../ui/digitizer.ui" line="14"/>
         <location filename="../ui/digitizer.ui" line="110"/>
         <source>Add Feature</source>
         <translation>Ajouter une entité</translation>
@@ -1062,6 +1944,7 @@
         <translation>Projection des coordonnées</translation>
     </message>
     <message>
+        <location filename="../ui/digitizer.ui" line="32"/>
         <location filename="../ui/digitizer.ui" line="51"/>
         <source>...</source>
         <translation>...</translation>
@@ -1085,6 +1968,24 @@
         <translation>Conversion de coordonnées</translation>
     </message>
     <message>
+        <location filename="../ui/coordinateConverter.ui" line="66"/>
+        <location filename="../ui/coordinateConverter.ui" line="85"/>
+        <location filename="../ui/coordinateConverter.ui" line="95"/>
+        <location filename="../ui/coordinateConverter.ui" line="105"/>
+        <location filename="../ui/coordinateConverter.ui" line="115"/>
+        <location filename="../ui/coordinateConverter.ui" line="153"/>
+        <location filename="../ui/coordinateConverter.ui" line="180"/>
+        <location filename="../ui/coordinateConverter.ui" line="210"/>
+        <location filename="../ui/coordinateConverter.ui" line="270"/>
+        <location filename="../ui/coordinateConverter.ui" line="294"/>
+        <location filename="../ui/coordinateConverter.ui" line="321"/>
+        <location filename="../ui/coordinateConverter.ui" line="341"/>
+        <location filename="../ui/coordinateConverter.ui" line="372"/>
+        <location filename="../ui/coordinateConverter.ui" line="396"/>
+        <location filename="../ui/coordinateConverter.ui" line="423"/>
+        <location filename="../ui/coordinateConverter.ui" line="450"/>
+        <location filename="../ui/coordinateConverter.ui" line="474"/>
+        <location filename="../ui/coordinateConverter.ui" line="498"/>
         <location filename="../ui/coordinateConverter.ui" line="522"/>
         <source>...</source>
         <translation>...</translation>
@@ -1110,6 +2011,13 @@
         <translation>Capturer les coordonnées en cliquant dans la carte</translation>
     </message>
     <message>
+        <location filename="../ui/coordinateConverter.ui" line="150"/>
+        <location filename="../ui/coordinateConverter.ui" line="177"/>
+        <location filename="../ui/coordinateConverter.ui" line="207"/>
+        <location filename="../ui/coordinateConverter.ui" line="267"/>
+        <location filename="../ui/coordinateConverter.ui" line="318"/>
+        <location filename="../ui/coordinateConverter.ui" line="338"/>
+        <location filename="../ui/coordinateConverter.ui" line="420"/>
         <location filename="../ui/coordinateConverter.ui" line="447"/>
         <source>Copy to clipboard</source>
         <translation>Copier dans le presse-papier</translation>
@@ -1170,6 +2078,7 @@
         <translation>WGS 84 (lat, lon))</translation>
     </message>
     <message>
+        <location filename="../ui/coordinateConverter.ui" line="162"/>
         <location filename="../ui/coordinateConverter.ui" line="228"/>
         <source>- (lat,lon)</source>
         <translation>- (lat,lon)</translation>
@@ -1185,6 +2094,7 @@
         <translation>- D M.mm</translation>
     </message>
     <message>
+        <location filename="../ui/coordinateConverter.ui" line="303"/>
         <location filename="../ui/coordinateConverter.ui" line="357"/>
         <source>- DDMMSS</source>
         <translation>- DDMMSS</translation>
@@ -1200,9 +2110,17 @@
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="23"/>
         <source>Open Location List</source>
-        <translation>Ouvrir une liste d'emplacements</translation>
+        <translation>Ouvrir une liste d&apos;emplacements</translation>
     </message>
     <message>
+        <location filename="../ui/multiZoomDialog.ui" line="26"/>
+        <location filename="../ui/multiZoomDialog.ui" line="42"/>
+        <location filename="../ui/multiZoomDialog.ui" line="68"/>
+        <location filename="../ui/multiZoomDialog.ui" line="78"/>
+        <location filename="../ui/multiZoomDialog.ui" line="104"/>
+        <location filename="../ui/multiZoomDialog.ui" line="114"/>
+        <location filename="../ui/multiZoomDialog.ui" line="151"/>
+        <location filename="../ui/multiZoomDialog.ui" line="161"/>
         <location filename="../ui/multiZoomDialog.ui" line="188"/>
         <source>...</source>
         <translation>...</translation>
@@ -1210,12 +2128,12 @@
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="39"/>
         <source>Save Location List</source>
-        <translation>Enregistrer la liste d'emplacements</translation>
+        <translation>Enregistrer la liste d&apos;emplacements</translation>
     </message>
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="65"/>
         <source>Delete Selected Location</source>
-        <translation>Supprimer l'emplacement sélectionné</translation>
+        <translation>Supprimer l&apos;emplacement sélectionné</translation>
     </message>
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="75"/>
@@ -1225,7 +2143,7 @@
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="101"/>
         <source>Create Vector Layer From Location List</source>
-        <translation>Créer une couche vecteur à partir de la liste d'emplacements</translation>
+        <translation>Créer une couche vecteur à partir de la liste d&apos;emplacements</translation>
     </message>
     <message>
         <location filename="../ui/multiZoomDialog.ui" line="111"/>
@@ -1276,6 +2194,11 @@
         <translation>Aller à des coordonnées</translation>
     </message>
     <message>
+        <location filename="../ui/zoomToLatLon.ui" line="44"/>
+        <location filename="../ui/zoomToLatLon.ui" line="54"/>
+        <location filename="../ui/zoomToLatLon.ui" line="64"/>
+        <location filename="../ui/zoomToLatLon.ui" line="71"/>
+        <location filename="../ui/zoomToLatLon.ui" line="81"/>
         <location filename="../ui/zoomToLatLon.ui" line="103"/>
         <source>...</source>
         <translation>...</translation>
@@ -1288,7 +2211,7 @@
     <message>
         <location filename="../ui/zoomToLatLon.ui" line="100"/>
         <source>Set Zoom to Settings</source>
-        <translation>Paramètres de l'outil Aller à des coordonnées</translation>
+        <translation>Paramètres de l&apos;outil Aller à des coordonnées</translation>
     </message>
     <message>
         <location filename="../ui/zoomToLatLon.ui" line="61"/>
@@ -1324,6 +2247,8 @@
         <translation>SCR/projection des coordonnées capturées</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="64"/>
+        <location filename="../ui/latLonSettings.ui" line="422"/>
         <location filename="../ui/latLonSettings.ui" line="849"/>
         <source>Custom CRS</source>
         <translation>SCR personnalisé</translation>
@@ -1374,11 +2299,13 @@
         <translation>Suffixe de coordonnées</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="200"/>
         <location filename="../ui/latLonSettings.ui" line="1203"/>
         <source>Geohash precision</source>
         <translation>Précision Geohash</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="237"/>
         <location filename="../ui/latLonSettings.ui" line="1124"/>
         <source>UTM precision</source>
         <translation>Précision UTM</translation>
@@ -1389,21 +2316,25 @@
         <translation>Précision grille Maidenhead</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="271"/>
         <location filename="../ui/latLonSettings.ui" line="1260"/>
         <source>UTM format</source>
         <translation>Format UTM</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="281"/>
         <location filename="../ui/latLonSettings.ui" line="1280"/>
         <source>UPS precision</source>
         <translation>Précision UTM</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="295"/>
         <location filename="../ui/latLonSettings.ui" line="1270"/>
         <source>UPS format</source>
         <translation>Format UPS</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="305"/>
         <location filename="../ui/latLonSettings.ui" line="1294"/>
         <source>GEOREF precision</source>
         <translation>Précision GEOFREF</translation>
@@ -1414,16 +2345,19 @@
         <translation>Résolution H3</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="339"/>
         <location filename="../ui/latLonSettings.ui" line="1311"/>
         <source>MGRS precision</source>
         <translation>Précision MGRS</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="378"/>
         <location filename="../ui/latLonSettings.ui" line="1351"/>
         <source>Add spaces to MGRS coordinates</source>
         <translation>Ajouter des espaces aux coordonnées MGRS</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="385"/>
         <location filename="../ui/latLonSettings.ui" line="710"/>
         <source>Show marker on QGIS map</source>
         <translation>Afficher le repère sur la carte QGIS</translation>
@@ -1441,7 +2375,7 @@
     <message>
         <location filename="../ui/latLonSettings.ui" line="432"/>
         <source>Zoom to coordinate order</source>
-        <translation>Ordre pour l'outil Aller à</translation>
+        <translation>Ordre pour l&apos;outil Aller à</translation>
     </message>
     <message>
         <location filename="../ui/latLonSettings.ui" line="444"/>
@@ -1456,7 +2390,7 @@
     <message>
         <location filename="../ui/latLonSettings.ui" line="468"/>
         <source>Marker icon size</source>
-        <translation>Taille de l'icône du repère</translation>
+        <translation>Taille de l&apos;icône du repère</translation>
     </message>
     <message>
         <location filename="../ui/latLonSettings.ui" line="491"/>
@@ -1497,7 +2431,7 @@ Geohash - Only accept geohash coordinates
 Maidenhead grid - Only accept maidenhead grid coordinates
 
 H3 (if installed) - Only accept H3 geohash string</source>
-        <translation>Format supportés pour l'outil &quot;Aller à&quot; (voir l'aide pour plus de détails):
+        <translation>Format supportés pour l&apos;outil &quot;Aller à&quot; (voir l&apos;aide pour plus de détails):
 
 WGS 84 - Degrés décimaux, DMS, WKT, GeoJSON, MGRS, Plus Codes (Open Location Code), Standard UTM, UPS, GEOREF, Geohash
 
@@ -1613,7 +2547,7 @@ H3 (si installé) - Seulement les coordonnées H3 geohash</translation>
     <message>
         <location filename="../ui/latLonSettings.ui" line="880"/>
         <source>Input .qml point vector style for Multi-zoom create layer</source>
-        <translation>Fichier de style .qml de vecteur ponctuel pour la création d'une couche Multi-zoom</translation>
+        <translation>Fichier de style .qml de vecteur ponctuel pour la création d&apos;une couche Multi-zoom</translation>
     </message>
     <message>
         <location filename="../ui/latLonSettings.ui" line="892"/>
@@ -1633,7 +2567,7 @@ H3 (si installé) - Seulement les coordonnées H3 geohash</translation>
     <message>
         <location filename="../ui/latLonSettings.ui" line="930"/>
         <source>Number of extra data fields </source>
-        <translation>Nombre d'attributs supplémentaires</translation>
+        <translation>Nombre d&apos;attributs supplémentaires</translation>
     </message>
     <message>
         <location filename="../ui/latLonSettings.ui" line="961"/>
@@ -1711,6 +2645,7 @@ H3 (si installé) - Seulement les coordonnées H3 geohash</translation>
         <translation>Séparateur entre les paires de coordonnées</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="1182"/>
         <location filename="../ui/latLonSettings.ui" line="1196"/>
         <source>,</source>
         <translation>,</translation>
@@ -1731,16 +2666,19 @@ H3 (si installé) - Seulement les coordonnées H3 geohash</translation>
         <translation>Précision des secondes DMS.ss</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="220"/>
         <location filename="../ui/latLonSettings.ui" line="1223"/>
         <source>DM.mm precision</source>
         <translation>Précision DM.mm</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="358"/>
         <location filename="../ui/latLonSettings.ui" line="1330"/>
         <source>Add space between DMS.ss and DM.mm numbers</source>
         <translation>Ajouter une espace entre les valeurs DMS.ss et DM.mm</translation>
     </message>
     <message>
+        <location filename="../ui/latLonSettings.ui" line="368"/>
         <location filename="../ui/latLonSettings.ui" line="1337"/>
         <source>Pad DMS.ss and DM.mm output coordinates with leading zeroes</source>
         <translation>Compléter les coordonnées DMS.ss et DM.mm avec des zéros non significatifs en début de valeur</translation>
