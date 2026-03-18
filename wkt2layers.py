@@ -45,14 +45,14 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInput,
                 tr('Input vector layer or table'),
-                [QgsProcessing.TypeVector])
+                [QgsProcessing.SourceType.TypeVector])
         )
         self.addParameter(
             QgsProcessingParameterField(
                 self.PrmField,
                 tr('Select a WKT coordinate field'),
                 parentLayerParameterName=self.PrmInput,
-                type=QgsProcessingParameterField.String,
+                type=QgsProcessingParameterField.DataType.String,
                 optional=False)
         )
         self.addParameter(
@@ -119,11 +119,11 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
                     continue
                     
                 type = geom.type()
-                if type == QgsWkbTypes.PointGeometry:
+                if type == QgsWkbTypes.GeometryType.PointGeometry:
                     self.addpoint(feature, geom)
-                elif type == QgsWkbTypes.LineGeometry:
+                elif type == QgsWkbTypes.GeometryType.LineGeometry:
                     self.addline(feature, geom)
-                elif type == QgsWkbTypes.PolygonGeometry:
+                elif type == QgsWkbTypes.GeometryType.PolygonGeometry:
                     self.addpolygon(feature, geom)
                 else:
                     failed += 1
@@ -154,10 +154,10 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
             (self.sinkPt, self.dest_id_pt) = self.parameterAsSink(
                 self.parameters,
                 self.PrmPointOutputLayer, self.context, self.fields,
-                QgsWkbTypes.MultiPoint, self.input_crs)
+                QgsWkbTypes.Type.MultiPoint, self.input_crs)
 
         if geom.isSimple():
-            geom = geom.convertToType(QgsWkbTypes.PointGeometry, True)
+            geom = geom.convertToType(QgsWkbTypes.GeometryType.PointGeometry, True)
         feature.setGeometry(geom)
         self.cntPt += 1
         self.sinkPt.addFeature(feature)
@@ -167,10 +167,10 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
             (self.sinkLine, self.dest_id_line) = self.parameterAsSink(
                 self.parameters,
                 self.PrmLineOutputLayer, self.context, self.fields,
-                QgsWkbTypes.MultiLineString, self.input_crs)
+                QgsWkbTypes.Type.MultiLineString, self.input_crs)
 
         if geom.isSimple():
-            geom = geom.convertToType(QgsWkbTypes.LineGeometry, True)
+            geom = geom.convertToType(QgsWkbTypes.GeometryType.LineGeometry, True)
         feature.setGeometry(geom)
         self.cntLine += 1
         self.sinkLine.addFeature(feature)
@@ -180,9 +180,9 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
             (self.sinkPoly, self.dest_id_poly) = self.parameterAsSink(
                 self.parameters,
                 self.PrmPolygonOutputLayer, self.context, self.fields,
-                QgsWkbTypes.MultiPolygon, self.input_crs)
+                QgsWkbTypes.Type.MultiPolygon, self.input_crs)
         if geom.isSimple():
-            geom = geom.convertToType(QgsWkbTypes.PolygonGeometry, True)
+            geom = geom.convertToType(QgsWkbTypes.GeometryType.PolygonGeometry, True)
         feature.setGeometry(geom)
         self.cntPoly += 1
         self.sinkPoly.addFeature(feature)
@@ -200,7 +200,7 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def createInstance(self):
         return Wkt2LayersAlgorithm()

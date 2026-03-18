@@ -108,7 +108,7 @@ class DigitizerWidget(QDialog, FORM_CLASS):
                         raise ValueError(tr('Invalid Coordinates'))
 
                     geom = fet[0].geometry()
-                    if geom.isEmpty() or (geom.wkbType() != QgsWkbTypes.Point):
+                    if geom.isEmpty() or (geom.wkbType() != QgsWkbTypes.Type.Point):
                         raise ValueError(tr('Invalid GeoJSON Geometry'))
                     pt = geom.asPoint()
                     lat = pt.y()
@@ -162,11 +162,11 @@ class DigitizerWidget(QDialog, FORM_CLASS):
                     srcCrs = QgsCoordinateReferenceSystem(self.inputCustomCRS)
         except Exception:
             # traceback.print_exc()
-            self.iface.messageBar().pushMessage("", tr("Invalid Coordinate"), level=Qgis.Warning, duration=2)
+            self.iface.messageBar().pushMessage("", tr("Invalid Coordinate"), level=Qgis.MessageLevel.Warning, duration=2)
             return
         self.lineEdit.clear()
         caps = layer.dataProvider().capabilities()
-        if caps & QgsVectorDataProvider.AddFeatures:
+        if caps & QgsVectorDataProvider.Capability.AddFeatures:
             destCRS = layer.crs()  # Get the CRS of the layer we are adding a point toWgs
             transform = QgsCoordinateTransform(srcCrs, destCRS, QgsProject.instance())
             # Transform the input coordinate projection to the layer CRS
@@ -210,9 +210,9 @@ class DigitizerWidget(QDialog, FORM_CLASS):
 
     def readSettings(self):
         settings = QgsSettings()
-        self.inputProjection = int(settings.value('/LatLonTools/DigitizerProjection', 0))
-        self.inputXYOrder = int(settings.value('/LatLonTools/DigitizerXYOrder', 0))
-        self.inputCustomCRS = settings.value('/LatLonTools/DigitizerCustomCRS', 'EPSG:4326')
+        self.inputProjection = int(settings.value('/LatLonTools4/DigitizerProjection', 0))
+        self.inputXYOrder = int(settings.value('/LatLonTools4/DigitizerXYOrder', 0))
+        self.inputCustomCRS = settings.value('/LatLonTools4/DigitizerCustomCRS', 'EPSG:4326')
         if self.inputProjection < 0 or self.inputProjection > 4:
             self.inputProjection = 0
         if self.inputXYOrder < 0 or self.inputXYOrder > 1:
@@ -221,9 +221,9 @@ class DigitizerWidget(QDialog, FORM_CLASS):
 
     def saveSettings(self):
         settings = QgsSettings()
-        settings.setValue('/LatLonTools/DigitizerProjection', self.inputProjection)
-        settings.setValue('/LatLonTools/DigitizerXYOrder', self.inputXYOrder)
-        settings.setValue('/LatLonTools/DigitizerCustomCRS', self.inputCustomCRS)
+        settings.setValue('/LatLonTools4/DigitizerProjection', self.inputProjection)
+        settings.setValue('/LatLonTools4/DigitizerXYOrder', self.inputXYOrder)
+        settings.setValue('/LatLonTools4/DigitizerCustomCRS', self.inputCustomCRS)
         self.labelUpdate()
 
     def crsTriggered(self, action):

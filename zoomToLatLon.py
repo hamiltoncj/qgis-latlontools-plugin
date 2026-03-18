@@ -14,7 +14,6 @@ import re
 from qgis.PyQt.uic import loadUiType
 from qgis.PyQt.QtGui import QIcon, QColor
 from qgis.PyQt.QtWidgets import QDockWidget, QApplication, QMenu
-from qgis.PyQt.QtCore import QTextCodec
 from qgis.gui import QgsRubberBand, QgsProjectionSelectionDialog
 from qgis.core import Qgis, QgsJsonUtils, QgsWkbTypes, QgsPointXY, QgsGeometry, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject, QgsRectangle
 from .util import epsg4326, parseDMSString, tr
@@ -83,14 +82,14 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
         self.coordTxt.returnPressed.connect(self.zoomToPressed)
         self.canvas.destinationCrsChanged.connect(self.crsChanged)
         
-        self.marker = QgsRubberBand(self.canvas, QgsWkbTypes.PointGeometry)
+        self.marker = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.PointGeometry)
         self.marker.setColor(settings.markerColor)
         self.marker.setStrokeColor(settings.markerColor)
         self.marker.setWidth(settings.markerWidth)
         self.marker.setIconSize(settings.markerSize)
-        self.marker.setIcon(QgsRubberBand.ICON_CROSS)
+        self.marker.setIcon(QgsRubberBand.IconType.ICON_CROSS)
         
-        self.line_marker = QgsRubberBand(self.canvas, QgsWkbTypes.LineGeometry)
+        self.line_marker = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.LineGeometry)
         self.line_marker.setWidth(settings.gridWidth)
         self.line_marker.setColor(settings.gridColor)
         self.configure()
@@ -211,14 +210,13 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
 
             # Check for other formats
             if text[0] == '{':  # This may be a GeoJSON point
-                codec = QTextCodec.codecForName("UTF-8")
-                fields = QgsJsonUtils.stringToFields(text, codec)
-                fet = QgsJsonUtils.stringToFeatureList(text, fields, codec)
+                fields = QgsJsonUtils.stringToFields(text)
+                fet = QgsJsonUtils.stringToFeatureList(text, fields)
                 if (len(fet) == 0) or not fet[0].isValid():
                     raise ValueError(tr('Invalid Coordinates'))
 
                 geom = fet[0].geometry()
-                if geom.isEmpty() or (geom.wkbType() != QgsWkbTypes.Point):
+                if geom.isEmpty() or (geom.wkbType() != QgsWkbTypes.Type.Point):
                     raise ValueError(tr('Invalid GeoJSON Geometry'))
                 pt = geom.asPoint()
                 return(pt.y(), pt.x(), None, epsg4326)
@@ -309,13 +307,13 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
             text = self.coordTxt.text().strip()
             (lat, lon, bounds, srcCrs) = self.convertCoordinate(text)
             pt = self.lltools.zoomTo(srcCrs, lat, lon)
-            self.marker.reset(QgsWkbTypes.PointGeometry)
+            self.marker.reset(QgsWkbTypes.GeometryType.PointGeometry)
             self.marker.setWidth(settings.markerWidth)
             self.marker.setIconSize(settings.markerSize)
             self.marker.setColor(settings.markerColor)
             if self.settings.persistentMarker:
                 self.marker.addPoint(pt)
-            self.line_marker.reset(QgsWkbTypes.LineGeometry)
+            self.line_marker.reset(QgsWkbTypes.GeometryType.LineGeometry)
             self.line_marker.setWidth(settings.gridWidth)
             self.line_marker.setColor(settings.gridColor)
             if bounds and self.settings.showGrid:
@@ -326,7 +324,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 self.line_marker.addGeometry(bounds, None)
         except Exception:
             traceback.print_exc()
-            self.iface.messageBar().pushMessage("", tr("Invalid Coordinate"), level=Qgis.Warning, duration=2)
+            self.iface.messageBar().pushMessage("", tr("Invalid Coordinate"), level=Qgis.MessageLevel.Warning, duration=2)
             return
 
     def pasteCoordinate(self):
@@ -335,8 +333,8 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
         self.coordTxt.setText(text)
         
     def removeMarker(self):
-        self.marker.reset(QgsWkbTypes.PointGeometry)
-        self.line_marker.reset(QgsWkbTypes.LineGeometry)
+        self.marker.reset(QgsWkbTypes.GeometryType.PointGeometry)
+        self.line_marker.reset(QgsWkbTypes.GeometryType.LineGeometry)
         self.coordTxt.clear()
 
     def showSettings(self):

@@ -50,7 +50,7 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input point vector layer'),
-                [QgsProcessing.TypeVectorPoint])
+                [QgsProcessing.SourceType.TypeVectorPoint])
         )
         self.addParameter(
             QgsProcessingParameterBoolean(
@@ -64,14 +64,14 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
                 self.PrmAltitudeField,
                 tr('Altitude attribute'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Numeric,
+                type=QgsProcessingParameterField.DataType.Numeric,
                 optional=True)
         )
         self.addParameter(
             QgsProcessingParameterNumber(
                 self.PrmDefaultAltitude,
                 tr('Default altitude in meters when not otherwise specified'),
-                QgsProcessingParameterNumber.Double,
+                QgsProcessingParameterNumber.Type.Double,
                 defaultValue=0,
                 optional=True)
         )
@@ -121,7 +121,7 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
         layerCRS = source.sourceCrs()
         (sink, dest_id) = self.parameterAsSink(
             parameters, self.PrmOutputLayer, context, xyzfields,
-            QgsWkbTypes.NoGeometry)
+            QgsWkbTypes.Type.NoGeometry)
 
         # The input requires latitudes and longitudes
         # If the layer is not EPSG:4326 we need to convert it.
@@ -170,7 +170,7 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     '''def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/geom2mgrs.help'
@@ -203,14 +203,14 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input layer'),
-                [QgsProcessing.TypeVector])
+                [QgsProcessing.SourceType.TypeVector])
         )
         self.addParameter(
             QgsProcessingParameterField(
                 self.PrmXField,
                 tr('ECEF X attribute (meters)'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Numeric,
+                type=QgsProcessingParameterField.DataType.Numeric,
                 optional=False)
         )
         self.addParameter(
@@ -218,7 +218,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
                 self.PrmYField,
                 tr('ECEF Y attribute (meters)'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Numeric,
+                type=QgsProcessingParameterField.DataType.Numeric,
                 optional=False)
         )
         self.addParameter(
@@ -226,7 +226,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
                 self.PrmZField,
                 tr('ECEF Z attribute (meters)'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Numeric,
+                type=QgsProcessingParameterField.DataType.Numeric,
                 optional=False)
         )
         self.addParameter(
@@ -265,7 +265,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
 
         (sink, dest_id) = self.parameterAsSink(
             parameters, self.PrmOutputLayer, context, fieldsout,
-            QgsWkbTypes.PointZ, epsg4326)
+            QgsWkbTypes.Type.PointZ, epsg4326)
 
         ecef = pyproj.Proj(proj='geocent', ellps='WGS84', datum='WGS84')
         lla = pyproj.Proj(proj='latlong', ellps='WGS84', datum='WGS84')
@@ -280,7 +280,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
             y = float(feature[y_field])
             z = float(feature[z_field])
             lon, lat, alt = pyproj.transform(ecef, lla, x, y, z, radians=False)
-            pt = QgsPoint(lon, lat, alt, wkbType=QgsWkbTypes.PointZ)
+            pt = QgsPoint(lon, lat, alt, wkbType=QgsWkbTypes.Type.PointZ)
             f = QgsFeature()
             if add_z:
                 f.setAttributes(feature.attributes()+[alt])
@@ -306,7 +306,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     '''def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/geom2mgrs.help'

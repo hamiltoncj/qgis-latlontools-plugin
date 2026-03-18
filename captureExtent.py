@@ -64,7 +64,7 @@ class CaptureExtentTool(QgsMapToolExtent):
 
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
-        self.canvas.setCursor(Qt.CrossCursor)
+        self.canvas.setCursor(Qt.CursorShape.CrossCursor)
 
     def deactivate(self):
         QgsMapToolExtent.deactivate(self)
@@ -85,4 +85,4 @@ class CaptureExtentTool(QgsMapToolExtent):
 
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
-        self.iface.messageBar().pushMessage("", "'{}'".format(outStr) + tr("copied to the clipboard"), level=Qgis.Info, duration=4)
+        self.iface.messageBar().pushMessage("", "'{}'".format(outStr) + tr("copied to the clipboard"), level=Qgis.MessageLevel.Info, duration=4)

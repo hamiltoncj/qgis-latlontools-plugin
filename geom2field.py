@@ -68,7 +68,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input point vector layer'),
-                [QgsProcessing.TypeVectorPoint])
+                [QgsProcessing.SourceType.TypeVectorPoint])
         )
         self.addParameter(
             QgsProcessingParameterEnum(
@@ -153,7 +153,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmCoordinatePrecision,
                 tr('Decimal number precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=8,
                 optional=True,
                 minValue=0)
@@ -162,7 +162,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmDmsSecondPrecision,
                 tr('DMS / Degrees Minutes / UTM precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=0,
                 optional=True,
                 minValue=0)
@@ -171,7 +171,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmPlusCodesLength,
                 tr('Plus Codes length'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=11,
                 optional=True,
                 minValue=10,
@@ -181,7 +181,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmGeohashPrecision,
                 tr('Geohash precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=12,
                 optional=True,
                 minValue=1,
@@ -191,7 +191,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmMaidenheadPrecision,
                 tr('Maidenhead grid locator precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=3,
                 optional=True,
                 minValue=1,
@@ -201,7 +201,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmUpsPrecision,
                 tr('UPS precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=0,
                 optional=True,
                 minValue=0,
@@ -211,7 +211,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmGeorefPrecision,
                 tr('GEOREF precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=5,
                 optional=True,
                 minValue=0,
@@ -366,7 +366,7 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/geom2fields.help'

@@ -33,8 +33,8 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
 
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
-        self.canvas.setCursor(Qt.CrossCursor)
-        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.magenta ) )
+        self.canvas.setCursor(Qt.CursorShape.CrossCursor)
+        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.GlobalColor.magenta ) )
 
     def deactivate(self):
         self.removeMarker()
@@ -50,7 +50,7 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
                 self.marker = QgsVertexMarker(self.canvas)
                 self.marker.setIconSize(18)
                 self.marker.setPenWidth(2)
-                self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
+                self.marker.setIconType(QgsVertexMarker.IconType.ICON_CROSS)
             self.marker.setCenter(pt)
         else:
             self.removeMarker()
@@ -82,12 +82,12 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
                 os.startfile(f.name)
             else:
                 webbrowser.open(f.name)
-            self.iface.messageBar().pushMessage("", "{} {:.8f},{:.8f} {}".format(tr("Viewing Coordinate"), lat, lon, tr("in Google Earth")), level=Qgis.Info, duration=3)
+            self.iface.messageBar().pushMessage("", "{} {:.8f},{:.8f} {}".format(tr("Viewing Coordinate"), lat, lon, tr("in Google Earth")), level=Qgis.MessageLevel.Info, duration=3)
         else:
             mapprovider = settings.getMapProviderString(lat, lon, button)
             url = QUrl(mapprovider).toString()
             webbrowser.open(url, new=2)
-            self.iface.messageBar().pushMessage("", "{} {:.8f},{:.8f} {}".format(tr("Viewing Coordinate"), lat, lon, tr("in external map")), level=Qgis.Info, duration=3)
+            self.iface.messageBar().pushMessage("", "{} {:.8f},{:.8f} {}".format(tr("Viewing Coordinate"), lat, lon, tr("in external map")), level=Qgis.MessageLevel.Info, duration=3)
 
     def canvasMoveEvent(self, event):
         '''Show when the user mouses over a vector vertex in snapping mode.'''
@@ -101,7 +101,7 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
                 self.vertex.setIconSize(12)
                 self.vertex.setPenWidth(2)
                 self.vertex.setColor(self.snapcolor)
-                self.vertex.setIconType(QgsVertexMarker.ICON_BOX)
+                self.vertex.setIconType(QgsVertexMarker.IconType.ICON_BOX)
             self.vertex.setCenter(match.point())
             return (match.point()) # Returns QgsPointXY
         else:

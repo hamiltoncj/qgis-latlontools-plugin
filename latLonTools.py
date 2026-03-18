@@ -52,8 +52,8 @@ class LatLonTools:
             self.translator.load(locale_path)
             QCoreApplication.installTranslator(self.translator)
 
-        self.crossRb = QgsRubberBand(self.canvas, QgsWkbTypes.LineGeometry)
-        self.crossRb.setColor(Qt.red)
+        self.crossRb = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.LineGeometry)
+        self.crossRb.setColor(Qt.GlobalColor.red)
         self.provider = LatLonToolsProvider()
         self.toolbar = self.iface.addToolBar(tr('Lat Lon Tools Toolbar'))
         self.toolbar.setObjectName('LatLonToolsToolbar')
@@ -91,7 +91,7 @@ class LatLonTools:
         self.iface.addPluginToMenu('Lat Lon Tools', self.zoomToAction)
 
         self.zoomToDialog = ZoomToLatLon(self, self.iface, self.iface.mainWindow())
-        self.iface.addDockWidget(Qt.LeftDockWidgetArea, self.zoomToDialog)
+        self.iface.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, self.zoomToDialog)
         self.zoomToDialog.hide()
 
         # Add Interface for Multi point zoom
@@ -108,23 +108,19 @@ class LatLonTools:
 
         menu = QMenu()
         menu.setObjectName('latLonToolsCopyExtents')
-
         # Add Interface for copying the canvas extent
         icon = QIcon(self.plugin_dir + "/images/copycanvas.svg")
         self.copyCanvasAction = menu.addAction(icon, tr('Copy Canvas Extent'), self.copyCanvas)
         self.copyCanvasAction.setObjectName('latLonToolsCopyCanvasExtent')
-
         # Add Interface for copying an interactive extent
         icon = QIcon(self.plugin_dir + "/images/copyextent.svg")
         self.copyExtentAction = menu.addAction(icon, tr('Copy Selected Area Extent'), self.copyExtent)
         self.copyExtentAction.setCheckable(True)
         self.copyExtentAction.setObjectName('latLonToolsCopySelectedAreaExtent')
-
         # Add Interface for copying a layer extent
         icon = QIcon(self.plugin_dir + "/images/copylayerextent.svg")
         self.copyLayerExtentAction = menu.addAction(icon, tr('Copy Layer Extent'), self.copyLayerExtent)
         self.copyLayerExtentAction.setObjectName('latLonToolsCopyLayerExtent')
-
         # Add Interface for copying the extent of selected features
         icon = QIcon(self.plugin_dir + "/images/copyselectedlayerextent.svg")
         self.copySelectedFeaturesExtentAction = menu.addAction(icon, tr('Copy Selected Features Extent'), self.copySelectedFeaturesExtent)
@@ -140,7 +136,7 @@ class LatLonTools:
         self.copyExtentButton = QToolButton()
         self.copyExtentButton.setMenu(menu)
         self.copyExtentButton.setDefaultAction(self.copyCanvasAction)
-        self.copyExtentButton.setPopupMode(QToolButton.MenuButtonPopup)
+        self.copyExtentButton.setPopupMode(QToolButton.ToolButtonPopupMode.MenuButtonPopup)
         self.copyExtentButton.triggered.connect(self.copyExtentTriggered)
         self.copyExtentToolbar = self.toolbar.addWidget(self.copyExtentButton)
         self.copyExtentToolbar.setObjectName('latLonToolsCopyExtent')
@@ -155,48 +151,36 @@ class LatLonTools:
 
         # Create the conversions menu
         menu = QMenu()
-
         icon = QIcon(self.plugin_dir + '/images/field2geom.svg')
         action = menu.addAction(icon, tr("Fields to point layer"), self.field2geom)
         action.setObjectName('latLonToolsField2Geom')
-
         icon = QIcon(self.plugin_dir + '/images/geom2field.svg')
         action = menu.addAction(icon, tr("Point layer to fields"), self.geom2Field)
         action.setObjectName('latLonToolsGeom2Field')
-
         icon = QIcon(self.plugin_dir + '/images/geom2wkt.svg')
         action = menu.addAction(icon, tr("Geometry to WKT/JSON"), self.geom2wkt)
         action.setObjectName('latLonToolsGeom2Wkt')
-
         icon = QIcon(self.plugin_dir + '/images/wkt2layers.svg')
         action = menu.addAction(icon, tr("WKT attribute to layers"), self.wkt2layers)
         action.setObjectName('latLonToolsWkt2Layers')
-
         icon = QIcon(self.plugin_dir + '/images/pluscodes.svg')
         action = menu.addAction(icon, tr("Plus Codes to point layer"), self.PlusCodestoLayer)
         action.setObjectName('latLonToolsPlusCodes2Geom')
-
         action = menu.addAction(icon, tr("Point layer to Plus Codes"), self.toPlusCodes)
         action.setObjectName('latLonToolsGeom2PlusCodes')
-
         icon = QIcon(self.plugin_dir + '/images/mgrs2point.svg')
         action = menu.addAction(icon, tr("MGRS to point layer"), self.MGRStoLayer)
         action.setObjectName('latLonToolsMGRS2Geom')
-
         icon = QIcon(self.plugin_dir + '/images/point2mgrs.svg')
         action = menu.addAction(icon, tr("Point layer to MGRS"), self.toMGRS)
         action.setObjectName('latLonToolsGeom2MGRS')
-
         icon = QIcon(self.plugin_dir + '/images/ecef.png')
         action = menu.addAction(icon, tr("ECEF to Lat, Lon, Altitude"), self.ecef2lla)
         action.setObjectName('latLonToolsEcef2lla')
-
         action = menu.addAction(icon, tr("Lat, Lon, Altitude to ECEF"), self.lla2ecef)
         action.setObjectName('latLonToolsLla2ecef')
-
         self.conversionsAction = QAction(icon, tr("Conversions"), self.iface.mainWindow())
         self.conversionsAction.setMenu(menu)
-
         self.iface.addPluginToMenu('Lat Lon Tools', self.conversionsAction)
 
         # Add to Digitize Toolbar
@@ -266,7 +250,6 @@ class LatLonTools:
         self.iface.removePluginMenu('Lat Lon Tools', self.digitizeAction)
         self.iface.removeDockWidget(self.zoomToDialog)
         self.iface.removeDockWidget(self.multiZoomDialog)
-
         # Remove Toolbar Icons
         self.iface.removeToolBarIcon(self.copyAction)
         self.iface.removeToolBarIcon(self.copyExtentToolbar)
@@ -287,7 +270,6 @@ class LatLonTools:
         self.showMapTool = None
         self.mapTool = None
         self.digitizerDialog = None
-
         QgsApplication.processingRegistry().removeProvider(self.provider)
         UnloadLatLonFunctions()
 
@@ -313,7 +295,7 @@ class LatLonTools:
         if not layer or not layer.isValid():
             return
         if isinstance(layer, QgsVectorLayer) and (layer.featureCount() == 0):
-            self.iface.messageBar().pushMessage("", tr("This layer has no features - A bounding box cannot be calculated."), level=Qgis.Warning, duration=4)
+            self.iface.messageBar().pushMessage("", tr("This layer has no features - A bounding box cannot be calculated."), level=Qgis.MessageLevel.Warning, duration=4)
             return
         src_crs = layer.crs()
         extent = layer.extent()
@@ -325,19 +307,19 @@ class LatLonTools:
         outStr = getExtentString(extent, src_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
-        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.Info, duration=4)
+        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.MessageLevel.Info, duration=4)
 
     def copySelectedFeaturesExtent(self):
         layer = self.iface.activeLayer()
         if not layer or not layer.isValid():
             return
         if isinstance(layer, QgsVectorLayer) and (layer.featureCount() == 0):
-            self.iface.messageBar().pushMessage("", tr("This layer has no features - A bounding box cannot be calculated."), level=Qgis.Warning, duration=4)
+            self.iface.messageBar().pushMessage("", tr("This layer has no features - A bounding box cannot be calculated."), level=Qgis.MessageLevel.Warning, duration=4)
             return
         if isinstance(layer, QgsVectorLayer):
             extent = layer.boundingBoxOfSelected()
             if extent.isNull():
-                self.iface.messageBar().pushMessage("", tr("No features were selected."), level=Qgis.Warning, duration=4)
+                self.iface.messageBar().pushMessage("", tr("No features were selected."), level=Qgis.MessageLevel.Warning, duration=4)
                 return
         else:
             extent = layer.extent()
@@ -350,7 +332,7 @@ class LatLonTools:
         outStr = getExtentString(extent, src_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
-        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.Info, duration=4)
+        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.MessageLevel.Info, duration=4)
 
     def copyCanvas(self):
         extent = self.iface.mapCanvas().extent()
@@ -363,7 +345,7 @@ class LatLonTools:
         outStr = getExtentString(extent, canvas_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
-        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.Info, duration=4)
+        self.iface.messageBar().pushMessage("", "'{}' {}".format(outStr, tr('copied to the clipboard')), level=Qgis.MessageLevel.Info, duration=4)
 
     def setShowMapTool(self):
         '''Set the focus of the external map tool.'''
@@ -382,7 +364,7 @@ class LatLonTools:
             from .coordinateConverter import CoordinateConverterWidget
             self.convertCoordinateDialog = CoordinateConverterWidget(self, self.settingsDialog, self.iface, self.iface.mainWindow())
             self.convertCoordinateDialog.setFloating(True)
-            self.iface.addDockWidget(Qt.RightDockWidgetArea, self.convertCoordinateDialog)
+            self.iface.addDockWidget(Qt.DockWidgetArea.RightDockWidgetArea, self.convertCoordinateDialog)
         self.convertCoordinateDialog.show()
 
     def multiZoomTo(self):
@@ -465,7 +447,7 @@ class LatLonTools:
         horizLine = QgsGeometry.fromPolyline([leftPt, rightPt])
         vertLine = QgsGeometry.fromPolyline([topPt, bottomPt])
 
-        self.crossRb.reset(QgsWkbTypes.LineGeometry)
+        self.crossRb.reset(QgsWkbTypes.GeometryType.LineGeometry)
         self.crossRb.setWidth(settings.markerWidth)
         self.crossRb.setColor(settings.markerColor)
         self.crossRb.addGeometry(horizLine, None)
@@ -507,7 +489,7 @@ class LatLonTools:
         self.digitizeAction.setEnabled(False)
         layer = self.iface.activeLayer()
 
-        if layer is not None and isinstance(layer, QgsVectorLayer) and (layer.geometryType() == QgsWkbTypes.PointGeometry) and layer.isEditable():
+        if layer is not None and isinstance(layer, QgsVectorLayer) and (layer.geometryType() == QgsWkbTypes.GeometryType.PointGeometry) and layer.isEditable():
             self.digitizeAction.setEnabled(True)
         else:
             if self.digitizerDialog is not None:

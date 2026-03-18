@@ -64,81 +64,81 @@ class Settings():
         qset = QgsSettings()
 
         ### CAPTURE SETTINGS ###
-        self.captureShowLocation = int(qset.value('/LatLonTools/CaptureShowClickedLocation', Qt.Unchecked))
-        self.captureCustomCrsAuthId = qset.value('/LatLonTools/CaptureCustomCrsId', 'EPSG:4326')
-        self.captureGeohashPrecision = int(qset.value('/LatLonTools/CaptureGeohashPrecision', 12))
-        self.captureDmmPrecision =  int(qset.value('/LatLonTools/CaptureDmmPrecision', 4))
-        self.captureUtmPrecision =  int(qset.value('/LatLonTools/CaptureUtmPrecision', 0))
-        self.captureUtmFormat = int(qset.value('/LatLonTools/CaptureUtmFormat', 0))
-        self.captureUpsPrecision =  int(qset.value('/LatLonTools/CaptureUpsPrecision', 0))
-        self.captureUpsFormat = int(qset.value('/LatLonTools/CaptureUpsFormat', 0))
-        self.captureAddDmsSpace = int(qset.value('/LatLonTools/CaptureAddDmsSpace', Qt.Checked))
-        self.capturePadZeroes = int(qset.value('/LatLonTools/CapturePadZeroes', Qt.Unchecked))
-        self.captureMaidenheadPrecision = int(qset.value('/LatLonTools/CaptureMaidenheadPrecision', 3))
-        self.captureGeorefPrecision = int(qset.value('/LatLonTools/CaptureGeorefPrecision', 5))
-        self.captureMgrsAddSpacesCheckBox = int(qset.value('/LatLonTools/CaptureMgrsAddSpaces', Qt.Unchecked))
-        self.captureMgrsPrec = int(qset.value('/LatLonTools/CaptureMgrsPrecision', 5))
+        self.captureShowLocation = qset.value('/LatLonTools4/CaptureShowClickedLocation', Qt.CheckState.Unchecked)
+        self.captureCustomCrsAuthId = qset.value('/LatLonTools4/CaptureCustomCrsId', 'EPSG:4326')
+        self.captureGeohashPrecision = int(qset.value('/LatLonTools4/CaptureGeohashPrecision', 12))
+        self.captureDmmPrecision =  int(qset.value('/LatLonTools4/CaptureDmmPrecision', 4))
+        self.captureUtmPrecision =  int(qset.value('/LatLonTools4/CaptureUtmPrecision', 0))
+        self.captureUtmFormat = int(qset.value('/LatLonTools4/CaptureUtmFormat', 0))
+        self.captureUpsPrecision =  int(qset.value('/LatLonTools4/CaptureUpsPrecision', 0))
+        self.captureUpsFormat = int(qset.value('/LatLonTools4/CaptureUpsFormat', 0))
+        self.captureAddDmsSpace = qset.value('/LatLonTools4/CaptureAddDmsSpace', Qt.CheckState.Checked)
+        self.capturePadZeroes = qset.value('/LatLonTools4/CapturePadZeroes', Qt.CheckState.Unchecked)
+        self.captureMaidenheadPrecision = int(qset.value('/LatLonTools4/CaptureMaidenheadPrecision', 3))
+        self.captureGeorefPrecision = int(qset.value('/LatLonTools4/CaptureGeorefPrecision', 5))
+        self.captureMgrsAddSpacesCheckBox = qset.value('/LatLonTools4/CaptureMgrsAddSpaces', Qt.CheckState.Unchecked)
+        self.captureMgrsPrec = int(qset.value('/LatLonTools4/CaptureMgrsPrecision', 5))
         if H3_INSTALLED:
-            self.captureH3Precision = int(qset.value('/LatLonTools/CaptureH3Precision', 8))
+            self.captureH3Precision = int(qset.value('/LatLonTools4/CaptureH3Precision', 8))
         else:
             self.captureH3Precision = 8
 
         ### ZOOM TO SETTINGS ###
-        self.markerSize = int(qset.value('/LatLonTools/MarkerSize', 18))
-        self.markerWidth = int(qset.value('/LatLonTools/MarkerWidth', 2))
-        self.gridWidth = int(qset.value('/LatLonTools/GridWidth', 2))
-        color = qset.value('/LatLonTools/MarkerColor', '#ff0000')
+        self.markerSize = int(qset.value('/LatLonTools4/MarkerSize', 18))
+        self.markerWidth = int(qset.value('/LatLonTools4/MarkerWidth', 2))
+        self.gridWidth = int(qset.value('/LatLonTools4/GridWidth', 2))
+        color = qset.value('/LatLonTools4/MarkerColor', '#ff0000')
         self.markerColor = QColor(color)
-        value = int(qset.value('/LatLonTools/MarkerColorOpacity', 255))
+        value = int(qset.value('/LatLonTools4/MarkerColorOpacity', 255))
         self.markerColor.setAlpha(value)
-        color = qset.value('/LatLonTools/GridColor', '#ff0000')
+        color = qset.value('/LatLonTools4/GridColor', '#ff0000')
         self.gridColor = QColor(color)
-        value = int(qset.value('/LatLonTools/GridColorOpacity', 255))
+        value = int(qset.value('/LatLonTools4/GridColorOpacity', 255))
         self.gridColor.setAlpha(value)
 
         ### EXTERNAL MAP ###
-        self.showPlacemark = int(qset.value('/LatLonTools/ShowPlacemark', Qt.Checked))
-        self.mapProvider = int(qset.value('/LatLonTools/MapProvider', 0))
-        self.mapProviderRight = int(qset.value('/LatLonTools/MapProviderRight', 0))
-        self.mapZoom = int(qset.value('/LatLonTools/MapZoom', 13))
-        self.externalMapShowLocation = int(qset.value('/LatLonTools/ExternMapShowClickedLocation', Qt.Unchecked))
-        self.userMapProviders = qset.value('/LatLonTools/UserMapProviders', 0)
+        self.showPlacemark = qset.value('/LatLonTools4/ShowPlacemark', Qt.CheckState.Checked)
+        self.mapProvider = int(qset.value('/LatLonTools4/MapProvider', 0))
+        self.mapProviderRight = int(qset.value('/LatLonTools4/MapProviderRight', 0))
+        self.mapZoom = int(qset.value('/LatLonTools4/MapZoom', 13))
+        self.externalMapShowLocation = qset.value('/LatLonTools4/ExternMapShowClickedLocation', Qt.CheckState.Unchecked)
+        self.userMapProviders = qset.value('/LatLonTools4/UserMapProviders', 0)
         if not isinstance(self.userMapProviders, list):
             self.userMapProviders = []
 
         ### Multi-zoom Settings ###
-        self.multiZoomCustomCrsAuthId = qset.value('/LatLonTools/MultiZoomCustomCrsId', 'EPSG:4326')
+        self.multiZoomCustomCrsAuthId = qset.value('/LatLonTools4/MultiZoomCustomCrsId', 'EPSG:4326')
 
         ### BBOX CAPTURE SETTINGS ###
-        self.bBoxCrs = int(qset.value('/LatLonTools/BBoxCrs', 0))  # Specifies WGS 84
-        self.bBoxFormat = int(qset.value('/LatLonTools/BBoxFormat', CopyExtent.WSEN))
-        self.bBoxDelimiter = qset.value('/LatLonTools/BBoxDelimiter', ',')
-        self.bBoxDigits = int(qset.value('/LatLonTools/BBoxDigits', 8))
-        self.bBoxPrefix = qset.value('/LatLonTools/BBoxPrefix', '')
-        self.bBoxSuffix = qset.value('/LatLonTools/BBoxSuffix', '')
+        self.bBoxCrs = int(qset.value('/LatLonTools4/BBoxCrs', 0))  # Specifies WGS 84
+        self.bBoxFormat = int(qset.value('/LatLonTools4/BBoxFormat', CopyExtent.WSEN))
+        self.bBoxDelimiter = qset.value('/LatLonTools4/BBoxDelimiter', ',')
+        self.bBoxDigits = int(qset.value('/LatLonTools4/BBoxDigits', 8))
+        self.bBoxPrefix = qset.value('/LatLonTools4/BBoxPrefix', '')
+        self.bBoxSuffix = qset.value('/LatLonTools4/BBoxSuffix', '')
 
         ### COORDINATE CONVERSION SETTINGS ###
-        self.converterCustomCrsAuthId = qset.value('/LatLonTools/ConverterCustomCrsId', 'EPSG:4326')
-        self.converterCoordOrder = int(qset.value('/LatLonTools/ConverterCoordOrder', CoordOrder.OrderYX))
-        self.converterDDPrec = int(qset.value('/LatLonTools/ConverterDDPrecision', 2))
-        self.converter4326DDPrec = int(qset.value('/LatLonTools/Converter4326DDPrecision', 8))
-        self.converterDmsPrec = int(qset.value('/LatLonTools/ConverterDmsPrecision', 0))
-        self.converterDmmPrec = int(qset.value('/LatLonTools/ConverterDmmPrecision', 4))
-        self.converterUtmPrec = int(qset.value('/LatLonTools/ConverterUtmPrecision', 0))
-        self.converterUtmFormat = int(qset.value('/LatLonTools/ConverterUtmFormat', 0))
-        self.converterUpsPrec = int(qset.value('/LatLonTools/ConverterUpsPrecision', 0))
-        self.converterUpsFormat = int(qset.value('/LatLonTools/ConverterUpsFormat', 0))
-        self.converterPlusCodeLength = int(qset.value('/LatLonTools/ConverterPlusCodeLength', 10))
-        self.converterGeohashPrecision = int(qset.value('/LatLonTools/ConverterGeohashPrecision', 12))
-        self.converterMaidenheadPrecision = int(qset.value('/LatLonTools/ConverterMaidenheadPrecision', 3))
-        self.converterGeorefPrecision = int(qset.value('/LatLonTools/ConverterGeorefPrecision', 5))
-        self.converterDelimiter = qset.value('/LatLonTools/ConverterDelimiter', ', ')
-        self.converterDdmmssDelimiter = qset.value('/LatLonTools/ConverterDdmmssDelimiter', ', ')
-        self.converterAddDmsSpace = int(qset.value('/LatLonTools/ConverterAddDmsSpace', Qt.Checked))
-        self.converterPadZeroes = int(qset.value('/LatLonTools/ConverterPadZeroes', Qt.Unchecked))
-        self.converterNsewBeginning = int(qset.value('/LatLonTools/ConverterNsewBeginning', Qt.Unchecked))
-        self.converterMgrsAddSpacesCheckBox = int(qset.value('/LatLonTools/ConverterMgrsAddSpaces', Qt.Unchecked))
-        self.converterMgrsPrec = int(qset.value('/LatLonTools/ConverterMgrsPrecision', 5))
+        self.converterCustomCrsAuthId = qset.value('/LatLonTools4/ConverterCustomCrsId', 'EPSG:4326')
+        self.converterCoordOrder = int(qset.value('/LatLonTools4/ConverterCoordOrder', CoordOrder.OrderYX))
+        self.converterDDPrec = int(qset.value('/LatLonTools4/ConverterDDPrecision', 2))
+        self.converter4326DDPrec = int(qset.value('/LatLonTools4/Converter4326DDPrecision', 8))
+        self.converterDmsPrec = int(qset.value('/LatLonTools4/ConverterDmsPrecision', 0))
+        self.converterDmmPrec = int(qset.value('/LatLonTools4/ConverterDmmPrecision', 4))
+        self.converterUtmPrec = int(qset.value('/LatLonTools4/ConverterUtmPrecision', 0))
+        self.converterUtmFormat = int(qset.value('/LatLonTools4/ConverterUtmFormat', 0))
+        self.converterUpsPrec = int(qset.value('/LatLonTools4/ConverterUpsPrecision', 0))
+        self.converterUpsFormat = int(qset.value('/LatLonTools4/ConverterUpsFormat', 0))
+        self.converterPlusCodeLength = int(qset.value('/LatLonTools4/ConverterPlusCodeLength', 10))
+        self.converterGeohashPrecision = int(qset.value('/LatLonTools4/ConverterGeohashPrecision', 12))
+        self.converterMaidenheadPrecision = int(qset.value('/LatLonTools4/ConverterMaidenheadPrecision', 3))
+        self.converterGeorefPrecision = int(qset.value('/LatLonTools4/ConverterGeorefPrecision', 5))
+        self.converterDelimiter = qset.value('/LatLonTools4/ConverterDelimiter', ', ')
+        self.converterDdmmssDelimiter = qset.value('/LatLonTools4/ConverterDdmmssDelimiter', ', ')
+        self.converterAddDmsSpace = qset.value('/LatLonTools4/ConverterAddDmsSpace', Qt.CheckState.Checked)
+        self.converterPadZeroes = qset.value('/LatLonTools4/ConverterPadZeroes', Qt.CheckState.Unchecked)
+        self.converterNsewBeginning = qset.value('/LatLonTools4/ConverterNsewBeginning', Qt.CheckState.Unchecked)
+        self.converterMgrsAddSpacesCheckBox = qset.value('/LatLonTools4/ConverterMgrsAddSpaces', Qt.CheckState.Unchecked)
+        self.converterMgrsPrec = int(qset.value('/LatLonTools4/ConverterMgrsPrecision', 5))
 
     def mapProviderNames(self):
         plist = []
@@ -213,7 +213,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.iface = iface
         self.canvas = iface.mapCanvas()
 
-        self.buttonBox.button(QDialogButtonBox.RestoreDefaults).clicked.connect(self.restoreDefaults)
+        self.buttonBox.button(QDialogButtonBox.StandardButton.RestoreDefaults).clicked.connect(self.restoreDefaults)
         if H3_INSTALLED:
             self.captureH3Label.setEnabled(True)
             self.captureH3PrecisionSpinBox.setEnabled(True)
@@ -318,10 +318,10 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.digitsSpinBox.setValue(8)
         self.capturePrefixLineEdit.setText('')
         self.captureSuffixLineEdit.setText('')
-        self.captureMarkerCheckBox.setCheckState(Qt.Unchecked)
-        self.captureAddDmsSpaceCheckBox.setCheckState(Qt.Checked)
-        self.capturePadZeroesCheckBox.setCheckState(Qt.Unchecked)
-        self.captureMgrsAddSpacesCheckBox.setCheckState(Qt.Unchecked)
+        self.captureMarkerCheckBox.setCheckState(Qt.CheckState.Unchecked)
+        self.captureAddDmsSpaceCheckBox.setCheckState(Qt.CheckState.Checked)
+        self.capturePadZeroesCheckBox.setCheckState(Qt.CheckState.Unchecked)
+        self.captureMgrsAddSpacesCheckBox.setCheckState(Qt.CheckState.Unchecked)
         self.captureMgrsPrecisionSpinBox.setValue(5)
         if H3_INSTALLED:
             self.captureH3PrecisionSpinBox.setValue(8)
@@ -329,8 +329,8 @@ class SettingsWidget(QDialog, FORM_CLASS):
         ### ZOOM TO SETTINGS ###
         self.zoomToProjectionComboBox.setCurrentIndex(self.ProjectionTypeWgs84)
         self.zoomToCoordOrderComboBox.setCurrentIndex(CoordOrder.OrderYX)
-        self.persistentMarkerCheckBox.setCheckState(Qt.Checked)
-        self.showGridCheckBox.setCheckState(Qt.Checked)
+        self.persistentMarkerCheckBox.setCheckState(Qt.CheckState.Checked)
+        self.showGridCheckBox.setCheckState(Qt.CheckState.Checked)
         self.zoomToProjectionSelectionWidget.setCrs(epsg4326)
         self.markerSizeSpinBox.setValue(18)
         self.markerWidthSpinBox.setValue(2)
@@ -343,11 +343,11 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.gridColorButton.setColor(gridColor)
 
         ### EXTERNAL MAP ###
-        self.showPlacemarkCheckBox.setCheckState(Qt.Checked)
+        self.showPlacemarkCheckBox.setCheckState(Qt.CheckState.Checked)
         self.mapProviderComboBox.setCurrentIndex(0)
         self.mapProviderRComboBox.setCurrentIndex(0)
         self.zoomSpinBox.setValue(13)
-        self.showLocationCheckBox.setCheckState(Qt.Unchecked)
+        self.showLocationCheckBox.setCheckState(Qt.CheckState.Unchecked)
 
         ### Multi-zoom Settings ###
         self.multiZoomToProjectionComboBox.setCurrentIndex(0)  # WGS 84
@@ -383,10 +383,10 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.converterGeorefPrecisionSpinBox.setValue(5)
         self.converterDelimiterLineEdit.setText(',')
         self.converterDdmmssDelimiterLineEdit.setText(',')
-        self.converterAddDmsSpaceCheckBox.setCheckState(Qt.Checked)
-        self.converterPadZeroesCheckBox.setCheckState(Qt.Unchecked)
-        self.converterNsewBeginningCheckBox.setCheckState(Qt.Unchecked)
-        self.converterMgrsAddSpacesCheckBox.setCheckState(Qt.Unchecked)
+        self.converterAddDmsSpaceCheckBox.setCheckState(Qt.CheckState.Checked)
+        self.converterPadZeroesCheckBox.setCheckState(Qt.CheckState.Unchecked)
+        self.converterNsewBeginningCheckBox.setCheckState(Qt.CheckState.Unchecked)
+        self.converterMgrsAddSpacesCheckBox.setCheckState(Qt.CheckState.Unchecked)
         self.converterMgrsPrecisionSpinBox.setValue(5)
 
 
@@ -397,39 +397,39 @@ class SettingsWidget(QDialog, FORM_CLASS):
         qset = QgsSettings()
 
         ### CAPTURE SETTINGS ###
-        self.captureProjection = int(qset.value('/LatLonTools/CaptureProjection', self.ProjectionTypeWgs84))
+        self.captureProjection = int(qset.value('/LatLonTools4/CaptureProjection', self.ProjectionTypeWgs84))
         if not H3_INSTALLED and self.captureProjection == self.ProjectionTypeH3:
             self.captureProjection = 0
-        self.delimiter = qset.value('/LatLonTools/Delimiter', ', ')
-        self.dmsPrecision = int(qset.value('/LatLonTools/DMSPrecision', 0))
-        self.coordOrder = int(qset.value('/LatLonTools/CoordOrder', CoordOrder.OrderYX))
-        self.wgs84NumberFormat = int(qset.value('/LatLonTools/WGS84NumberFormat', 0))
-        self.otherNumberFormat = int(qset.value('/LatLonTools/OtherNumberFormat', 0))
-        self.plusCodesLength = int(qset.value('/LatLonTools/PlusCodesLength', 10))
-        self.decimalDigits = int(qset.value('/LatLonTools/DecimalDigits', 8))
-        self.capturePrefix = qset.value('/LatLonTools/CapturePrefix', '')
-        self.captureSuffix = qset.value('/LatLonTools/CaptureSuffix', '')
+        self.delimiter = qset.value('/LatLonTools4/Delimiter', ', ')
+        self.dmsPrecision = int(qset.value('/LatLonTools4/DMSPrecision', 0))
+        self.coordOrder = int(qset.value('/LatLonTools4/CoordOrder', CoordOrder.OrderYX))
+        self.wgs84NumberFormat = int(qset.value('/LatLonTools4/WGS84NumberFormat', 0))
+        self.otherNumberFormat = int(qset.value('/LatLonTools4/OtherNumberFormat', 0))
+        self.plusCodesLength = int(qset.value('/LatLonTools4/PlusCodesLength', 10))
+        self.decimalDigits = int(qset.value('/LatLonTools4/DecimalDigits', 8))
+        self.capturePrefix = qset.value('/LatLonTools4/CapturePrefix', '')
+        self.captureSuffix = qset.value('/LatLonTools4/CaptureSuffix', '')
 
         ### ZOOM TO SETTINGS ###
-        self.zoomToCoordOrder = int(qset.value('/LatLonTools/ZoomToCoordOrder', CoordOrder.OrderYX))
-        self.zoomToProjection = int(qset.value('/LatLonTools/ZoomToCoordType', 0))
+        self.zoomToCoordOrder = int(qset.value('/LatLonTools4/ZoomToCoordOrder', CoordOrder.OrderYX))
+        self.zoomToProjection = int(qset.value('/LatLonTools4/ZoomToCoordType', 0))
         if not H3_INSTALLED and self.zoomToProjection == self.ZoomProjectionTypeH3:
             self.zoomToProjection = 0
-        self.persistentMarker = int(qset.value('/LatLonTools/PersistentMarker', Qt.Checked))
-        self.showGrid = int(qset.value('/LatLonTools/ShowGrid', Qt.Checked))
-        self.zoomToCustomCrsAuthId = qset.value('/LatLonTools/ZoomToCustomCrsId', 'EPSG:4326')
+        self.persistentMarker = qset.value('/LatLonTools4/PersistentMarker', Qt.CheckState.Checked)
+        self.showGrid = qset.value('/LatLonTools4/ShowGrid', Qt.CheckState.Checked)
+        self.zoomToCustomCrsAuthId = qset.value('/LatLonTools4/ZoomToCustomCrsId', 'EPSG:4326')
         self.zoomToProjectionSelectionWidget.setCrs(QgsCoordinateReferenceSystem(self.zoomToCustomCrsAuthId))
 
         ### MULTI-ZOOM CUSTOM QML STYLE ###
-        self.multiZoomToProjection = int(qset.value('/LatLonTools/MultiZoomToProjection', 0))
-        self.multiCoordOrder = int(qset.value('/LatLonTools/MultiCoordOrder', CoordOrder.OrderYX))
-        self.multiZoomNumCol = int(qset.value('/LatLonTools/MultiZoomExtraData', 0))
-        self.multiZoomStyleID = int(qset.value('/LatLonTools/MultiZoomStyleID', 0))
-        self.qmlStyle = qset.value('/LatLonTools/QmlStyle', '')
+        self.multiZoomToProjection = int(qset.value('/LatLonTools4/MultiZoomToProjection', 0))
+        self.multiCoordOrder = int(qset.value('/LatLonTools4/MultiCoordOrder', CoordOrder.OrderYX))
+        self.multiZoomNumCol = int(qset.value('/LatLonTools4/MultiZoomExtraData', 0))
+        self.multiZoomStyleID = int(qset.value('/LatLonTools4/MultiZoomStyleID', 0))
+        self.qmlStyle = qset.value('/LatLonTools4/QmlStyle', '')
         if (self.multiZoomStyleID == 2) and (self.qmlStyle == '' or self.qmlStyle is None or not os.path.isfile(self.qmlStyle)):
             # If the file is invalid then set to an emply string
-            qset.setValue('/LatLonTools/QmlStyle', '')
-            qset.setValue('/LatLonTools/MultiZoomStyleID', 0)
+            qset.setValue('/LatLonTools4/QmlStyle', '')
+            qset.setValue('/LatLonTools4/MultiZoomStyleID', 0)
             self.qmlStyle = ''
             self.multiZoomStyleID = 0
 
@@ -443,120 +443,120 @@ class SettingsWidget(QDialog, FORM_CLASS):
         qset = QgsSettings()
 
         ### CAPTURE SETTINGS ###
-        qset.setValue('/LatLonTools/CaptureCustomCrsId', self.captureProjectionSelectionWidget.crs().authid())
-        qset.setValue('/LatLonTools/CaptureProjection', int(self.captureProjectionComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/CaptureCustomCrsId', self.captureProjectionSelectionWidget.crs().authid())
+        qset.setValue('/LatLonTools4/CaptureProjection', int(self.captureProjectionComboBox.currentIndex()))
 
-        qset.setValue('/LatLonTools/WGS84NumberFormat', int(self.wgs84NumberFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/OtherNumberFormat', int(self.otherNumberFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/CoordOrder', int(self.coordOrderComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/WGS84NumberFormat', int(self.wgs84NumberFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/OtherNumberFormat', int(self.otherNumberFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/CoordOrder', int(self.coordOrderComboBox.currentIndex()))
         delim = self.delimComboBox.currentIndex()
         if delim == 0:
-            qset.setValue('/LatLonTools/Delimiter', ',')
+            qset.setValue('/LatLonTools4/Delimiter', ',')
         elif delim == 1:
-            qset.setValue('/LatLonTools/Delimiter', ', ')
+            qset.setValue('/LatLonTools4/Delimiter', ', ')
         elif delim == 2:
-            qset.setValue('/LatLonTools/Delimiter', ' ')
+            qset.setValue('/LatLonTools4/Delimiter', ' ')
         elif delim == 3:
-            qset.setValue('/LatLonTools/Delimiter', '\t')
+            qset.setValue('/LatLonTools4/Delimiter', '\t')
         else:
-            qset.setValue('/LatLonTools/Delimiter', self.otherTxt.text())
+            qset.setValue('/LatLonTools4/Delimiter', self.otherTxt.text())
 
-        qset.setValue('/LatLonTools/DMSPrecision', self.precisionSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureDmmPrecision', self.captureDmmPrecisionSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureUtmPrecision', self.captureUtmPrecisionSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureUtmFormat', int(self.captureUtmFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/CaptureUpsPrecision', self.captureUpsPrecisionSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureUpsFormat', int(self.captureUpsFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/CaptureGeohashPrecision', self.captureGeohashSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureMaidenheadPrecision', self.captureMaidenheadPrecisionSpinBox.value())
-        qset.setValue('/LatLonTools/CaptureGeorefPrecision', self.captureGeorefPrecisionSpinBox.value())
-        qset.setValue('/LatLonTools/PlusCodesLength', self.plusCodesSpinBox.value())
-        qset.setValue('/LatLonTools/DecimalDigits', self.digitsSpinBox.value())
-        qset.setValue('/LatLonTools/CapturePrefix', self.capturePrefixLineEdit.text())
-        qset.setValue('/LatLonTools/CaptureSuffix', self.captureSuffixLineEdit.text())
-        qset.setValue('/LatLonTools/CaptureShowClickedLocation', self.captureMarkerCheckBox.checkState())
-        qset.setValue('/LatLonTools/CaptureAddDmsSpace', self.captureAddDmsSpaceCheckBox.checkState())
-        qset.setValue('/LatLonTools/CapturePadZeroes', self.capturePadZeroesCheckBox.checkState())
-        qset.setValue('/LatLonTools/CaptureMgrsAddSpaces', self.captureMgrsAddSpacesCheckBox.checkState())
-        qset.setValue('/LatLonTools/CaptureMgrsPrecision', int(self.captureMgrsPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/DMSPrecision', self.precisionSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureDmmPrecision', self.captureDmmPrecisionSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureUtmPrecision', self.captureUtmPrecisionSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureUtmFormat', int(self.captureUtmFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/CaptureUpsPrecision', self.captureUpsPrecisionSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureUpsFormat', int(self.captureUpsFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/CaptureGeohashPrecision', self.captureGeohashSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureMaidenheadPrecision', self.captureMaidenheadPrecisionSpinBox.value())
+        qset.setValue('/LatLonTools4/CaptureGeorefPrecision', self.captureGeorefPrecisionSpinBox.value())
+        qset.setValue('/LatLonTools4/PlusCodesLength', self.plusCodesSpinBox.value())
+        qset.setValue('/LatLonTools4/DecimalDigits', self.digitsSpinBox.value())
+        qset.setValue('/LatLonTools4/CapturePrefix', self.capturePrefixLineEdit.text())
+        qset.setValue('/LatLonTools4/CaptureSuffix', self.captureSuffixLineEdit.text())
+        qset.setValue('/LatLonTools4/CaptureShowClickedLocation', self.captureMarkerCheckBox.checkState())
+        qset.setValue('/LatLonTools4/CaptureAddDmsSpace', self.captureAddDmsSpaceCheckBox.checkState())
+        qset.setValue('/LatLonTools4/CapturePadZeroes', self.capturePadZeroesCheckBox.checkState())
+        qset.setValue('/LatLonTools4/CaptureMgrsAddSpaces', self.captureMgrsAddSpacesCheckBox.checkState())
+        qset.setValue('/LatLonTools4/CaptureMgrsPrecision', int(self.captureMgrsPrecisionSpinBox.value()))
         if H3_INSTALLED:
-            qset.setValue('/LatLonTools/CaptureH3Precision', self.captureH3PrecisionSpinBox.value())
+            qset.setValue('/LatLonTools4/CaptureH3Precision', self.captureH3PrecisionSpinBox.value())
 
         ### ZOOM TO SETTINGS ###
-        qset.setValue('/LatLonTools/ZoomToCoordType', int(self.zoomToProjectionComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/ZoomToCoordOrder', int(self.zoomToCoordOrderComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/PersistentMarker', self.persistentMarkerCheckBox.checkState())
-        qset.setValue('/LatLonTools/ShowGrid', self.showGridCheckBox.checkState())
-        qset.setValue('/LatLonTools/ZoomToCustomCrsId', self.zoomToCustomCrsId())
-        qset.setValue('/LatLonTools/MarkerSize', int(self.markerSizeSpinBox.value()))
-        qset.setValue('/LatLonTools/MarkerWidth', int(self.markerWidthSpinBox.value()))
-        qset.setValue('/LatLonTools/GridWidth', int(self.gridWidthSpinBox.value()))
+        qset.setValue('/LatLonTools4/ZoomToCoordType', int(self.zoomToProjectionComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ZoomToCoordOrder', int(self.zoomToCoordOrderComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/PersistentMarker', self.persistentMarkerCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ShowGrid', self.showGridCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ZoomToCustomCrsId', self.zoomToCustomCrsId())
+        qset.setValue('/LatLonTools4/MarkerSize', int(self.markerSizeSpinBox.value()))
+        qset.setValue('/LatLonTools4/MarkerWidth', int(self.markerWidthSpinBox.value()))
+        qset.setValue('/LatLonTools4/GridWidth', int(self.gridWidthSpinBox.value()))
         settings.markerColor = self.markerColorButton.color()
         settings.gridColor = self.gridColorButton.color()
-        qset.setValue('/LatLonTools/MarkerColor', settings.markerColor.name())
-        qset.setValue('/LatLonTools/MarkerColorOpacity', settings.markerColor.alpha())
-        qset.setValue('/LatLonTools/GridColor', settings.gridColor.name())
-        qset.setValue('/LatLonTools/GridColorOpacity', settings.gridColor.alpha())
+        qset.setValue('/LatLonTools4/MarkerColor', settings.markerColor.name())
+        qset.setValue('/LatLonTools4/MarkerColorOpacity', settings.markerColor.alpha())
+        qset.setValue('/LatLonTools4/GridColor', settings.gridColor.name())
+        qset.setValue('/LatLonTools4/GridColorOpacity', settings.gridColor.alpha())
 
         ### EXTERNAL MAP ###
-        qset.setValue('/LatLonTools/ShowPlacemark', self.showPlacemarkCheckBox.checkState())
-        qset.setValue('/LatLonTools/ExternMapShowClickedLocation', self.showLocationCheckBox.checkState())
-        qset.setValue('/LatLonTools/MapProvider', int(self.mapProviderComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/MapProviderRight', int(self.mapProviderRComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ShowPlacemark', self.showPlacemarkCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ExternMapShowClickedLocation', self.showLocationCheckBox.checkState())
+        qset.setValue('/LatLonTools4/MapProvider', int(self.mapProviderComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/MapProviderRight', int(self.mapProviderRComboBox.currentIndex()))
         if settings.userMapProviders:
-            qset.setValue('/LatLonTools/UserMapProviders', settings.userMapProviders)
+            qset.setValue('/LatLonTools4/UserMapProviders', settings.userMapProviders)
         else:
-            qset.setValue('/LatLonTools/UserMapProviders', 0)
-        qset.setValue('/LatLonTools/MapZoom', int(self.zoomSpinBox.value()))
+            qset.setValue('/LatLonTools4/UserMapProviders', 0)
+        qset.setValue('/LatLonTools4/MapZoom', int(self.zoomSpinBox.value()))
 
         ### MULTI-ZOOM TO SETTINGS ###
-        qset.setValue('/LatLonTools/MultiZoomCustomCrsId', self.multiZoomToProjectionSelectionWidget.crs().authid())
-        qset.setValue('/LatLonTools/MultiZoomToProjection', int(self.multiZoomToProjectionComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/MultiCoordOrder', int(self.multiCoordOrderComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/MultiZoomExtraData', int(self.extraDataSpinBox.value()))
-        qset.setValue('/LatLonTools/MultiZoomStyleID', int(self.markerStyleComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/QmlStyle', self.qmlLineEdit.text())
+        qset.setValue('/LatLonTools4/MultiZoomCustomCrsId', self.multiZoomToProjectionSelectionWidget.crs().authid())
+        qset.setValue('/LatLonTools4/MultiZoomToProjection', int(self.multiZoomToProjectionComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/MultiCoordOrder', int(self.multiCoordOrderComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/MultiZoomExtraData', int(self.extraDataSpinBox.value()))
+        qset.setValue('/LatLonTools4/MultiZoomStyleID', int(self.markerStyleComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/QmlStyle', self.qmlLineEdit.text())
 
         ### BBOX CAPTURE SETTINGS ###
-        qset.setValue('/LatLonTools/BBoxCrs', int(self.bBoxCrsComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/BBoxFormat', int(self.bBoxFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/BBoxCrs', int(self.bBoxCrsComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/BBoxFormat', int(self.bBoxFormatComboBox.currentIndex()))
         delim = self.bBoxDelimiterComboBox.currentIndex()
         if delim == 0:
-            qset.setValue('/LatLonTools/BBoxDelimiter', ',')
+            qset.setValue('/LatLonTools4/BBoxDelimiter', ',')
         elif delim == 1:
-            qset.setValue('/LatLonTools/BBoxDelimiter', ', ')
+            qset.setValue('/LatLonTools4/BBoxDelimiter', ', ')
         elif delim == 2:
-            qset.setValue('/LatLonTools/BBoxDelimiter', ' ')
+            qset.setValue('/LatLonTools4/BBoxDelimiter', ' ')
         elif delim == 3:
-            qset.setValue('/LatLonTools/BBoxDelimiter', '\t')
+            qset.setValue('/LatLonTools4/BBoxDelimiter', '\t')
         else:
-            qset.setValue('/LatLonTools/BBoxDelimiter', self.bBoxDelimiterLineEdit.text())
-        qset.setValue('/LatLonTools/BBoxPrefix', self.bBoxPrefixLineEdit.text())
-        qset.setValue('/LatLonTools/BBoxSuffix', self.bBoxSuffixLineEdit.text())
-        qset.setValue('/LatLonTools/BBoxDigits', self.bBoxDigitsSpinBox.value())
+            qset.setValue('/LatLonTools4/BBoxDelimiter', self.bBoxDelimiterLineEdit.text())
+        qset.setValue('/LatLonTools4/BBoxPrefix', self.bBoxPrefixLineEdit.text())
+        qset.setValue('/LatLonTools4/BBoxSuffix', self.bBoxSuffixLineEdit.text())
+        qset.setValue('/LatLonTools4/BBoxDigits', self.bBoxDigitsSpinBox.value())
 
         ### COORDINATE CONVERSION SETTINGS ###
-        qset.setValue('/LatLonTools/ConverterCustomCrsId', self.converterProjectionSelectionWidget.crs().authid())
-        qset.setValue('/LatLonTools/ConverterCoordOrder', int(self.converterCoordOrderComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/ConverterDDPrecision', int(self.converterDDPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/Converter4326DDPrecision', int(self.converter4326DDPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterDmsPrecision', int(self.converterDmsPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterDmmPrecision', int(self.converterDmmPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterUtmPrecision', int(self.converterUtmPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterUtmFormat', int(self.converterUtmFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/ConverterUpsPrecision', int(self.converterUpsPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterUpsFormat', int(self.converterUpsFormatComboBox.currentIndex()))
-        qset.setValue('/LatLonTools/ConverterPlusCodeLength', int(self.converterPlusCodePrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterGeohashPrecision', int(self.converterGeohashSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterMaidenheadPrecision', int(self.converterMaidenheadPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterGeorefPrecision', int(self.converterGeorefPrecisionSpinBox.value()))
-        qset.setValue('/LatLonTools/ConverterDelimiter', self.converterDelimiterLineEdit.text())
-        qset.setValue('/LatLonTools/ConverterDdmmssDelimiter', self.converterDdmmssDelimiterLineEdit.text())
-        qset.setValue('/LatLonTools/ConverterAddDmsSpace', self.converterAddDmsSpaceCheckBox.checkState())
-        qset.setValue('/LatLonTools/ConverterPadZeroes', self.converterPadZeroesCheckBox.checkState())
-        qset.setValue('/LatLonTools/ConverterNsewBeginning', self.converterNsewBeginningCheckBox.checkState())
-        qset.setValue('/LatLonTools/ConverterMgrsAddSpaces', self.converterMgrsAddSpacesCheckBox.checkState())
-        qset.setValue('/LatLonTools/ConverterMgrsPrecision', int(self.converterMgrsPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterCustomCrsId', self.converterProjectionSelectionWidget.crs().authid())
+        qset.setValue('/LatLonTools4/ConverterCoordOrder', int(self.converterCoordOrderComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ConverterDDPrecision', int(self.converterDDPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/Converter4326DDPrecision', int(self.converter4326DDPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterDmsPrecision', int(self.converterDmsPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterDmmPrecision', int(self.converterDmmPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterUtmPrecision', int(self.converterUtmPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterUtmFormat', int(self.converterUtmFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ConverterUpsPrecision', int(self.converterUpsPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterUpsFormat', int(self.converterUpsFormatComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ConverterPlusCodeLength', int(self.converterPlusCodePrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterGeohashPrecision', int(self.converterGeohashSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterMaidenheadPrecision', int(self.converterMaidenheadPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterGeorefPrecision', int(self.converterGeorefPrecisionSpinBox.value()))
+        qset.setValue('/LatLonTools4/ConverterDelimiter', self.converterDelimiterLineEdit.text())
+        qset.setValue('/LatLonTools4/ConverterDdmmssDelimiter', self.converterDdmmssDelimiterLineEdit.text())
+        qset.setValue('/LatLonTools4/ConverterAddDmsSpace', self.converterAddDmsSpaceCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ConverterPadZeroes', self.converterPadZeroesCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ConverterNsewBeginning', self.converterNsewBeginningCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ConverterMgrsAddSpaces', self.converterMgrsAddSpacesCheckBox.checkState())
+        qset.setValue('/LatLonTools4/ConverterMgrsPrecision', int(self.converterMgrsPrecisionSpinBox.value()))
 
         # The values have been read from the widgets and saved to the registry.
         # Now we will read them back to the variables.
@@ -833,7 +833,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
             self.zoomToCoordOrder = CoordOrder.OrderYX
         self.zoomToCoordOrderComboBox.setCurrentIndex(self.zoomToCoordOrder)
         qset = QgsSettings()
-        qset.setValue('/LatLonTools/ZoomToCoordOrder', self.zoomToCoordOrder)
+        qset.setValue('/LatLonTools4/ZoomToCoordOrder', self.zoomToCoordOrder)
 
     def setZoomToMode(self, mode, crs=None):
         qset = QgsSettings()
@@ -846,7 +846,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
             if not crs:
                 crs = epsg4326
             self.zoomToCustomCrsAuthId = crs.authid()
-            qset.setValue('/LatLonTools/ZoomToCustomCrsId', self.zoomToCustomCrsAuthId)
+            qset.setValue('/LatLonTools4/ZoomToCustomCrsId', self.zoomToCustomCrsAuthId)
             self.zoomToProjectionSelectionWidget.setCrs(crs)
         elif mode == 'mgrs':
             self.zoomToProjection = self.ProjectionTypeMGRS
@@ -861,7 +861,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         elif mode == 'h3':
             self.zoomToProjection = self.ZoomProjectionTypeH3
         self.zoomToProjectionComboBox.setCurrentIndex(self.zoomToProjection)
-        qset.setValue('/LatLonTools/ZoomToCoordType', int(self.zoomToProjectionComboBox.currentIndex()))
+        qset.setValue('/LatLonTools4/ZoomToCoordType', int(self.zoomToProjectionComboBox.currentIndex()))
 
     def zoomToProjIsWgs84(self):
         if self.zoomToProjection == self.ProjectionTypeWgs84:

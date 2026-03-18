@@ -44,7 +44,7 @@ class MGRStoLayerlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input vector layer or table'),
-                [QgsProcessing.TypeVector])
+                [QgsProcessing.SourceType.TypeVector])
         )
         self.addParameter(
             QgsProcessingParameterField(
@@ -52,7 +52,7 @@ class MGRStoLayerlgorithm(QgsProcessingAlgorithm):
                 tr('Field containing MGRS coordinate'),
                 defaultValue='mgrs',
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.String)
+                type=QgsProcessingParameterField.DataType.String)
         )
         self.addParameter(
             QgsProcessingParameterFeatureSink(
@@ -70,7 +70,7 @@ class MGRStoLayerlgorithm(QgsProcessingAlgorithm):
         epsg4326 = QgsCoordinateReferenceSystem("EPSG:4326")
         (sink, dest_id) = self.parameterAsSink(
             parameters, self.PrmOutputLayer,
-            context, source.fields(), QgsWkbTypes.Point, epsg4326)
+            context, source.fields(), QgsWkbTypes.Type.Point, epsg4326)
 
         featureCount = source.featureCount()
         total = 100.0 / featureCount if featureCount else 0
@@ -114,7 +114,7 @@ class MGRStoLayerlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/mgrs2point.help'

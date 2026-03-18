@@ -44,7 +44,7 @@ class ToMGRSAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input point vector layer'),
-                [QgsProcessing.TypeVectorPoint])
+                [QgsProcessing.SourceType.TypeVectorPoint])
         )
         self.addParameter(
             QgsProcessingParameterString(
@@ -56,7 +56,7 @@ class ToMGRSAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterNumber(
                 self.PrmMgrsPrecision,
                 tr('MGRS Precision'),
-                type=QgsProcessingParameterNumber.Integer,
+                type=QgsProcessingParameterNumber.Type.Integer,
                 defaultValue=5,
                 optional=False,
                 minValue=0,
@@ -126,7 +126,7 @@ class ToMGRSAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/geom2mgrs.help'

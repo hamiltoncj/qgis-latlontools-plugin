@@ -44,8 +44,8 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
 
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
-        self.canvas.setCursor(Qt.CrossCursor)
-        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.magenta ) )
+        self.canvas.setCursor(Qt.CursorShape.CrossCursor)
+        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.GlobalColor.magenta ) )
 
     def deactivate(self):
         self.removeMarker()
@@ -228,7 +228,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
                 self.vertex.setIconSize(12)
                 self.vertex.setPenWidth(2)
                 self.vertex.setColor(self.snapcolor)
-                self.vertex.setIconType(QgsVertexMarker.ICON_BOX)
+                self.vertex.setIconType(QgsVertexMarker.IconType.ICON_BOX)
             self.vertex.setCenter(match.point())
             return (match.point()) # Returns QgsPointXY
         else:
@@ -297,7 +297,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
                 self.marker = QgsVertexMarker(self.canvas)
                 self.marker.setIconSize(18)
                 self.marker.setPenWidth(2)
-                self.marker.setIconType(QgsVertexMarker.ICON_CROSS)
+                self.marker.setIconType(QgsVertexMarker.IconType.ICON_CROSS)
             self.marker.setCenter(pt)
         else:
             self.removeMarker()
@@ -308,9 +308,9 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
             if msg is not None:
                 clipboard = QApplication.clipboard()
                 clipboard.setText(msg)
-                self.iface.messageBar().pushMessage("", "{} {} {} {}".format(formatString, tr('coordinate'), msg, tr('copied to the clipboard')), level=Qgis.Info, duration=3)
+                self.iface.messageBar().pushMessage("", "{} {} {} {}".format(formatString, tr('coordinate'), msg, tr('copied to the clipboard')), level=Qgis.MessageLevel.Info, duration=3)
         except Exception as e:
-            self.iface.messageBar().pushMessage("", "{} {}".format(tr('Invalid coordinate:'), e), level=Qgis.Warning, duration=3)
+            self.iface.messageBar().pushMessage("", "{} {}".format(tr('Invalid coordinate:'), e), level=Qgis.MessageLevel.Warning, duration=3)
 
     def removeMarker(self):
         if self.marker is not None:

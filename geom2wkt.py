@@ -52,7 +52,7 @@ class Geom2WktAlgorithm(QgsProcessingFeatureBasedAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/geom2wkt.help'
@@ -63,7 +63,7 @@ class Geom2WktAlgorithm(QgsProcessingFeatureBasedAlgorithm):
         return help
 
     def inputLayerTypes(self):
-        return [QgsProcessing.TypeVectorAnyGeometry]
+        return [QgsProcessing.SourceType.TypeVectorAnyGeometry]
 
     def outputWkbType(self, input_wkb_type):
         return (input_wkb_type)

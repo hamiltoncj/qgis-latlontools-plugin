@@ -55,7 +55,7 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
             QgsProcessingParameterFeatureSource(
                 self.PrmInputLayer,
                 tr('Input point vector layer or table'),
-                [QgsProcessing.TypeVector])
+                [QgsProcessing.SourceType.TypeVector])
         )
         self.addParameter(
             QgsProcessingParameterEnum(
@@ -74,7 +74,7 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
                 self.PrmField1,
                 tr('Select a field containing both coordinates or the Y (latitude) coordinate'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Any,
+                type=QgsProcessingParameterField.DataType.Any,
                 optional=False)
         )
         self.addParameter(
@@ -82,7 +82,7 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
                 self.PrmField2,
                 tr('Select a field containing the X or longitude coordinate if applicable'),
                 parentLayerParameterName=self.PrmInputLayer,
-                type=QgsProcessingParameterField.Any,
+                type=QgsProcessingParameterField.DataType.Any,
                 optional=True)
         )
         self.addParameter(
@@ -140,7 +140,7 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
 
         (sink, dest_id) = self.parameterAsSink(
             parameters, self.PrmOutputLayer,
-            context, fieldsout, QgsWkbTypes.Point, input_crs)
+            context, fieldsout, QgsWkbTypes.Type.Point, input_crs)
 
         total = 100.0 / source.featureCount() if source.featureCount() else 0
         failed = 0
@@ -280,7 +280,7 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
         file = os.path.dirname(__file__) + '/index.html'
         if not os.path.exists(file):
             return ''
-        return QUrl.fromLocalFile(file).toString(QUrl.FullyEncoded)
+        return QUrl.fromLocalFile(file).toString(QUrl.ComponentFormattingOption.FullyEncoded)
 
     def shortHelpString(self):
         file = os.path.dirname(__file__) + '/doc/field2geom.help'
