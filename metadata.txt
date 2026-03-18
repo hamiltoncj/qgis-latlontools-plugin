@@ -32,7 +32,7 @@ experimental=False
 deprecated=False
 changelog=
     4.0.0 - QGIS 4 Release
-    3.7.5 - Qt5/Qt6 compatibility
+    3.7.5 - Update translation files - final QGIS 3 update
     3.7.4 - Updated to work with H3 version 4.x.x
     3.7.3 - Fix to handle invalid geometries in Point layer to MGRS
     3.7.2 - Add clear marker button to Multi-zoom panel
