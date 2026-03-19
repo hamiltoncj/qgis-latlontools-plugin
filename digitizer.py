@@ -11,7 +11,7 @@
 import os
 import re
 
-from qgis.PyQt.QtCore import QSize, QTextCodec
+from qgis.PyQt.QtCore import QSize
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QDialog, QMenu
 from qgis.PyQt.uic import loadUiType
@@ -101,9 +101,8 @@ class DigitizerWidget(QDialog, FORM_CLASS):
             if (self.inputProjection == 0) or (text[0] == '{'):
                 # If this is GeoJson it does not matter what inputProjection is
                 if text[0] == '{':  # This may be a GeoJSON point
-                    codec = QTextCodec.codecForName("UTF-8")
-                    fields = QgsJsonUtils.stringToFields(text, codec)
-                    fet = QgsJsonUtils.stringToFeatureList(text, fields, codec)
+                    fields = QgsJsonUtils.stringToFields(text)
+                    fet = QgsJsonUtils.stringToFeatureList(text, fields)
                     if (len(fet) == 0) or not fet[0].isValid():
                         raise ValueError(tr('Invalid Coordinates'))
 
