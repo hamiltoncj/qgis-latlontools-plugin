@@ -106,42 +106,42 @@ class LatLonTools:
         self.multiZoomDialog.hide()
         self.multiZoomDialog.setFloating(True)
 
-        menu = QMenu()
-        menu.setObjectName('latLonToolsCopyExtents')
+        self.extentsMenu = QMenu(self.iface.mainWindow())
+        self.extentsMenu.setObjectName('latLonToolsCopyExtents')
         # Add Interface for copying the canvas extent
         icon = QIcon(self.plugin_dir + "/images/copycanvas.svg")
-        self.copyCanvasAction = menu.addAction(icon, tr('Copy Canvas Extent'), self.copyCanvas)
+        self.copyCanvasAction = self.extentsMenu.addAction(icon, tr('Copy Canvas Extent'), self.copyCanvas)
         self.copyCanvasAction.setObjectName('latLonToolsCopyCanvasExtent')
         # Add Interface for copying an interactive extent
         icon = QIcon(self.plugin_dir + "/images/copyextent.svg")
-        self.copyExtentAction = menu.addAction(icon, tr('Copy Selected Area Extent'), self.copyExtent)
+        self.copyExtentAction = self.extentsMenu.addAction(icon, tr('Copy Selected Area Extent'), self.copyExtent)
         self.copyExtentAction.setCheckable(True)
         self.copyExtentAction.setObjectName('latLonToolsCopySelectedAreaExtent')
         # Add Interface for copying a layer extent
         icon = QIcon(self.plugin_dir + "/images/copylayerextent.svg")
-        self.copyLayerExtentAction = menu.addAction(icon, tr('Copy Layer Extent'), self.copyLayerExtent)
+        self.copyLayerExtentAction = self.extentsMenu.addAction(icon, tr('Copy Layer Extent'), self.copyLayerExtent)
         self.copyLayerExtentAction.setObjectName('latLonToolsCopyLayerExtent')
         # Add Interface for copying the extent of selected features
         icon = QIcon(self.plugin_dir + "/images/copyselectedlayerextent.svg")
-        self.copySelectedFeaturesExtentAction = menu.addAction(icon, tr('Copy Selected Features Extent'), self.copySelectedFeaturesExtent)
+        self.copySelectedFeaturesExtentAction = self.extentsMenu.addAction(icon, tr('Copy Selected Features Extent'), self.copySelectedFeaturesExtent)
         self.copySelectedFeaturesExtentAction.setObjectName('latLonToolsCopySelectedFeaturesExtent')
         
         # Add the copy extent tools to the menu
         icon = QIcon(self.plugin_dir + '/images/copylayerextent.svg')
         self.copyExtentsAction = QAction(icon, tr('Copy Extents to Clipboard'), self.iface.mainWindow())
-        self.copyExtentsAction.setMenu(menu)
+        self.copyExtentsAction.setMenu(self.extentsMenu)
         self.iface.addPluginToMenu('Lat Lon Tools', self.copyExtentsAction)
 
         # Add the copy extent tools to the toolbar
         self.copyExtentButton = QToolButton()
-        self.copyExtentButton.setMenu(menu)
+        self.copyExtentButton.setMenu(self.extentsMenu)
         self.copyExtentButton.setDefaultAction(self.copyCanvasAction)
         self.copyExtentButton.setPopupMode(QToolButton.ToolButtonPopupMode.MenuButtonPopup)
         self.copyExtentButton.triggered.connect(self.copyExtentTriggered)
         self.copyExtentToolbar = self.toolbar.addWidget(self.copyExtentButton)
         self.copyExtentToolbar.setObjectName('latLonToolsCopyExtent')
 
-        # Create the coordinate converter menu
+        # Create the coordinate converter dialog menu
         icon = QIcon(':/images/themes/default/mIconProjectionEnabled.svg')
         self.convertCoordinatesAction = QAction(icon, tr("Coordinate Conversion"), self.iface.mainWindow())
         self.convertCoordinatesAction.setObjectName('latLonToolsCoordinateConversion')
@@ -150,37 +150,53 @@ class LatLonTools:
         self.iface.addPluginToMenu("Lat Lon Tools", self.convertCoordinatesAction)
 
         # Create the conversions menu
-        menu = QMenu()
+        self.conversionMenu = QMenu(self.iface.mainWindow())
+        self.conversionMenu.setObjectName('latLonToolsConversions')
+        # Add interface for Field to Geometery conversion
         icon = QIcon(self.plugin_dir + '/images/field2geom.svg')
-        action = menu.addAction(icon, tr("Fields to point layer"), self.field2geom)
+        action = self.conversionMenu.addAction(icon, tr("Fields to point layer"), self.field2geom)
         action.setObjectName('latLonToolsField2Geom')
+        # Add interface for Geometry to Field conversion
         icon = QIcon(self.plugin_dir + '/images/geom2field.svg')
-        action = menu.addAction(icon, tr("Point layer to fields"), self.geom2Field)
+        action = self.conversionMenu.addAction(icon, tr("Point layer to fields"), self.geom2Field)
         action.setObjectName('latLonToolsGeom2Field')
+        # Add interface for Geometry to WKT/JSON conversion
         icon = QIcon(self.plugin_dir + '/images/geom2wkt.svg')
-        action = menu.addAction(icon, tr("Geometry to WKT/JSON"), self.geom2wkt)
+        action = self.conversionMenu.addAction(icon, tr("Geometry to WKT/JSON"), self.geom2wkt)
         action.setObjectName('latLonToolsGeom2Wkt')
+        # Add interface for WKT attribute to Layers conversion
         icon = QIcon(self.plugin_dir + '/images/wkt2layers.svg')
-        action = menu.addAction(icon, tr("WKT attribute to layers"), self.wkt2layers)
+        action = self.conversionMenu.addAction(icon, tr("WKT attribute to layers"), self.wkt2layers)
         action.setObjectName('latLonToolsWkt2Layers')
+        # Add interface for Plus Codes to point layer conversion
         icon = QIcon(self.plugin_dir + '/images/pluscodes.svg')
-        action = menu.addAction(icon, tr("Plus Codes to point layer"), self.PlusCodestoLayer)
+        action = self.conversionMenu.addAction(icon, tr("Plus Codes to point layer"), self.PlusCodestoLayer)
         action.setObjectName('latLonToolsPlusCodes2Geom')
-        action = menu.addAction(icon, tr("Point layer to Plus Codes"), self.toPlusCodes)
+        # Add interface for Point layer to Plus Codes conversion
+        icon = QIcon(self.plugin_dir + '/images/pluscodes.svg')
+        action = self.conversionMenu.addAction(icon, tr("Point layer to Plus Codes"), self.toPlusCodes)
         action.setObjectName('latLonToolsGeom2PlusCodes')
+        # Add interface for MGRS to Point Layer conversion
         icon = QIcon(self.plugin_dir + '/images/mgrs2point.svg')
-        action = menu.addAction(icon, tr("MGRS to point layer"), self.MGRStoLayer)
+        action = self.conversionMenu.addAction(icon, tr("MGRS to point layer"), self.MGRStoLayer)
         action.setObjectName('latLonToolsMGRS2Geom')
+        # Add interface for Point layer to MGRS conversion
         icon = QIcon(self.plugin_dir + '/images/point2mgrs.svg')
-        action = menu.addAction(icon, tr("Point layer to MGRS"), self.toMGRS)
+        action = self.conversionMenu.addAction(icon, tr("Point layer to MGRS"), self.toMGRS)
         action.setObjectName('latLonToolsGeom2MGRS')
+        # Add interface for ECEF to Lat Lon Altitude conversion
         icon = QIcon(self.plugin_dir + '/images/ecef.png')
-        action = menu.addAction(icon, tr("ECEF to Lat, Lon, Altitude"), self.ecef2lla)
+        action = self.conversionMenu.addAction(icon, tr("ECEF to Lat, Lon, Altitude"), self.ecef2lla)
         action.setObjectName('latLonToolsEcef2lla')
-        action = menu.addAction(icon, tr("Lat, Lon, Altitude to ECEF"), self.lla2ecef)
+        # Add interface for Lat, Lon, Altitude to ECEF conversion
+        icon = QIcon(self.plugin_dir + '/images/ecef.png')
+        action = self.conversionMenu.addAction(icon, tr("Lat, Lon, Altitude to ECEF"), self.lla2ecef)
         action.setObjectName('latLonToolsLla2ecef')
+        
+        # Add the conversion tools to the menu
+        icon = QIcon(self.plugin_dir + '/images/field2geom.svg')
         self.conversionsAction = QAction(icon, tr("Conversions"), self.iface.mainWindow())
-        self.conversionsAction.setMenu(menu)
+        self.conversionsAction.setMenu(self.conversionMenu)
         self.iface.addPluginToMenu('Lat Lon Tools', self.conversionsAction)
 
         # Add to Digitize Toolbar
