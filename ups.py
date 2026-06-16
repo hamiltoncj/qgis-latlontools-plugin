@@ -9,7 +9,6 @@
  ***************************************************************************/
 """
 import re
-import math
 from qgis.core import QgsPointXY, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject
 from .util import epsg4326, tr
 
@@ -32,8 +31,8 @@ def upsParse(ups_str):
             letter = m[0]
             easting = float(m[1])
             northing = float(m[2])
-            return(letter, easting, northing)
-    
+            return (letter, easting, northing)
+
     raise UpsException(tr('Invalid UPS Coordinate'))
 
 def ups2Point(ups, crs=epsg4326):
@@ -44,24 +43,24 @@ def ups2Point(ups, crs=epsg4326):
         epsg = epsg32661
     pt = QgsPointXY(easting, northing)
     upstrans = QgsCoordinateTransform(epsg, crs, QgsProject.instance())
-    return(upstrans.transform(pt))
+    return (upstrans.transform(pt))
 
 def isUps(ups):
     try:
         l, e, n = upsParse(ups)
     except Exception:
-        return(False)
+        return (False)
 
-    return(True)
+    return (True)
 
 
 def latLon2Ups(lat, lon, precision=0, format=0):
     if lon < -180 or lon > 360:
-        return("")
+        return ("")
     if lat < 83.5 and lat > -79.5:
-        return("")
+        return ("")
     if lat > 90 or lat < -90:
-        return("")
+        return ("")
     if lon > 180:
         lon -= 360
     if lat >= 83.5:
@@ -84,4 +83,4 @@ def latLon2Ups(lat, lon, precision=0, format=0):
     else:
         msg = '{}{:.{prec}f}E{:.{prec}f}N'.format(letter, upspt.x(), upspt.y(), prec=precision)
 
-    return(msg)
+    return (msg)

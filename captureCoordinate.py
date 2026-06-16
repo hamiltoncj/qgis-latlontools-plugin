@@ -28,7 +28,7 @@ class CaptureCoordinate(QgsMapToolEmitPoint):
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
         self.canvas.setCursor(Qt.CursorShape.CrossCursor)
-        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.GlobalColor.magenta ) )
+        self.snapcolor = QgsSettings().value("/qgis/digitizing/snap_color", QColor(Qt.GlobalColor.magenta))
 
     def deactivate(self):
         self.removeVertexMarker()
@@ -44,15 +44,15 @@ class CaptureCoordinate(QgsMapToolEmitPoint):
                 self.vertex.setColor(self.snapcolor)
                 self.vertex.setIconType(QgsVertexMarker.IconType.ICON_BOX)
             self.vertex.setCenter(match.point())
-            return (match.point()) # Returns QgsPointXY
+            return (match.point())  # Returns QgsPointXY
         else:
             self.removeVertexMarker()
-            return self.toMapCoordinates(qpoint) # QPoint input, returns QgsPointXY
+            return self.toMapCoordinates(qpoint)  # QPoint input, returns QgsPointXY
 
     def canvasMoveEvent(self, event):
         '''Capture the coordinate as the user moves the mouse over
         the canvas.'''
-        self.snappoint(event.originalPixelPoint()) # input is QPoint
+        self.snappoint(event.originalPixelPoint())  # input is QPoint
 
     def canvasReleaseEvent(self, event):
         '''Capture the coordinate when the mouse button has been released,

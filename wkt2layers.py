@@ -14,7 +14,7 @@ import os
 from qgis.PyQt.QtCore import QUrl
 from qgis.PyQt.QtGui import QIcon
 
-from qgis.core import QgsCoordinateReferenceSystem, QgsGeometry, QgsWkbTypes
+from qgis.core import QgsGeometry, QgsWkbTypes
 
 from qgis.core import (
     QgsProcessing,
@@ -90,9 +90,9 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
         source = self.parameterAsSource(parameters, self.PrmInput, context)
         self.input_crs = self.parameterAsCrs(parameters, self.PrmInputCRS, context)
 
-        skipPt = True if self.PrmPointOutputLayer not in parameters or parameters[self.PrmPointOutputLayer] is None else False
-        skipline = True if self.PrmLineOutputLayer not in parameters or parameters[self.PrmLineOutputLayer] is None else False
-        skipPoly = True if self.PrmPolygonOutputLayer not in parameters or parameters[self.PrmPolygonOutputLayer] is None else False
+        #  skipPt = True if self.PrmPointOutputLayer not in parameters or parameters[self.PrmPointOutputLayer] is None else False
+        #  skipline = True if self.PrmLineOutputLayer not in parameters or parameters[self.PrmLineOutputLayer] is None else False
+        #  skipPoly = True if self.PrmPolygonOutputLayer not in parameters or parameters[self.PrmPolygonOutputLayer] is None else False
         self.cntPt = 0
         self.cntLine = 0
         self.cntPoly = 0
@@ -117,7 +117,7 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
                 if geom.isEmpty() or geom.isNull():
                     failed += 1
                     continue
-                    
+
                 type = geom.type()
                 if type == QgsWkbTypes.GeometryType.PointGeometry:
                     self.addpoint(feature, geom)
@@ -128,12 +128,11 @@ class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
                 else:
                     failed += 1
                     continue
-                
+
             except Exception:
                 '''s = traceback.format_exc()
                 feedback.pushInfo(s)'''
                 failed += 1
-
 
         feedback.pushInfo('{} points extracted'.format(self.cntPt))
         feedback.pushInfo('{} lines extracted'.format(self.cntLine))

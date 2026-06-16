@@ -63,14 +63,14 @@ class Settings():
         but does not update the widgets. The widgets are updated with showEvent.'''
         qset = QgsSettings()
 
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         self.captureShowLocation = qset.value('/LatLonTools4/CaptureShowClickedLocation', Qt.CheckState.Unchecked)
         self.captureCustomCrsAuthId = qset.value('/LatLonTools4/CaptureCustomCrsId', 'EPSG:4326')
         self.captureGeohashPrecision = int(qset.value('/LatLonTools4/CaptureGeohashPrecision', 12))
-        self.captureDmmPrecision =  int(qset.value('/LatLonTools4/CaptureDmmPrecision', 4))
-        self.captureUtmPrecision =  int(qset.value('/LatLonTools4/CaptureUtmPrecision', 0))
+        self.captureDmmPrecision = int(qset.value('/LatLonTools4/CaptureDmmPrecision', 4))
+        self.captureUtmPrecision = int(qset.value('/LatLonTools4/CaptureUtmPrecision', 0))
         self.captureUtmFormat = int(qset.value('/LatLonTools4/CaptureUtmFormat', 0))
-        self.captureUpsPrecision =  int(qset.value('/LatLonTools4/CaptureUpsPrecision', 0))
+        self.captureUpsPrecision = int(qset.value('/LatLonTools4/CaptureUpsPrecision', 0))
         self.captureUpsFormat = int(qset.value('/LatLonTools4/CaptureUpsFormat', 0))
         self.captureAddDmsSpace = qset.value('/LatLonTools4/CaptureAddDmsSpace', Qt.CheckState.Checked)
         self.capturePadZeroes = qset.value('/LatLonTools4/CapturePadZeroes', Qt.CheckState.Unchecked)
@@ -83,7 +83,7 @@ class Settings():
         else:
             self.captureH3Precision = 8
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         self.markerSize = int(qset.value('/LatLonTools4/MarkerSize', 18))
         self.markerWidth = int(qset.value('/LatLonTools4/MarkerWidth', 2))
         self.gridWidth = int(qset.value('/LatLonTools4/GridWidth', 2))
@@ -96,7 +96,7 @@ class Settings():
         value = int(qset.value('/LatLonTools4/GridColorOpacity', 255))
         self.gridColor.setAlpha(value)
 
-        ### EXTERNAL MAP ###
+        # EXTERNAL MAP
         self.showPlacemark = qset.value('/LatLonTools4/ShowPlacemark', Qt.CheckState.Checked)
         self.mapProvider = int(qset.value('/LatLonTools4/MapProvider', 0))
         self.mapProviderRight = int(qset.value('/LatLonTools4/MapProviderRight', 0))
@@ -106,10 +106,10 @@ class Settings():
         if not isinstance(self.userMapProviders, list):
             self.userMapProviders = []
 
-        ### Multi-zoom Settings ###
+        # Multi-zoom Settings
         self.multiZoomCustomCrsAuthId = qset.value('/LatLonTools4/MultiZoomCustomCrsId', 'EPSG:4326')
 
-        ### BBOX CAPTURE SETTINGS ###
+        # BBOX CAPTURE SETTINGS
         self.bBoxCrs = int(qset.value('/LatLonTools4/BBoxCrs', 0))  # Specifies WGS 84
         self.bBoxFormat = int(qset.value('/LatLonTools4/BBoxFormat', CopyExtent.WSEN))
         self.bBoxDelimiter = qset.value('/LatLonTools4/BBoxDelimiter', ',')
@@ -117,7 +117,7 @@ class Settings():
         self.bBoxPrefix = qset.value('/LatLonTools4/BBoxPrefix', '')
         self.bBoxSuffix = qset.value('/LatLonTools4/BBoxSuffix', '')
 
-        ### COORDINATE CONVERSION SETTINGS ###
+        # COORDINATE CONVERSION SETTINGS
         self.converterCustomCrsAuthId = qset.value('/LatLonTools4/ConverterCustomCrsId', 'EPSG:4326')
         self.converterCoordOrder = int(qset.value('/LatLonTools4/ConverterCoordOrder', CoordOrder.OrderYX))
         self.converterDDPrec = int(qset.value('/LatLonTools4/ConverterDDPrecision', 2))
@@ -182,6 +182,7 @@ class Settings():
         ms = ms.replace('{zoom}', str(self.mapZoom))
         return ms
 
+
 settings = Settings()
 
 
@@ -221,34 +222,34 @@ class SettingsWidget(QDialog, FORM_CLASS):
             self.captureH3Label.setEnabled(False)
             self.captureH3PrecisionSpinBox.setEnabled(False)
 
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         if H3_INSTALLED:
-            self.captureProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'),tr('Geohash'),tr('Maidenhead Grid Locator'),tr('UPS'),tr('GEOREF'),'H3'])
+            self.captureProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'), tr('Geohash'), tr('Maidenhead Grid Locator'), tr('UPS'), tr('GEOREF'), 'H3'])
         else:
-            self.captureProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'),tr('Geohash'),tr('Maidenhead Grid Locator'),tr('UPS'),tr('GEOREF')])
+            self.captureProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'), tr('Geohash'), tr('Maidenhead Grid Locator'), tr('UPS'), tr('GEOREF')])
         self.captureProjectionSelectionWidget.setCrs(epsg4326)
         self.wgs84NumberFormatComboBox.addItems([tr('Decimal Degrees'), 'D°M\'S"', 'DDMMSS', 'D°M.MM\'', 'WKT POINT', 'GeoJSON'])
         self.otherNumberFormatComboBox.addItems([tr('Normal Coordinate'), 'WKT POINT'])
         self.coordOrderComboBox.addItems([tr('Lat, Lon (Y,X) - Google Map Order'), tr('Lon, Lat (X,Y) Order')])
         self.delimComboBox.addItems([tr('Comma'), tr('Comma Space'), tr('Space'), tr('Tab'), tr('Other')])
         self.captureProjectionComboBox.activated.connect(self.setEnabled)
-        self.captureUtmFormatComboBox.addItems(['15N 755631 4283168', '755631,4283168,15N','755631mE,4283168mN,15N', '755631mE,4283168mN,15,N'])
+        self.captureUtmFormatComboBox.addItems(['15N 755631 4283168', '755631,4283168,15N', '755631mE,4283168mN,15N', '755631mE,4283168mN,15,N'])
         self.captureUpsFormatComboBox.addItems(['Z 2426773mE 1530125mN', 'Z2426773E1530125N'])
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         if H3_INSTALLED:
-            self.zoomToProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude) / Auto Detect Format'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'),tr('Geohash'),tr('Maidenhead Grid'),'H3'])
+            self.zoomToProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude) / Auto Detect Format'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'), tr('Geohash'), tr('Maidenhead Grid'), 'H3'])
         else:
-            self.zoomToProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude) / Auto Detect Format'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'),tr('Geohash'),tr('Maidenhead Grid')])
+            self.zoomToProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude) / Auto Detect Format'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM'), tr('Geohash'), tr('Maidenhead Grid')])
         self.zoomToProjectionSelectionWidget.setCrs(epsg4326)
         self.zoomToCoordOrderComboBox.addItems([tr('Lat, Lon (Y,X) - Google Map Order'), tr('Lon, Lat (X,Y) Order')])
         self.zoomToProjectionComboBox.activated.connect(self.setEnabled)
 
-        ### EXTERNAL MAP ###
+        # EXTERNAL MAP
         self.addProviderButton.clicked.connect(self.addUserProvider)
         self.deleteProviderButton.clicked.connect(self.deleteUserProvider)
 
-        ### MULTI-ZOOM ###
+        # MULTI-ZOOM
         self.multiZoomToProjectionComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS'), tr('Custom CRS'), tr('MGRS'), tr('Plus Codes (Open Location Code)'), tr('Standard UTM')])
         self.multiZoomToProjectionComboBox.activated.connect(self.setEnabled)
         self.multiZoomToProjectionSelectionWidget.setCrs(epsg4326)
@@ -257,7 +258,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.multiCoordOrderComboBox.addItems([tr('Lat, Lon (Y,X) - Google Map Order'), tr('Lon, Lat (X,Y) Order')])
         self.qmlStyle = ''
 
-        ### BBOX CAPTURE SETTINGS ###
+        # BBOX CAPTURE SETTINGS
         self.bBoxCrsComboBox.addItems([tr('WGS 84 (Latitude & Longitude)'), tr('Project CRS')])
         self.bBoxFormatComboBox.addItems([
             tr('"minX,minY,maxX,maxY (W,S,E,N)" - Using the selected delimiter'),
@@ -270,9 +271,9 @@ class SettingsWidget(QDialog, FORM_CLASS):
             tr('"bbox=minX,minY,maxX,maxY" - GeoServer WFS, WMS')])
         self.bBoxDelimiterComboBox.addItems([tr('Comma'), tr('Comma Space'), tr('Space'), tr('Tab'), tr('Other')])
 
-        ### COORDINATE CONVERSION SETTINGS ###
+        # COORDINATE CONVERSION SETTINGS
         self.converterCoordOrderComboBox.addItems([tr('Lat, Lon (Y,X) - Google Map Order'), tr('Lon, Lat (X,Y) Order')])
-        self.converterUtmFormatComboBox.addItems(['15N 755631 4283168', '755631,4283168,15N','755631mE,4283168mN,15N', '755631mE,4283168mN,15,N'])
+        self.converterUtmFormatComboBox.addItems(['15N 755631 4283168', '755631,4283168,15N', '755631mE,4283168mN,15N', '755631mE,4283168mN,15,N'])
         self.converterUpsFormatComboBox.addItems(['Z 2426773mE 1530125mN', 'Z2426773E1530125N'])
         self.converterProjectionSelectionWidget.setCrs(epsg4326)
 
@@ -297,7 +298,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
 
     def restoreDefaults(self):
         '''Restore all settings to their default state.'''
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         self.captureProjectionComboBox.setCurrentIndex(self.ProjectionTypeWgs84)
         self.wgs84NumberFormatComboBox.setCurrentIndex(0)
         self.otherNumberFormatComboBox.setCurrentIndex(0)
@@ -326,7 +327,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         if H3_INSTALLED:
             self.captureH3PrecisionSpinBox.setValue(8)
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         self.zoomToProjectionComboBox.setCurrentIndex(self.ProjectionTypeWgs84)
         self.zoomToCoordOrderComboBox.setCurrentIndex(CoordOrder.OrderYX)
         self.persistentMarkerCheckBox.setCheckState(Qt.CheckState.Checked)
@@ -342,14 +343,14 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.markerColorButton.setColor(markerColor)
         self.gridColorButton.setColor(gridColor)
 
-        ### EXTERNAL MAP ###
+        # EXTERNAL MAP
         self.showPlacemarkCheckBox.setCheckState(Qt.CheckState.Checked)
         self.mapProviderComboBox.setCurrentIndex(0)
         self.mapProviderRComboBox.setCurrentIndex(0)
         self.zoomSpinBox.setValue(13)
         self.showLocationCheckBox.setCheckState(Qt.CheckState.Unchecked)
 
-        ### Multi-zoom Settings ###
+        # Multi-zoom Settings
         self.multiZoomToProjectionComboBox.setCurrentIndex(0)  # WGS 84
         self.multiZoomToProjectionSelectionWidget.setCrs(epsg4326)
         self.multiCoordOrderComboBox.setCurrentIndex(CoordOrder.OrderYX)
@@ -357,7 +358,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.markerStyleComboBox.setCurrentIndex(0)
         self.extraDataSpinBox.setValue(0)
 
-        ### BBOX CAPTURE SETTINGS ###
+        # BBOX CAPTURE SETTINGS
         self.bBoxCrsComboBox.setCurrentIndex(0)  # WGS 84
         self.bBoxFormatComboBox.setCurrentIndex(0)  # MapProxy format
         self.bBoxDelimiterComboBox.setCurrentIndex(0)  # Comma
@@ -366,7 +367,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.bBoxSuffixLineEdit.setText('')
         self.bBoxDigitsSpinBox.setValue(8)
 
-        ### COORDINATE CONVERSION SETTINGS ###
+        # COORDINATE CONVERSION SETTINGS
         self.converterCoordOrderComboBox.setCurrentIndex(0)  # WGS 84
         self.converterProjectionSelectionWidget.setCrs(epsg4326)
         self.converter4326DDPrecisionSpinBox.setValue(8)
@@ -389,14 +390,13 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.converterMgrsAddSpacesCheckBox.setCheckState(Qt.CheckState.Unchecked)
         self.converterMgrsPrecisionSpinBox.setValue(5)
 
-
     def readSettings(self):
         '''Load the user selected settings. The settings are retained even when
         the user quits QGIS. This just loads the saved information into varialbles,
         but does not update the widgets. The widgets are updated with showEvent.'''
         qset = QgsSettings()
 
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         self.captureProjection = int(qset.value('/LatLonTools4/CaptureProjection', self.ProjectionTypeWgs84))
         if not H3_INSTALLED and self.captureProjection == self.ProjectionTypeH3:
             self.captureProjection = 0
@@ -410,7 +410,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.capturePrefix = qset.value('/LatLonTools4/CapturePrefix', '')
         self.captureSuffix = qset.value('/LatLonTools4/CaptureSuffix', '')
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         self.zoomToCoordOrder = int(qset.value('/LatLonTools4/ZoomToCoordOrder', CoordOrder.OrderYX))
         self.zoomToProjection = int(qset.value('/LatLonTools4/ZoomToCoordType', 0))
         if not H3_INSTALLED and self.zoomToProjection == self.ZoomProjectionTypeH3:
@@ -420,7 +420,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.zoomToCustomCrsAuthId = qset.value('/LatLonTools4/ZoomToCustomCrsId', 'EPSG:4326')
         self.zoomToProjectionSelectionWidget.setCrs(QgsCoordinateReferenceSystem(self.zoomToCustomCrsAuthId))
 
-        ### MULTI-ZOOM CUSTOM QML STYLE ###
+        # MULTI-ZOOM CUSTOM QML STYLE
         self.multiZoomToProjection = int(qset.value('/LatLonTools4/MultiZoomToProjection', 0))
         self.multiCoordOrder = int(qset.value('/LatLonTools4/MultiCoordOrder', CoordOrder.OrderYX))
         self.multiZoomNumCol = int(qset.value('/LatLonTools4/MultiZoomExtraData', 0))
@@ -433,7 +433,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
             self.qmlStyle = ''
             self.multiZoomStyleID = 0
 
-        ### BBOX & EXTERNAL MAP SETTINGS ###
+        # BBOX & EXTERNAL MAP SETTINGS
         settings.readSettings()
 
         self.setEnabled()
@@ -442,7 +442,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         '''Accept the settings and save them for next time.'''
         qset = QgsSettings()
 
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         qset.setValue('/LatLonTools4/CaptureCustomCrsId', self.captureProjectionSelectionWidget.crs().authid())
         qset.setValue('/LatLonTools4/CaptureProjection', int(self.captureProjectionComboBox.currentIndex()))
 
@@ -482,7 +482,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         if H3_INSTALLED:
             qset.setValue('/LatLonTools4/CaptureH3Precision', self.captureH3PrecisionSpinBox.value())
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         qset.setValue('/LatLonTools4/ZoomToCoordType', int(self.zoomToProjectionComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/ZoomToCoordOrder', int(self.zoomToCoordOrderComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/PersistentMarker', self.persistentMarkerCheckBox.checkState())
@@ -498,7 +498,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         qset.setValue('/LatLonTools4/GridColor', settings.gridColor.name())
         qset.setValue('/LatLonTools4/GridColorOpacity', settings.gridColor.alpha())
 
-        ### EXTERNAL MAP ###
+        # EXTERNAL MAP
         qset.setValue('/LatLonTools4/ShowPlacemark', self.showPlacemarkCheckBox.checkState())
         qset.setValue('/LatLonTools4/ExternMapShowClickedLocation', self.showLocationCheckBox.checkState())
         qset.setValue('/LatLonTools4/MapProvider', int(self.mapProviderComboBox.currentIndex()))
@@ -509,7 +509,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
             qset.setValue('/LatLonTools4/UserMapProviders', 0)
         qset.setValue('/LatLonTools4/MapZoom', int(self.zoomSpinBox.value()))
 
-        ### MULTI-ZOOM TO SETTINGS ###
+        # MULTI-ZOOM TO SETTINGS
         qset.setValue('/LatLonTools4/MultiZoomCustomCrsId', self.multiZoomToProjectionSelectionWidget.crs().authid())
         qset.setValue('/LatLonTools4/MultiZoomToProjection', int(self.multiZoomToProjectionComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/MultiCoordOrder', int(self.multiCoordOrderComboBox.currentIndex()))
@@ -517,7 +517,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         qset.setValue('/LatLonTools4/MultiZoomStyleID', int(self.markerStyleComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/QmlStyle', self.qmlLineEdit.text())
 
-        ### BBOX CAPTURE SETTINGS ###
+        # BBOX CAPTURE SETTINGS
         qset.setValue('/LatLonTools4/BBoxCrs', int(self.bBoxCrsComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/BBoxFormat', int(self.bBoxFormatComboBox.currentIndex()))
         delim = self.bBoxDelimiterComboBox.currentIndex()
@@ -535,7 +535,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         qset.setValue('/LatLonTools4/BBoxSuffix', self.bBoxSuffixLineEdit.text())
         qset.setValue('/LatLonTools4/BBoxDigits', self.bBoxDigitsSpinBox.value())
 
-        ### COORDINATE CONVERSION SETTINGS ###
+        # COORDINATE CONVERSION SETTINGS
         qset.setValue('/LatLonTools4/ConverterCustomCrsId', self.converterProjectionSelectionWidget.crs().authid())
         qset.setValue('/LatLonTools4/ConverterCoordOrder', int(self.converterCoordOrderComboBox.currentIndex()))
         qset.setValue('/LatLonTools4/ConverterDDPrecision', int(self.converterDDPrecisionSpinBox.value()))
@@ -563,22 +563,22 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.readSettings()
         self.lltools.settingsChanged()
         self.close()
-        
-    def updateMapProviderComboBoxes(self):
-            # Update the selected map provider lists
-            curindex = settings.mapProvider
-            self.mapProviderComboBox.clear()
-            self.mapProviderComboBox.addItems(settings.mapProviderNames())
-            if curindex >= len(settings.mapProviderNames()):
-                curindex = 0
-            self.mapProviderComboBox.setCurrentIndex(curindex)
 
-            curindex = settings.mapProviderRight
-            self.mapProviderRComboBox.clear()
-            self.mapProviderRComboBox.addItems(settings.mapProviderNames())
-            if curindex >= len(settings.mapProviderNames()):
-                curindex = 0
-            self.mapProviderRComboBox.setCurrentIndex(curindex)
+    def updateMapProviderComboBoxes(self):
+        # Update the selected map provider lists
+        curindex = settings.mapProvider
+        self.mapProviderComboBox.clear()
+        self.mapProviderComboBox.addItems(settings.mapProviderNames())
+        if curindex >= len(settings.mapProviderNames()):
+            curindex = 0
+        self.mapProviderComboBox.setCurrentIndex(curindex)
+
+        curindex = settings.mapProviderRight
+        self.mapProviderRComboBox.clear()
+        self.mapProviderRComboBox.addItems(settings.mapProviderNames())
+        if curindex >= len(settings.mapProviderNames()):
+            curindex = 0
+        self.mapProviderRComboBox.setCurrentIndex(curindex)
 
     def addUserProvider(self):
         name = self.userProviderNameLineEdit.text().strip()
@@ -626,10 +626,16 @@ class SettingsWidget(QDialog, FORM_CLASS):
 
         # Simple Zoom to Enables
         zoomToProjection = int(self.zoomToProjectionComboBox.currentIndex())
-        self.zoomToCoordOrderComboBox.setEnabled((zoomToProjection != self.ProjectionTypeMGRS) and
-                (zoomToProjection != self.ProjectionTypePlusCodes) and (zoomToProjection != self.ProjectionTypeUTM) and
-                (zoomToProjection != self.ProjectionTypeGeohash) and (zoomToProjection != self.ProjectionTypeMaidenhead) and
-                (zoomToProjection != self.ZoomProjectionTypeH3))
+        self.zoomToCoordOrderComboBox.setEnabled(
+            zoomToProjection not in (
+                self.ProjectionTypeMGRS,
+                self.ProjectionTypePlusCodes,
+                self.ProjectionTypeUTM,
+                self.ProjectionTypeGeohash,
+                self.ProjectionTypeMaidenhead,
+                self.ZoomProjectionTypeH3,
+            )
+        )
         self.zoomToProjectionSelectionWidget.setEnabled(zoomToProjection == self.ProjectionTypeCustomCRS)
 
         # MULTI Zoom
@@ -646,7 +652,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         selected settings.'''
         self.readSettings()
 
-        ### CAPTURE SETTINGS ###
+        # CAPTURE SETTINGS
         self.captureProjectionSelectionWidget.setCrs(QgsCoordinateReferenceSystem(settings.captureCustomCrsAuthId))
         self.captureProjectionComboBox.setCurrentIndex(self.captureProjection)
         self.wgs84NumberFormatComboBox.setCurrentIndex(self.wgs84NumberFormat)
@@ -685,7 +691,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.captureMgrsAddSpacesCheckBox.setCheckState(settings.captureMgrsAddSpacesCheckBox)
         self.captureMgrsPrecisionSpinBox.setValue(settings.captureMgrsPrec)
 
-        ### ZOOM TO SETTINGS ###
+        # ZOOM TO SETTINGS
         self.zoomToProjectionComboBox.setCurrentIndex(self.zoomToProjection)
         if self.zoomToCustomCrsAuthId == 'EPSG:4326':
             self.zoomToProjectionSelectionWidget.setCrs(epsg4326)
@@ -700,7 +706,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.markerColorButton.setColor(settings.markerColor)
         self.gridColorButton.setColor(settings.gridColor)
 
-        ### EXTERNAL MAP ###
+        # EXTERNAL MAP
         self.showPlacemarkCheckBox.setCheckState(settings.showPlacemark)
         self.showLocationCheckBox.setCheckState(settings.externalMapShowLocation)
         self.zoomSpinBox.setValue(settings.mapZoom)
@@ -713,7 +719,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.userMapProviderComboBox.addItems(names)
         self.updateMapProviderComboBoxes()
 
-        ### MULTI-ZOOM CUSTOM QML STYLE ###
+        # MULTI-ZOOM CUSTOM QML STYLE
         self.multiZoomToProjectionSelectionWidget.setCrs(QgsCoordinateReferenceSystem(settings.multiZoomCustomCrsAuthId))
         self.multiZoomToProjectionComboBox.setCurrentIndex(self.multiZoomToProjection)
         self.multiCoordOrderComboBox.setCurrentIndex(self.multiCoordOrder)
@@ -721,7 +727,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.markerStyleComboBox.setCurrentIndex(self.multiZoomStyleID)
         self.qmlLineEdit.setText(self.qmlStyle)
 
-        ### BBOX CAPTURE SETTINGS ###
+        # BBOX CAPTURE SETTINGS
         self.bBoxCrsComboBox.setCurrentIndex(settings.bBoxCrs)
         self.bBoxFormatComboBox.setCurrentIndex(settings.bBoxFormat)
         self.bBoxDelimiterLineEdit.setText('')
@@ -740,7 +746,7 @@ class SettingsWidget(QDialog, FORM_CLASS):
         self.bBoxSuffixLineEdit.setText(settings.bBoxSuffix)
         self.bBoxDigitsSpinBox.setValue(settings.bBoxDigits)
 
-        ### COORDINATE CONVERSION SETTINGS ###
+        # COORDINATE CONVERSION SETTINGS
         self.converterProjectionSelectionWidget.setCrs(QgsCoordinateReferenceSystem(settings.converterCustomCrsAuthId))
         self.converterCoordOrderComboBox.setCurrentIndex(settings.converterCoordOrder)
         self.converterDDPrecisionSpinBox.setValue(settings.converterDDPrec)

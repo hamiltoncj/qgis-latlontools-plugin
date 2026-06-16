@@ -23,7 +23,7 @@ from math import log10
 #  Note: the alphabet in geohash differs from the common base32
 #  alphabet described in IETF's RFC 4648
 #  (http://tools.ietf.org/html/rfc4648)
-__base32 = '0123456789bcdefghjkmnpqrstuvwxyz'
+__base32 = '0123456789bcdefghjkmnpqrstuvwxyz'   # pragma: allowlist secret
 __decodemap = { }
 for i in range(len(__base32)):
     __decodemap[__base32[i]] = i

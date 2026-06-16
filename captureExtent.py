@@ -10,7 +10,7 @@
 """
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtWidgets import QApplication
-from qgis.core import Qgis, QgsCoordinateTransform, QgsCoordinateReferenceSystem, QgsProject
+from qgis.core import Qgis, QgsCoordinateTransform, QgsProject
 from qgis.gui import QgsMapToolExtent
 # import traceback
 from .util import epsg4326, tr
@@ -71,7 +71,7 @@ class CaptureExtentTool(QgsMapToolExtent):
         action = self.action()
         if action:
             action.setChecked(False)
-        
+
     def getExtent(self, bbox):
         if bbox.isNull():
             return

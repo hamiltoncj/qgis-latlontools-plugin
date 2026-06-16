@@ -19,7 +19,7 @@ from qgis.core import QgsCoordinateTransform, QgsPoint, QgsPointXY, QgsProject
 from .util import epsg4326, parseDMSString, formatDmsString, formatMgrsString, tr
 # import traceback
 
-from .captureCoordinate  import CaptureCoordinate
+from .captureCoordinate import CaptureCoordinate
 from .settings import settings
 from . import mgrs
 from . import olc
@@ -135,7 +135,7 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
         if self.savedMapTool:
             self.canvas.setMapTool(self.savedMapTool)
             self.savedMapTool = None
-        QDockWidget.closeEvent(self, e)       
+        QDockWidget.closeEvent(self, e)
 
     def xyTriggered(self, action):
         self.xyButton.setDefaultAction(action)
@@ -247,7 +247,8 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
             self.customLineEdit.setText(s)
         if id != 3:  # D M' S"
             s = formatDmsString(pt4326.y(), pt4326.x(), 0, settings.converterDmsPrec, self.inputXYOrder,
-                    settings.converterDelimiter, settings.converterAddDmsSpace, settings.converterPadZeroes, settings.converterNsewBeginning)
+                    settings.converterDelimiter, settings.converterAddDmsSpace, settings.converterPadZeroes,
+                    settings.converterNsewBeginning)
             self.dmsLineEdit.setText(s)
         if id != 4:  # D M.MM'
             s = formatDmsString(pt4326.y(), pt4326.x(), 2, settings.converterDmmPrec, self.inputXYOrder,

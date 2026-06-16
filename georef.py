@@ -11,7 +11,7 @@ import math
 import sys
 
 digits_ = "0123456789"
-lontile_ = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+lontile_ = "ABCDEFGHJKLMNPQRSTUVWXYZ"   # pragma: allowlist secret
 lattile_ = "ABCDEFGHJKLMM" # Repeat the last M for 90 degrees which rounds up - Prevents extra checks in the code
 degrees_ = "ABCDEFGHJKLMNPQ"
 tile_ = 15

@@ -24,15 +24,15 @@ def formatMgrsString(mgrs, add_spaces=False):
         gsid = mgrs[3:5]
         ns = mgrs[5:].strip()
         if len(mgrs) > 5:
-            l = int(len(ns) / 2)
-            easting = ns[0:l]
-            northing = ns[l:]
+            cnt = int(len(ns) / 2)
+            easting = ns[0:cnt]
+            northing = ns[cnt:]
             s = '{} {} {} {}'.format(gzd, gsid, easting, northing)
         else:
             s = '{} {}'.format(gzd, gsid)
-        return(s)
+        return (s)
     else:
-        return(mgrs.strip())
+        return (mgrs.strip())
 
 def formatDmsString(lat, lon, dms_mode=0, prec=0, order=0, delimiter=', ', useDmsSpace=True, padZeros=False, nsewInFront=False):
     '''Return a DMS formated string.'''
@@ -54,7 +54,7 @@ def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False
         else:
             unit = 'W'
     dmsSpace = " " if useDmsSpace else ""
-    zeros = 1 if padZeros else 0 #this will be used for padding
+    zeros = 1 if padZeros else 0  # this will be used for padding
     dextra = 1 if prec else 0
     coord = math.fabs(coord)
     deg = math.floor(coord)
@@ -66,7 +66,7 @@ def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False
     else:
         dprec = prec + 3
     s = ""
-    if dms_mode==0: # D M S
+    if dms_mode == 0:  # D M S
         # Properly handle rounding based on the digit precision
         d = "{:.{prec}f}".format(sec, prec=prec)
         if float(d) == 60:
@@ -76,14 +76,14 @@ def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False
                 deg += 1
                 min = 0
         if islat:
-            s = "{:0{}.0f}\xB0{}{:0{}.0f}\'{}{:0{}.{prec}f}\"".format(deg, zeros*2, dmsSpace, min, zeros*2, dmsSpace, sec, prec+zeros*2+dextra, prec=prec)
+            s = "{:0{}.0f}\xB0{}{:0{}.0f}\'{}{:0{}.{prec}f}\"".format(deg, zeros * 2, dmsSpace, min, zeros * 2, dmsSpace, sec, prec + zeros * 2 + dextra, prec=prec)
         else:
-            s = "{:0{}.0f}\xB0{}{:0{}.0f}\'{}{:0{}.{prec}f}\"".format(deg, zeros*3, dmsSpace, min, zeros*2, dmsSpace, sec, prec+zeros*2+dextra, prec=prec)
+            s = "{:0{}.0f}\xB0{}{:0{}.0f}\'{}{:0{}.{prec}f}\"".format(deg, zeros * 3, dmsSpace, min, zeros * 2, dmsSpace, sec, prec + zeros * 2 + dextra, prec=prec)
         if nsewInFront:
             s = "{}{}{}".format(unit, dmsSpace, s)
         else:
             s = "{}{}{}".format(s, dmsSpace, unit)
-    elif dms_mode==1: # DDMMS
+    elif dms_mode == 1:  # DDMMS
         # Properly handle rounding based on the digit precision
         d = "{:.{prec}f}".format(sec, prec=prec)
         if float(d) == 60:
@@ -100,20 +100,20 @@ def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False
             s = "{}{}".format(unit, s)
         else:
             s = "{}{}".format(s, unit)
-    elif dms_mode==2: # DM.MM
+    elif dms_mode == 2:  # DM.MM
         d = "{:.{prec}f}".format(dmin, prec=prec)
         if float(d) == 60:
             deg += 1
             dmin = 0
         if islat:
-            s = "{:0{}.0f}\xB0{}{:0{}.0{prec}f}\'".format(deg, zeros*2, dmsSpace, dmin, prec+zeros*2+dextra, prec=prec)
+            s = "{:0{}.0f}\xB0{}{:0{}.0{prec}f}\'".format(deg, zeros * 2, dmsSpace, dmin, prec + zeros * 2 + dextra, prec=prec)
         else:
-            s = "{:0{}.0f}\xB0{}{:0{}.0{prec}f}\'".format(deg, zeros*3, dmsSpace, dmin, prec+zeros*2+dextra, prec=prec)
+            s = "{:0{}.0f}\xB0{}{:0{}.0{prec}f}\'".format(deg, zeros * 3, dmsSpace, dmin, prec + zeros * 2 + dextra, prec=prec)
         if nsewInFront:
             s = "{}{}{}".format(unit, dmsSpace, s)
         else:
             s = "{}{}{}".format(s, dmsSpace, unit)
-    return(s)
+    return (s)
 
 def parseDMSString(str, order=0):
     '''Parses a pair of coordinates that are in the order of

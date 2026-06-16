@@ -34,7 +34,7 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
         self.canvas.setCursor(Qt.CursorShape.CrossCursor)
-        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.GlobalColor.magenta ) )
+        self.snapcolor = QgsSettings().value("/qgis/digitizing/snap_color", QColor(Qt.GlobalColor.magenta))
 
     def deactivate(self):
         self.removeMarker()
@@ -91,7 +91,7 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
 
     def canvasMoveEvent(self, event):
         '''Show when the user mouses over a vector vertex in snapping mode.'''
-        self.snappoint(event.originalPixelPoint()) # input is QPoint
+        self.snappoint(event.originalPixelPoint())  # input is QPoint
 
     def snappoint(self, qpoint):
         match = self.canvas.snappingUtils().snapToMap(qpoint)
@@ -103,10 +103,10 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
                 self.vertex.setColor(self.snapcolor)
                 self.vertex.setIconType(QgsVertexMarker.IconType.ICON_BOX)
             self.vertex.setCenter(match.point())
-            return (match.point()) # Returns QgsPointXY
+            return (match.point())  # Returns QgsPointXY
         else:
             self.removeVertexMarker()
-            return self.toMapCoordinates(qpoint) # QPoint input, returns QgsPointXY
+            return self.toMapCoordinates(qpoint)  # QPoint input, returns QgsPointXY
 
     def removeMarker(self):
         if self.marker is not None:

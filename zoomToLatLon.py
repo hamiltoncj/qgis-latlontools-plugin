@@ -12,7 +12,7 @@ import os
 import re
 
 from qgis.PyQt.uic import loadUiType
-from qgis.PyQt.QtGui import QIcon, QColor
+from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QDockWidget, QApplication, QMenu
 from qgis.gui import QgsRubberBand, QgsProjectionSelectionDialog
 from qgis.core import Qgis, QgsJsonUtils, QgsWkbTypes, QgsPointXY, QgsGeometry, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject, QgsRectangle
@@ -81,14 +81,14 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
         self.iface = iface
         self.coordTxt.returnPressed.connect(self.zoomToPressed)
         self.canvas.destinationCrsChanged.connect(self.crsChanged)
-        
+
         self.marker = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.PointGeometry)
         self.marker.setColor(settings.markerColor)
         self.marker.setStrokeColor(settings.markerColor)
         self.marker.setWidth(settings.markerWidth)
         self.marker.setIconSize(settings.markerSize)
         self.marker.setIcon(QgsRubberBand.IconType.ICON_CROSS)
-        
+
         self.line_marker = QgsRubberBand(self.canvas, QgsWkbTypes.GeometryType.LineGeometry)
         self.line_marker.setWidth(settings.gridWidth)
         self.line_marker.setColor(settings.gridColor)
@@ -158,7 +158,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 # if it is not a valid MGRS coordinate
                 text2 = re.sub(r'\s+', '', str(text))  # Remove all white space
                 lat, lon = mgrs.toWgs(text2)
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
 
             if self.settings.zoomToProjIsPlusCodes():
                 # A Plus Codes coordinate has been selected. This will result in an exception
@@ -168,13 +168,13 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 lon = coord.longitudeCenter
                 rect = QgsRectangle(coord.longitudeLo, coord.latitudeLo, coord.longitudeHi, coord.latitudeHi)
                 geom = QgsGeometry.fromRect(rect)
-                return(lat, lon, geom, epsg4326)
+                return (lat, lon, geom, epsg4326)
 
             if self.settings.zoomToProjIsStandardUtm():
                 # A Standard UTM coordinate has been selected. This will result in an exception
                 # if it is not a valid utm coordinate.
                 pt = utm2Point(text)
-                return(pt.y(), pt.x(), None, epsg4326)
+                return (pt.y(), pt.x(), None, epsg4326)
 
             if self.settings.zoomToProjIsGeohash():
                 # A Geohash coordinate has been selected. This will result in an exception
@@ -184,10 +184,10 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 lon = (lon1 + lon2) / 2
                 rect = QgsRectangle(lon1, lat1, lon2, lat2)
                 geom = QgsGeometry.fromRect(rect)
-                return(lat, lon, geom, epsg4326)
+                return (lat, lon, geom, epsg4326)
 
             if self.settings.zoomToProjIsH3():
-                # An H3 coordinate has been selected. 
+                # An H3 coordinate has been selected.
                 if not h3.is_valid_cell(text):
                     raise ValueError(tr('Invalid H3 Coordinate'))
                 (lat, lon) = h3.cell_to_latlng(text)
@@ -198,7 +198,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                     pts.append(pt)
                 pts.append(pts[0])  # Close the polygon
                 geom = QgsGeometry.fromPolylineXY(pts)
-                return(lat, lon, geom, epsg4326)
+                return (lat, lon, geom, epsg4326)
 
             if self.settings.zoomToProjIsMaidenhead():
                 # A Maidenhead grid coordinate has been selected. This will result in an exception
@@ -206,7 +206,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 (lat, lon, lat1, lon1, lat2, lon2) = maidenGrid(text)
                 rect = QgsRectangle(lon1, lat1, lon2, lat2)
                 geom = QgsGeometry.fromRect(rect)
-                return(float(lat), float(lon), geom, epsg4326)
+                return (float(lat), float(lon), geom, epsg4326)
 
             # Check for other formats
             if text[0] == '{':  # This may be a GeoJSON point
@@ -219,22 +219,22 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 if geom.isEmpty() or (geom.wkbType() != QgsWkbTypes.Type.Point):
                     raise ValueError(tr('Invalid GeoJSON Geometry'))
                 pt = geom.asPoint()
-                return(pt.y(), pt.x(), None, epsg4326)
+                return (pt.y(), pt.x(), None, epsg4326)
 
             # Check to see if it is standard UTM
             if isUtm(text):
                 pt = utm2Point(text)
-                return(pt.y(), pt.x(), None, epsg4326)
+                return (pt.y(), pt.x(), None, epsg4326)
 
             # Check to see if it is a UPS coordinate
             if isUps(text):
                 pt = ups2Point(text)
-                return(pt.y(), pt.x(), None, epsg4326)
+                return (pt.y(), pt.x(), None, epsg4326)
 
             # Check to see if it is a Georef coordinate
             try:
                 (lat, lon, prec) = georef.decode(text, False)
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
             except Exception:
                 pass
 
@@ -242,7 +242,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
             try:
                 text2 = re.sub(r'\s+', '', str(text))
                 lat, lon = mgrs.toWgs(text2)
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
             except Exception:
                 pass
 
@@ -251,14 +251,14 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 coord = olc.decode(text)
                 lat = coord.latitudeCenter
                 lon = coord.longitudeCenter
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
             except Exception:
                 pass
 
             # Check to see if it is a geohash string
             try:
                 (lat, lon, lat_err, lon_err) = geohash.decode_exactly(text)
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
             except Exception:
                 pass
 
@@ -275,12 +275,12 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                     srcCrs = self.canvas.mapSettings().destinationCrs()
                 else:
                     srcCrs = self.settings.zoomToCustomCRS()
-                return(lat, lon, None, srcCrs)
+                return (lat, lon, None, srcCrs)
 
             # We are left with either DMS or decimal degrees in one of the projections
             if self.settings.zoomToProjIsWgs84():
                 lat, lon = parseDMSString(text, self.settings.zoomToCoordOrder)
-                return(lat, lon, None, epsg4326)
+                return (lat, lon, None, epsg4326)
 
             # We are left with a non WGS 84 decimal projection
             coords = re.split(r'[\s,;:]+', text, 1)
@@ -296,12 +296,12 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 srcCrs = self.canvas.mapSettings().destinationCrs()
             else:
                 srcCrs = self.settings.zoomToCustomCRS()
-            return(lat, lon, None, srcCrs)
+            return (lat, lon, None, srcCrs)
 
         except Exception:
             traceback.print_exc()
             raise ValueError(tr('Invalid Coordinates'))
-        
+
     def zoomToPressed(self):
         try:
             text = self.coordTxt.text().strip()
@@ -331,7 +331,7 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
         text = self.clipboard.text().strip()
         self.coordTxt.clear()
         self.coordTxt.setText(text)
-        
+
     def removeMarker(self):
         self.marker.reset(QgsWkbTypes.GeometryType.PointGeometry)
         self.line_marker.reset(QgsWkbTypes.GeometryType.LineGeometry)
@@ -357,4 +357,3 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                 crs = selector.crs()
         self.settings.setZoomToMode(selection_id, crs)
         self.configure()
-
