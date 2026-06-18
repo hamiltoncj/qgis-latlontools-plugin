@@ -117,13 +117,11 @@ GRID_LNG_FIRST_PLACE_VALUE_ = GRID_COLUMNS_**(GRID_CODE_LENGTH_ - 1)
 
 # Multiply latitude by this much to make it a multiple of the finest
 # precision.
-FINAL_LAT_PRECISION_ = PAIR_PRECISION_ * GRID_ROWS_**(MAX_DIGIT_COUNT_ -
-                                                      PAIR_CODE_LENGTH_)
+FINAL_LAT_PRECISION_ = PAIR_PRECISION_ * GRID_ROWS_**(MAX_DIGIT_COUNT_ - PAIR_CODE_LENGTH_)
 
 # Multiply longitude by this much to make it a multiple of the finest
 # precision.
-FINAL_LNG_PRECISION_ = PAIR_PRECISION_ * GRID_COLUMNS_**(MAX_DIGIT_COUNT_ -
-                                                         PAIR_CODE_LENGTH_)
+FINAL_LNG_PRECISION_ = PAIR_PRECISION_ * GRID_COLUMNS_**(MAX_DIGIT_COUNT_ - PAIR_CODE_LENGTH_)
 
 # Minimum length of a code that can be shortened.
 MIN_TRIMMABLE_CODE_LEN_ = 6
@@ -241,10 +239,8 @@ def encode(latitude, longitude, codeLength=PAIR_CODE_LENGTH_):
       codeLength: The number of significant digits in the output code, not
           including any separator characters.
     """
-    if codeLength < 2 or (codeLength < PAIR_CODE_LENGTH_ and
-                          codeLength % 2 == 1):
-        raise ValueError('Invalid Open Location Code length - ' +
-                         str(codeLength))
+    if codeLength < 2 or (codeLength < PAIR_CODE_LENGTH_ and codeLength % 2 == 1):
+        raise ValueError('Invalid Open Location Code length - ' + str(codeLength))
     codeLength = min(codeLength, MAX_DIGIT_COUNT_)
     # Ensure that latitude and longitude are valid.
     latitude = clipLatitude(latitude)
@@ -293,8 +289,7 @@ def encode(latitude, longitude, codeLength=PAIR_CODE_LENGTH_):
         return code[0:codeLength + 1]
 
     # Pad and return the code.
-    return code[0:codeLength] + ''.zfill(SEPARATOR_POSITION_ -
-                                         codeLength) + SEPARATOR_
+    return code[0:codeLength] + ''.zfill(SEPARATOR_POSITION_ - codeLength) + SEPARATOR_
 
 
 def decode(code):
@@ -370,6 +365,7 @@ def decode(code):
                     round(lng + lngPrecision, 14),
                     min(len(code), MAX_DIGIT_COUNT_))
 
+
 def recoverNearest(code, referenceLatitude, referenceLongitude):
     """
      Recover the nearest matching code to a specified location.
@@ -409,13 +405,11 @@ def recoverNearest(code, referenceLatitude, referenceLongitude):
     # How many degrees latitude is the code from the reference? If it is more
     # than half the resolution, we need to move it north or south but keep it
     # within -90 to 90 degrees.
-    if (referenceLatitude + halfResolution < codeArea.latitudeCenter and
-            codeArea.latitudeCenter - resolution >= -LATITUDE_MAX_):
+    if (referenceLatitude + halfResolution < codeArea.latitudeCenter and codeArea.latitudeCenter - resolution >= -LATITUDE_MAX_):
         # If the proposed code is more than half a cell north of the reference location,
         # it's too far, and the best match will be one cell south.
         codeArea.latitudeCenter -= resolution
-    elif (referenceLatitude - halfResolution > codeArea.latitudeCenter and
-          codeArea.latitudeCenter + resolution <= LATITUDE_MAX_):
+    elif (referenceLatitude - halfResolution > codeArea.latitudeCenter and codeArea.latitudeCenter + resolution <= LATITUDE_MAX_):
         # If the proposed code is more than half a cell south of the reference location,
         # it's too far, and the best match will be one cell north.
         codeArea.latitudeCenter += resolution
@@ -458,8 +452,7 @@ def shorten(code, latitude, longitude):
     code = code.upper()
     codeArea = decode(code)
     if codeArea.codeLength < MIN_TRIMMABLE_CODE_LEN_:
-        raise ValueError('Code length must be at least ' +
-                         MIN_TRIMMABLE_CODE_LEN_)
+        raise ValueError('Code length must be at least ' + MIN_TRIMMABLE_CODE_LEN_)
     # Ensure that latitude and longitude are valid.
     latitude = clipLatitude(latitude)
     longitude = normalizeLongitude(longitude)
