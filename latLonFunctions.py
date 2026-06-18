@@ -25,7 +25,7 @@ def transform_coords(y, x, crs):
     coord_crs = QgsCoordinateReferenceSystem(crs)
     transform = QgsCoordinateTransform(coord_crs, epsg4326, QgsProject.instance())
     pt = transform.transform(x, y)
-    return(pt.y(), pt.x())
+    return (pt.y(), pt.x())
 
 def InitLatLonFunctions():
     QgsExpression.registerFunction(dm)
@@ -48,7 +48,7 @@ def InitLatLonFunctions():
     QgsExpression.registerFunction(utm_north)
     QgsExpression.registerFunction(utm_to_point)
     QgsExpression.registerFunction(utm_zone)
-    
+
 
 def UnloadLatLonFunctions():
     QgsExpression.unregisterFunction('dm')
@@ -93,7 +93,7 @@ def mgrs_to_point(mgrs, feature, parent):
         mgrs = re.sub(r'\s+', '', str(mgrs))  # Remove all white space
         lat, lon = mg.toWgs(mgrs)
         pt = QgsPointXY(lon, lat)
-        return(QgsGeometry.fromPointXY(pt))
+        return (QgsGeometry.fromPointXY(pt))
     except Exception:
         parent.setEvalErrorString("Error: invalid MGRS coordinate")
         return
@@ -319,7 +319,7 @@ def to_pluscode(values, feature, parent):
         if precision < 10 or precision > 15:
             parent.setEvalErrorString("Error: precision must be between 10 and 15")
             return
-        
+
         lat = values[0]
         lon = values[1]
         msg = olc.encode(lat, lon, precision)
@@ -347,7 +347,7 @@ def from_pluscode(pluscode, feature, parent):
         lat = coord.latitudeCenter
         lon = coord.longitudeCenter
         pt = QgsPointXY(lon, lat)
-        return(QgsGeometry.fromPointXY(pt))
+        return (QgsGeometry.fromPointXY(pt))
     except Exception:
         parent.setEvalErrorString("Error: invalid pluscode coordinate")
         return
@@ -371,7 +371,7 @@ def utm_to_point(utm_str, feature, parent):
     """
     try:
         pt = utm2Point(utm_str)
-        return(QgsGeometry.fromPointXY(pt))
+        return (QgsGeometry.fromPointXY(pt))
     except Exception:
         parent.setEvalErrorString("Error: invalid MGRS coordinate")
         return
@@ -781,7 +781,7 @@ def llt_dd(values, feature, parent):
             order = 0 if values[2] == 'yx' else 1
         else:
             order = 0
-        
+
         precision = int(values[3]) if num_args > 3 else 8
         if precision < 0:
             parent.setEvalErrorString("Error: You cannot use a negative precision")
@@ -842,7 +842,7 @@ def llt_yx(values, feature, parent):
             order = 0 if values[2] == 'yx' else 1
         else:
             order = 0
-        
+
         precision = int(values[3]) if num_args > 3 else 8
         if precision < 0:
             parent.setEvalErrorString("Error: You cannot use a negative precision")

@@ -11,7 +11,6 @@
 from qgis.core import QgsApplication
 
 from .latLonFunctions import InitLatLonFunctions, UnloadLatLonFunctions
-from .settings import settings
 from .provider import LatLonToolsProvider
 
 

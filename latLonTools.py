@@ -125,7 +125,7 @@ class LatLonTools:
         icon = QIcon(self.plugin_dir + "/images/copyselectedlayerextent.svg")
         self.copySelectedFeaturesExtentAction = self.extentsMenu.addAction(icon, tr('Copy Selected Features Extent'), self.copySelectedFeaturesExtent)
         self.copySelectedFeaturesExtentAction.setObjectName('latLonToolsCopySelectedFeaturesExtent')
-        
+
         # Add the copy extent tools to the menu
         icon = QIcon(self.plugin_dir + '/images/copylayerextent.svg')
         self.copyExtentsAction = QAction(icon, tr('Copy Extents to Clipboard'), self.iface.mainWindow())
@@ -192,7 +192,7 @@ class LatLonTools:
         icon = QIcon(self.plugin_dir + '/images/ecef.png')
         action = self.conversionMenu.addAction(icon, tr("Lat, Lon, Altitude to ECEF"), self.lla2ecef)
         action.setObjectName('latLonToolsLla2ecef')
-        
+
         # Add the conversion tools to the menu
         icon = QIcon(self.plugin_dir + '/images/field2geom.svg')
         self.conversionsAction = QAction(icon, tr("Conversions"), self.iface.mainWindow())
@@ -275,7 +275,7 @@ class LatLonTools:
         self.iface.removeToolBarIcon(self.convertCoordinatesAction)
         self.iface.removeToolBarIcon(self.digitizeAction)
         del self.toolbar
-        
+
         if self.convertCoordinateDialog:
             self.iface.removeDockWidget(self.convertCoordinateDialog)
             self.convertCoordinateDialog = None
@@ -298,7 +298,7 @@ class LatLonTools:
 
     def copyExtentTriggered(self, action):
         self.copyExtentButton.setDefaultAction(action)
-        
+
     def copyExtent(self):
         if self.copyExtentTool is None:
             from .captureExtent import CaptureExtentTool
@@ -319,7 +319,7 @@ class LatLonTools:
             dst_crs = epsg4326
         else:
             dst_crs = self.canvas.mapSettings().destinationCrs()
-        
+
         outStr = getExtentString(extent, src_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
@@ -344,7 +344,7 @@ class LatLonTools:
             dst_crs = epsg4326
         else:
             dst_crs = self.canvas.mapSettings().destinationCrs()
-        
+
         outStr = getExtentString(extent, src_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)
@@ -357,7 +357,7 @@ class LatLonTools:
             dst_crs = epsg4326
         else:
             dst_crs = canvas_crs
-        
+
         outStr = getExtentString(extent, canvas_crs, dst_crs)
         clipboard = QApplication.clipboard()
         clipboard.setText(outStr)

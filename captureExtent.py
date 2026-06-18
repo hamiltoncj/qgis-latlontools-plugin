@@ -53,7 +53,7 @@ def getExtentString(bbox, src_crs, dst_crs):
         outStr = 'bbox={},{},{},{}'.format(
             minX, minY, maxX, maxY)
     outStr = '{}{}{}'.format(prefix, outStr, suffix)
-    return(outStr)
+    return (outStr)
 
 class CaptureExtentTool(QgsMapToolExtent):
     def __init__(self, iface, parent):

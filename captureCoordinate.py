@@ -65,7 +65,7 @@ class CaptureCoordinate(QgsMapToolEmitPoint):
             transform = QgsCoordinateTransform(canvasCRS, epsg4326, QgsProject.instance())
             pt4326 = transform.transform(pt.x(), pt.y())
             self.capturePoint.emit(pt4326)
-        except Exception as e:
+        except Exception:
             pass
 
     def removeVertexMarker(self):

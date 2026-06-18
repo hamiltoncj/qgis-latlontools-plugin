@@ -30,8 +30,8 @@ def maidenGridCenter(maiden):
 # %% first pair
     isValid(maiden[0], 0)
     isValid(maiden[1], 0)
-    lon += (ord(maiden[0])-Oa)*20
-    lat += (ord(maiden[1])-Oa)*10
+    lon += (ord(maiden[0]) - Oa) * 20
+    lat += (ord(maiden[1]) - Oa) * 10
     if N == 2:
         lon += 10
         lat += 5
@@ -39,8 +39,8 @@ def maidenGridCenter(maiden):
     if N >= 4:
         isValid(maiden[2], 1)
         isValid(maiden[3], 1)
-        lon += int(maiden[2])*2
-        lat += int(maiden[3])*1
+        lon += int(maiden[2]) * 2
+        lat += int(maiden[3]) * 1
     if N == 4:
         lon += 1
         lat += 0.5
@@ -48,17 +48,17 @@ def maidenGridCenter(maiden):
     if N >= 6:
         isValid(maiden[4], 2)
         isValid(maiden[5], 2)
-        lon += (ord(maiden[4])-Oa) * 5./60
-        lat += (ord(maiden[5])-Oa) * 2.5/60
+        lon += (ord(maiden[4]) - Oa) * 5. / 60
+        lat += (ord(maiden[5]) - Oa) * 2.5 / 60
     if N == 6:
-        lon += 5./120
-        lat += 2.5/120
+        lon += 5. / 120
+        lat += 2.5 / 120
 # %%
     if N == 8:
-        lon += int(maiden[6]) * 5./600
-        lat += int(maiden[7]) * 2.5/600
-        lon += 5./1200
-        lat += 2.5/1200
+        lon += int(maiden[6]) * 5. / 600
+        lat += int(maiden[7]) * 2.5 / 600
+        lon += 5. / 1200
+        lat += 2.5 / 1200
 
     return lat, lon
 
@@ -83,8 +83,8 @@ def maidenGrid(maiden):
 # %% first pair
     isValid(maiden[0], 0)
     isValid(maiden[1], 0)
-    lon += (ord(maiden[0])-Oa)*20
-    lat += (ord(maiden[1])-Oa)*10
+    lon += (ord(maiden[0]) - Oa) * 20
+    lat += (ord(maiden[1]) - Oa) * 10
     if N == 2:
         lon1 = lon
         lat1 = lat
@@ -96,8 +96,8 @@ def maidenGrid(maiden):
     if N >= 4:
         isValid(maiden[2], 1)
         isValid(maiden[3], 1)
-        lon += int(maiden[2])*2
-        lat += int(maiden[3])*1
+        lon += int(maiden[2]) * 2
+        lat += int(maiden[3]) * 1
     if N == 4:
         lon1 = lon
         lat1 = lat
@@ -109,25 +109,25 @@ def maidenGrid(maiden):
     if N >= 6:
         isValid(maiden[4], 2)
         isValid(maiden[5], 2)
-        lon += (ord(maiden[4])-Oa) * 5./60
-        lat += (ord(maiden[5])-Oa) * 2.5/60
+        lon += (ord(maiden[4]) - Oa) * 5. / 60
+        lat += (ord(maiden[5]) - Oa) * 2.5 / 60
     if N == 6:
         lon1 = lon
         lat1 = lat
-        lon2 = lon + 5./60
-        lat2 = lat + 2.5/60
-        lon += 5./120
-        lat += 2.5/120
+        lon2 = lon + 5. / 60
+        lat2 = lat + 2.5 / 60
+        lon += 5. / 120
+        lat += 2.5 / 120
 # %%
     if N == 8:
-        lon += int(maiden[6]) * 5./600
-        lat += int(maiden[7]) * 2.5/600
+        lon += int(maiden[6]) * 5. / 600
+        lat += int(maiden[7]) * 2.5 / 600
         lon1 = lon
         lat1 = lat
-        lon2 = lon + 5./600
-        lat2 = lat + 2.5/600
-        lon += 5./1200
-        lat += 2.5/1200
+        lon2 = lon + 5. / 600
+        lat2 = lat + 2.5 / 600
+        lon += 5. / 1200
+        lat += 2.5 / 1200
 
     return lat, lon, lat1, lon1, lat2, lon2
 
@@ -141,9 +141,9 @@ def isValid(c, level):
     if level == 2:
         if not 'X' >= c >= 'A':
             raise ValueError('Invalid maidenhead encoding')
-    return(True)
+    return (True)
 
-def toMaiden(lat, lon=None,precision = 3):
+def toMaiden(lat, lon=None, precision=3):
     """
     Returns a maidenhead string for latitude, longitude at specified level.
 
@@ -167,9 +167,9 @@ def toMaiden(lat, lon=None,precision = 3):
     if lon < -180.0 or lon > 180.0 or lat < -90.0 or lat > 90.0:
         raise ValueError('Maidenhead: invalid latitude and longitude')
     A = ord('A')
-    a = divmod(lon+180, 20)
-    b = divmod(lat+90, 10)
-    maiden = chr(A+int(a[0])) + chr(A+int(b[0]))
+    a = divmod(lon + 180, 20)
+    b = divmod(lat + 90, 10)
+    maiden = chr(A + int(a[0])) + chr(A + int(b[0]))
     lon = a[1] / 2.
     lat = b[1]
     i = 1
@@ -182,7 +182,7 @@ def toMaiden(lat, lon=None,precision = 3):
             lon = 24 * a[1]
             lat = 24 * b[1]
         else:
-            maiden += chr(A+int(a[0])) + chr(A+int(b[0]))
+            maiden += chr(A + int(a[0])) + chr(A + int(b[0]))
             lon = 10 * a[1]
             lat = 10 * b[1]
 
@@ -190,4 +190,3 @@ def toMaiden(lat, lon=None,precision = 3):
         maiden = maiden[:4] + maiden[4:6].lower() + maiden[6:]
 
     return maiden
-

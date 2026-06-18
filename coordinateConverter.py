@@ -246,13 +246,19 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
                 s = s_invalid
             self.customLineEdit.setText(s)
         if id != 3:  # D M' S"
-            s = formatDmsString(pt4326.y(), pt4326.x(), 0, settings.converterDmsPrec, self.inputXYOrder,
-                    settings.converterDelimiter, settings.converterAddDmsSpace, settings.converterPadZeroes,
-                    settings.converterNsewBeginning)
+            s = formatDmsString(
+                pt4326.y(), pt4326.x(), 0, settings.converterDmsPrec,
+                self.inputXYOrder, settings.converterDelimiter,
+                settings.converterAddDmsSpace, settings.converterPadZeroes,
+                settings.converterNsewBeginning
+            )
             self.dmsLineEdit.setText(s)
         if id != 4:  # D M.MM'
-            s = formatDmsString(pt4326.y(), pt4326.x(), 2, settings.converterDmmPrec, self.inputXYOrder,
-                    settings.converterDelimiter, settings.converterAddDmsSpace, settings.converterPadZeroes, settings.converterNsewBeginning)
+            s = formatDmsString(
+                pt4326.y(), pt4326.x(), 2, settings.converterDmmPrec, self.inputXYOrder,
+                settings.converterDelimiter, settings.converterAddDmsSpace, settings.converterPadZeroes,
+                settings.converterNsewBeginning
+            )
             self.dmLineEdit.setText(s)
         if id != 5:  # DDMMSS
             s = formatDmsString(pt4326.y(), pt4326.x(), 1, settings.converterDmsPrec, self.inputXYOrder, settings.converterDdmmssDelimiter, nsewInFront=settings.converterNsewBeginning)
@@ -273,28 +279,28 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
             except Exception:
                 s = s_invalid
             self.plusLineEdit.setText(s)
-        if id != 9: # GEOHASH
+        if id != 9:  # GEOHASH
             try:
                 s = geohash.encode(pt4326.y(), pt4326.x(), settings.converterGeohashPrecision)
             except Exception:
                 s = s_invalid
             self.geohashLineEdit.setText(s)
-        if id != 10: # Maidenhead
+        if id != 10:  # Maidenhead
             try:
                 s = maidenhead.toMaiden(pt4326.y(), pt4326.x(), precision=settings.converterMaidenheadPrecision)
             except Exception:
                 s = s_invalid
             self.maidenheadLineEdit.setText(s)
-        if id != 11: # UPS
-            s = latLon2Ups(pt4326.y(), pt4326.x(),precision=settings.converterUpsPrec,format=settings.converterUpsFormat)
+        if id != 11:  # UPS
+            s = latLon2Ups(pt4326.y(), pt4326.x(), precision=settings.converterUpsPrec, format=settings.converterUpsFormat)
             self.upsLineEdit.setText(s)
-        if id != 12: # Georef
+        if id != 12:  # Georef
             try:
                 s = georef.encode(pt4326.y(), pt4326.x(), settings.converterGeorefPrecision)
             except Exception:
                 s = s_invalid
             self.georefLineEdit.setText(s)
-        if id != 13: # Custom DDMMSS
+        if id != 13:  # Custom DDMMSS
             if customIsGeographic:
                 if crs == customCRS:
                     newpt = pt
@@ -305,7 +311,6 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
                 self.customDdmmssLineEdit.setText(s)
             else:
                 self.customDdmmssLineEdit.setText('')
-                
 
     def commitWgs84(self):
         text = self.wgs84LineEdit.text().strip()
@@ -605,7 +610,7 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
             if self.savedMapTool:
                 self.canvas.setMapTool(self.savedMapTool)
                 self.savedMapTool = None
-        
+
     @pyqtSlot()
     def stopCapture(self):
         self.coordCaptureButton.setChecked(False)
@@ -617,6 +622,6 @@ class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
         text = self.wgs84LineEdit.text().strip()
         try:
             lat, lon = parseDMSString(text, self.inputXYOrder)
-            pt = self.lltools.zoomTo(epsg4326, lat, lon)
+            self.lltools.zoomTo(epsg4326, lat, lon)
         except Exception:
             pass

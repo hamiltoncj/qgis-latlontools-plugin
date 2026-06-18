@@ -11,7 +11,7 @@
 from qgis.PyQt.QtCore import Qt, pyqtSignal
 from qgis.PyQt.QtGui import QColor
 from qgis.PyQt.QtWidgets import QApplication
-from qgis.core import Qgis, QgsCoordinateTransform, QgsPointXY, QgsProject, QgsSettings
+from qgis.core import Qgis, QgsCoordinateTransform, QgsProject, QgsSettings
 from qgis.gui import QgsMapToolEmitPoint, QgsVertexMarker
 
 from .settings import settings, CoordOrder, H3_INSTALLED
@@ -45,7 +45,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
     def activate(self):
         '''When activated set the cursor to a crosshair.'''
         self.canvas.setCursor(Qt.CursorShape.CrossCursor)
-        self.snapcolor = QgsSettings().value( "/qgis/digitizing/snap_color" , QColor( Qt.GlobalColor.magenta ) )
+        self.snapcolor = QgsSettings().value("/qgis/digitizing/snap_color", QColor(Qt.GlobalColor.magenta))
 
     def deactivate(self):
         self.removeMarker()
@@ -201,7 +201,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
                 msg = None
 
         if msg is None:
-            return(None)
+            return (None)
         else:
             msg = '{}{}{}'.format(self.settings.capturePrefix, msg, self.settings.captureSuffix)
         return msg
@@ -209,7 +209,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
     def canvasMoveEvent(self, event):
         '''Capture the coordinate as the user moves the mouse over
         the canvas. Show it in the status bar.'''
-        pt = self.snappoint(event.originalPixelPoint()) # input is QPoint
+        pt = self.snappoint(event.originalPixelPoint())  # input is QPoint
         try:
             msg = self.formatCoord(pt, ', ')
             formatString = self.coordFormatString()
@@ -230,10 +230,10 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
                 self.vertex.setColor(self.snapcolor)
                 self.vertex.setIconType(QgsVertexMarker.IconType.ICON_BOX)
             self.vertex.setCenter(match.point())
-            return (match.point()) # Returns QgsPointXY
+            return (match.point())  # Returns QgsPointXY
         else:
             self.removeVertexMarker()
-            return self.toMapCoordinates(qpoint) # QPoint input, returns QgsPointXY
+            return self.toMapCoordinates(qpoint)  # QPoint input, returns QgsPointXY
 
     def coordFormatString(self):
         if self.settings.captureProjIsWgs84():
@@ -247,7 +247,7 @@ class CopyLatLonTool(QgsMapToolEmitPoint):
             elif self.settings.wgs84NumberFormat == self.settings.Wgs84TypeGeoJSON:
                 s = 'GeoJSON'
             elif self.settings.wgs84NumberFormat == self.settings.Wgs84TypeDMM:
-                s= 'DM.MM'
+                s = 'DM.MM'
             else:
                 s = 'DMS'
         elif self.settings.captureProjIsProjectCRS():

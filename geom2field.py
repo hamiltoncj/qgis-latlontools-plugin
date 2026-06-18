@@ -10,7 +10,7 @@
 """
 import os
 
-from qgis.PyQt.QtCore import QVariant, QCoreApplication, QUrl
+from qgis.PyQt.QtCore import QVariant, QUrl
 from qgis.PyQt.QtGui import QIcon
 from qgis.core import QgsFields, QgsField, QgsFeature, QgsCoordinateTransform, QgsProject
 
@@ -330,9 +330,9 @@ class Geom2FieldAlgorithm(QgsProcessingAlgorithm):
                     msg = geohash.encode(pt.y(), pt.x(), geohashPrecision)
                 elif outputFormat == 7:  # WGS 84 UTM
                     msg = latLon2Utm(pt.y(), pt.x(), dmsPrecision)
-                elif outputFormat == 8: # Maidenhead grid
+                elif outputFormat == 8:  # Maidenhead grid
                     msg = toMaiden(pt.y(), pt.x(), maidenPrecision)
-                elif outputFormat == 9: # UPS
+                elif outputFormat == 9:  # UPS
                     msg = latLon2Ups(pt.y(), pt.x(), upsPrecision, 0)
                 else:  # GEOREF
                     msg = georef.encode(pt.y(), pt.x(), georefPrecision)

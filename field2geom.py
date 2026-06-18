@@ -29,7 +29,7 @@ from . import mgrs
 from .util import epsg4326, parseDMSStringSingle, parseDMSString, tr
 from . import olc
 from . import geohash
-from .utm import isUtm, utm2Point
+from .utm import utm2Point
 from .maidenhead import maidenGridCenter
 from .ups import ups2Point
 from . import georef
@@ -114,16 +114,16 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
             msg = tr('Select an attribute field containing an X or longitude coordinate')
             feedback.reportError(msg)
             raise QgsProcessingException(msg)
-        
+
         fields = source.fields()
         field1_isnumeric = fields[field1_name].isNumeric()
-        
+
         # All field_type != 0 are string attributes. Check for it.
         if (not field1_isnumeric) and (fields[field1_name].type() != QVariant.String):
             msg = tr('Attribute field containing Y or latitude must either be a numeric or string field.')
             feedback.reportError(msg)
             raise QgsProcessingException(msg)
-            
+
         if field_type == 0 and field2_name:
             field2_isnumeric = fields[field2_name].isNumeric()
             if (not field2_isnumeric) and (fields[field2_name].type() != QVariant.String):
@@ -240,11 +240,11 @@ class Field2GeomAlgorithm(QgsProcessingAlgorithm):
                         (lat, lon) = maidenGridCenter(attr1)
                         lat = float(lat)
                         lon = float(lon)
-                    elif field_type == 8: # UPS
+                    elif field_type == 8:  # UPS
                         pt = ups2Point(attr1, epsg4326)
                         lat = pt.y()
                         lon = pt.x()
-                    elif field_type == 9: # GEOREF
+                    elif field_type == 9:  # GEOREF
                         (lat, lon, prec) = georef.decode(attr1, False)
 
                     f = QgsFeature()

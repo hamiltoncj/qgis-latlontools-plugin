@@ -130,7 +130,7 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
             transform = QgsCoordinateTransform(layerCRS, epsg4326, QgsProject.instance())
         ecef = pyproj.Proj(proj='geocent', ellps='WGS84', datum='WGS84')
         lla = pyproj.Proj(proj='latlong', ellps='WGS84', datum='WGS84')
-        
+
         hasz = QgsWkbTypes.hasZ(source.wkbType())
 
         total = 100.0 / source.featureCount() if source.featureCount() else 0
@@ -148,9 +148,9 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
                 alt = default_altitude
             if layerCRS != epsg4326:
                 pt = transform.transform(pt)
-            x,y,z = pyproj.transform(lla, ecef, pt.x(), pt.y(), alt, radians=False)
+            x, y, z = pyproj.transform(lla, ecef, pt.x(), pt.y(), alt, radians=False)
             f = QgsFeature()
-            f.setAttributes([x,y,z] + feature.attributes())
+            f.setAttributes([x, y, z] + feature.attributes())
             sink.addFeature(f)
             if cnt % 100 == 0:
                 feedback.setProgress(int(cnt * total))
@@ -283,7 +283,7 @@ class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
             pt = QgsPoint(lon, lat, alt, wkbType=QgsWkbTypes.Type.PointZ)
             f = QgsFeature()
             if add_z:
-                f.setAttributes(feature.attributes()+[alt])
+                f.setAttributes(feature.attributes() + [alt])
             else:
                 f.setAttributes(feature.attributes())
             f.setGeometry(QgsGeometry(pt))

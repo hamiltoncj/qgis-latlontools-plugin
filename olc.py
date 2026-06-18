@@ -370,8 +370,6 @@ def decode(code):
                     round(lng + lngPrecision, 14),
                     min(len(code), MAX_DIGIT_COUNT_))
 
-
-
 def recoverNearest(code, referenceLatitude, referenceLongitude):
     """
      Recover the nearest matching code to a specified location.

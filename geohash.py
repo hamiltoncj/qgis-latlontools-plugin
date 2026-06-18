@@ -24,7 +24,7 @@ from math import log10
 #  alphabet described in IETF's RFC 4648
 #  (http://tools.ietf.org/html/rfc4648)
 __base32 = '0123456789bcdefghjkmnpqrstuvwxyz'   # pragma: allowlist secret
-__decodemap = { }
+__decodemap = {}
 for i in range(len(__base32)):
     __decodemap[__base32[i]] = i
 del i
@@ -43,18 +43,18 @@ def decode_exactly(geohash):
     for c in geohash:
         cd = __decodemap[c]
         for mask in [16, 8, 4, 2, 1]:
-            if is_even: # adds longitude info
+            if is_even:  # adds longitude info
                 lon_err /= 2
                 if cd & mask:
-                    lon_interval = ((lon_interval[0]+lon_interval[1])/2, lon_interval[1])
+                    lon_interval = ((lon_interval[0] + lon_interval[1]) / 2, lon_interval[1])
                 else:
-                    lon_interval = (lon_interval[0], (lon_interval[0]+lon_interval[1])/2)
+                    lon_interval = (lon_interval[0], (lon_interval[0] + lon_interval[1]) / 2)
             else:      # adds latitude info
                 lat_err /= 2
                 if cd & mask:
-                    lat_interval = ((lat_interval[0]+lat_interval[1])/2, lat_interval[1])
+                    lat_interval = ((lat_interval[0] + lat_interval[1]) / 2, lat_interval[1])
                 else:
-                    lat_interval = (lat_interval[0], (lat_interval[0]+lat_interval[1])/2)
+                    lat_interval = (lat_interval[0], (lat_interval[0] + lat_interval[1]) / 2)
             is_even = not is_even
     lat = (lat_interval[0] + lat_interval[1]) / 2
     lon = (lon_interval[0] + lon_interval[1]) / 2
@@ -69,8 +69,10 @@ def decode(geohash):
     # Format to the number of decimals that are known
     lats = "%.*f" % (max(1, int(round(-log10(lat_err)))) - 1, lat)
     lons = "%.*f" % (max(1, int(round(-log10(lon_err)))) - 1, lon)
-    if '.' in lats: lats = lats.rstrip('0')
-    if '.' in lons: lons = lons.rstrip('0')
+    if '.' in lats:
+        lats = lats.rstrip('0')
+    if '.' in lons:
+        lons = lons.rstrip('0')
     return lats, lons
 
 def encode(latitude, longitude, precision=12):
@@ -80,7 +82,7 @@ def encode(latitude, longitude, precision=12):
     """
     lat_interval, lon_interval = (-90.0, 90.0), (-180.0, 180.0)
     geohash = []
-    bits = [ 16, 8, 4, 2, 1 ]
+    bits = [16, 8, 4, 2, 1]
     bit = 0
     ch = 0
     even = True
@@ -119,15 +121,15 @@ def decode_extent(geohash):
     for c in geohash:
         cd = __decodemap[c]
         for mask in [16, 8, 4, 2, 1]:
-            if is_even: # adds longitude info
+            if is_even:  # adds longitude info
                 if cd & mask:
-                    lon_interval = ((lon_interval[0]+lon_interval[1])/2, lon_interval[1])
+                    lon_interval = ((lon_interval[0] + lon_interval[1]) / 2, lon_interval[1])
                 else:
-                    lon_interval = (lon_interval[0], (lon_interval[0]+lon_interval[1])/2)
+                    lon_interval = (lon_interval[0], (lon_interval[0] + lon_interval[1]) / 2)
             else:      # adds latitude info
                 if cd & mask:
-                    lat_interval = ((lat_interval[0]+lat_interval[1])/2, lat_interval[1])
+                    lat_interval = ((lat_interval[0] + lat_interval[1]) / 2, lat_interval[1])
                 else:
-                    lat_interval = (lat_interval[0], (lat_interval[0]+lat_interval[1])/2)
+                    lat_interval = (lat_interval[0], (lat_interval[0] + lat_interval[1]) / 2)
             is_even = not is_even
     return lat_interval[0], lat_interval[1], lon_interval[0], lon_interval[1]

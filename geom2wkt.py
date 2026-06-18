@@ -10,13 +10,10 @@
 """
 import os
 
-from qgis.core import (
-    QgsPointXY, QgsGeometry, QgsField,
-    QgsProject, QgsWkbTypes, QgsPropertyDefinition)
+from qgis.core import QgsField
 
 from qgis.core import (
     QgsProcessing,
-    QgsProcessingParameters,
     QgsProcessingFeatureBasedAlgorithm,
     QgsProcessingParameterEnum)
 
@@ -30,7 +27,7 @@ class Geom2WktAlgorithm(QgsProcessingFeatureBasedAlgorithm):
     Algorithm to create a circle shape.
     """
 
-    wkt_type = 0 # WKT
+    wkt_type = 0  # WKT
     PrmFormat = 'Format'
 
     def createInstance(self):
@@ -75,11 +72,11 @@ class Geom2WktAlgorithm(QgsProcessingFeatureBasedAlgorithm):
             str = '_ewkt'
         else:
             str = '_json'
-            
-        input_fields.append(QgsField(str, QVariant.String))
-        return(input_fields)
 
-    def  supportInPlaceEdit(self, layer):
+        input_fields.append(QgsField(str, QVariant.String))
+        return (input_fields)
+
+    def supportInPlaceEdit(self, layer):
         return False
 
     def initParameters(self, config=None):
