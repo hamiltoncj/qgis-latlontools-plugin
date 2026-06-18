@@ -872,31 +872,28 @@ def _clean_mgrs_str(s):
     """
     Clean up MGRS user-input string.
     :param s: MGRS input string
-    :return: Cleaned and stripped string as Unicode
+    :return: Cleaned and stripped string
     """
     log.debug('in: {0}'.format(s))
-    if str(type(s)) not in ["<class 'str'>",
-                            "<class 'bytes'>",
-                            "<type 'str'>",
-                            "<type 'unicode'>"]:
+
+    if not isinstance(s, (str, bytes)):
         raise MgrsException(BADLY_FORMED)
 
-    # convert to unicode, so str.isdigit, etc work in Py2
-    if str(type(s)) == "<class 'bytes'>":  # Py 3
-        s = s.decode()  # <class 'str'> as UTF-8
-    elif str(type(s)) == "<type 'str'>":  # Py 2
-        s = unicode(s, encoding='UTF-8')  # <type 'unicode'>
+    if isinstance(s, bytes):
+        s = s.decode('utf-8')
 
     # strip whitespace
     s = re.sub(r'\s+', '', s)
 
     # prepend 0 to input of single-digit zone
     count = sum(1 for _ in itertools.takewhile(str.isdigit, s))
+
     if count == 0:
-        s = u'00' + s
+        s = '00' + s
     elif count == 1:
-        s = u'0' + s
+        s = '0' + s
     elif count > 2:
         raise MgrsException(BADLY_FORMED)
+
     log.debug('out: {0}'.format(s))
     return s
