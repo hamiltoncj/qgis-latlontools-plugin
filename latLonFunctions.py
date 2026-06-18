@@ -21,11 +21,13 @@ from .util import formatDmsString
 group_name = 'Lat Lon Tools'
 epsg4326 = QgsCoordinateReferenceSystem("EPSG:4326")
 
+
 def transform_coords(y, x, crs):
     coord_crs = QgsCoordinateReferenceSystem(crs)
     transform = QgsCoordinateTransform(coord_crs, epsg4326, QgsProject.instance())
     pt = transform.transform(x, y)
     return (pt.y(), pt.x())
+
 
 def InitLatLonFunctions():
     QgsExpression.registerFunction(dm)
@@ -72,6 +74,7 @@ def UnloadLatLonFunctions():
     QgsExpression.unregisterFunction('utm_to_point')
     QgsExpression.unregisterFunction('utm_zone')
 
+
 @qgsfunction(args='auto', group=group_name)
 def mgrs_to_point(mgrs, feature, parent):
     """
@@ -97,6 +100,7 @@ def mgrs_to_point(mgrs, feature, parent):
     except Exception:
         parent.setEvalErrorString("Error: invalid MGRS coordinate")
         return
+
 
 @qgsfunction(-1, group=group_name)
 def mgrs(values, feature, parent):
@@ -132,6 +136,7 @@ def mgrs(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return full_mgrs
+
 
 @qgsfunction(-1, group=group_name)
 def mgrs_gzd(values, feature, parent):
@@ -171,6 +176,7 @@ def mgrs_gzd(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return gzd
+
 
 @qgsfunction(-1, group=group_name)
 def mgrs_100km(values, feature, parent):
@@ -212,6 +218,7 @@ def mgrs_100km(values, feature, parent):
         return
     return ups
 
+
 @qgsfunction(-1, group=group_name)
 def mgrs_east(values, feature, parent):
     """
@@ -250,6 +257,7 @@ def mgrs_east(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return east
+
 
 @qgsfunction(-1, group=group_name)
 def mgrs_north(values, feature, parent):
@@ -290,6 +298,7 @@ def mgrs_north(values, feature, parent):
         return
     return north
 
+
 @qgsfunction(-1, group=group_name)
 def to_pluscode(values, feature, parent):
     """
@@ -328,6 +337,7 @@ def to_pluscode(values, feature, parent):
         return
     return msg
 
+
 @qgsfunction(args='auto', group=group_name)
 def from_pluscode(pluscode, feature, parent):
     """
@@ -352,6 +362,7 @@ def from_pluscode(pluscode, feature, parent):
         parent.setEvalErrorString("Error: invalid pluscode coordinate")
         return
 
+
 @qgsfunction(args='auto', group=group_name)
 def utm_to_point(utm_str, feature, parent):
     """
@@ -375,6 +386,7 @@ def utm_to_point(utm_str, feature, parent):
     except Exception:
         parent.setEvalErrorString("Error: invalid MGRS coordinate")
         return
+
 
 @qgsfunction(-1, group=group_name)
 def utm(values, feature, parent):
@@ -421,6 +433,7 @@ def utm(values, feature, parent):
         return
     return utm_str
 
+
 @qgsfunction(-1, group=group_name)
 def utm_zone(values, feature, parent):
     """
@@ -456,6 +469,7 @@ def utm_zone(values, feature, parent):
         return
     return zone
 
+
 @qgsfunction(-1, group=group_name)
 def utm_hemisphere(values, feature, parent):
     """
@@ -489,6 +503,7 @@ def utm_hemisphere(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return hemisphere
+
 
 @qgsfunction(-1, group=group_name)
 def utm_epsg(values, feature, parent):
@@ -524,6 +539,7 @@ def utm_epsg(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return epsg_code
+
 
 @qgsfunction(-1, group=group_name)
 def utm_east(values, feature, parent):
@@ -561,6 +577,7 @@ def utm_east(values, feature, parent):
         return
     return east
 
+
 @qgsfunction(-1, group=group_name)
 def utm_north(values, feature, parent):
     """
@@ -596,6 +613,7 @@ def utm_north(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude/longitude parameters")
         return
     return north
+
 
 @qgsfunction(-1, group=group_name)
 def dm(values, feature, parent):
@@ -699,6 +717,7 @@ def dms(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude, longitude, or parameters")
         return
     return dms_str
+
 
 @qgsfunction(-1, group=group_name)
 def ddmmss(values, feature, parent):
@@ -807,6 +826,7 @@ def llt_dd(values, feature, parent):
         parent.setEvalErrorString("Error: invalid latitude, longitude, or parameters")
         return
     return dd_str
+
 
 @qgsfunction(-1, group=group_name)
 def llt_yx(values, feature, parent):

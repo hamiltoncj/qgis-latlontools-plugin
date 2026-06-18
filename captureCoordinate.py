@@ -14,6 +14,7 @@ from qgis.core import QgsCoordinateTransform, QgsPointXY, QgsProject, QgsSetting
 from qgis.gui import QgsMapToolEmitPoint, QgsVertexMarker
 from .util import epsg4326
 
+
 class CaptureCoordinate(QgsMapToolEmitPoint):
     '''Class to interact with the map canvas to capture the coordinate
     when the mouse button is pressed.'''

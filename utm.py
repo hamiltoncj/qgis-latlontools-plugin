@@ -12,8 +12,10 @@ import re
 from qgis.core import QgsPointXY, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject
 from .util import epsg4326, tr
 
+
 class UtmException(Exception):
     pass
+
 
 def utmParse(utm_str):
     utm = utm_str.strip().upper()
@@ -50,12 +52,14 @@ def utmParse(utm_str):
 
     raise UtmException('Invalid UTM Coordinate')
 
+
 def utm2Point(utm, crs=epsg4326):
     zone, hemisphere, easting, northing = utmParse(utm)
     utmcrs = QgsCoordinateReferenceSystem(utmGetEpsg(hemisphere, zone))
     pt = QgsPointXY(easting, northing)
     utmtrans = QgsCoordinateTransform(utmcrs, crs, QgsProject.instance())
     return (utmtrans.transform(pt))
+
 
 def isUtm(utm):
     try:
@@ -64,6 +68,7 @@ def isUtm(utm):
         return (False)
 
     return (True)
+
 
 def latLon2UtmZone(lat, lon):
     if lon < -180 or lon > 360:
@@ -97,6 +102,7 @@ def latLon2UtmZone(lat, lon):
         hemisphere = 'N'
     return (zone, hemisphere)
 
+
 def latLon2UtmParameters(lat, lon):
     zone, hemisphere = latLon2UtmZone(lat, lon)
     epsg = utmGetEpsg(hemisphere, zone)
@@ -105,6 +111,7 @@ def latLon2UtmParameters(lat, lon):
     pt = QgsPointXY(lon, lat)
     utmpt = utmtrans.transform(pt)
     return (zone, hemisphere, utmpt.x(), utmpt.y())
+
 
 def latLon2Utm(lat, lon, precision, format=0):
     try:
@@ -120,6 +127,7 @@ def latLon2Utm(lat, lon, precision, format=0):
     except Exception:
         msg = ''
     return (msg)
+
 
 def utmGetEpsg(hemisphere, zone):
     if hemisphere == 'N':

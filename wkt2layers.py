@@ -29,6 +29,7 @@ from .util import tr
 
 # import traceback
 
+
 class Wkt2LayersAlgorithm(QgsProcessingAlgorithm):
     """
     Algorithm to import KML and KMZ files.

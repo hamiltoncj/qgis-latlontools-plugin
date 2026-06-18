@@ -15,8 +15,10 @@ from .util import epsg4326, tr
 epsg32661 = QgsCoordinateReferenceSystem("EPSG:32661")
 epsg32761 = QgsCoordinateReferenceSystem("EPSG:32761")
 
+
 class UpsException(Exception):
     pass
+
 
 def upsParse(ups_str):
     ups = ups_str.strip().upper()
@@ -35,6 +37,7 @@ def upsParse(ups_str):
 
     raise UpsException(tr('Invalid UPS Coordinate'))
 
+
 def ups2Point(ups, crs=epsg4326):
     letter, easting, northing = upsParse(ups)
     if letter == 'A' or letter == 'B':
@@ -44,6 +47,7 @@ def ups2Point(ups, crs=epsg4326):
     pt = QgsPointXY(easting, northing)
     upstrans = QgsCoordinateTransform(epsg, crs, QgsProject.instance())
     return (upstrans.transform(pt))
+
 
 def isUps(ups):
     try:

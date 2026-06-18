@@ -16,6 +16,7 @@ from qgis.gui import QgsMapToolExtent
 from .util import epsg4326, tr
 from .settings import settings, CopyExtent
 
+
 def getExtentString(bbox, src_crs, dst_crs):
     if src_crs != dst_crs:
         transform = QgsCoordinateTransform(src_crs, dst_crs, QgsProject.instance())
@@ -54,6 +55,7 @@ def getExtentString(bbox, src_crs, dst_crs):
             minX, minY, maxX, maxY)
     outStr = '{}{}{}'.format(prefix, outStr, suffix)
     return (outStr)
+
 
 class CaptureExtentTool(QgsMapToolExtent):
     def __init__(self, iface, parent):

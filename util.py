@@ -15,8 +15,10 @@ from qgis.PyQt.QtCore import QCoreApplication
 
 epsg4326 = QgsCoordinateReferenceSystem('EPSG:4326')
 
+
 def tr(string):
     return QCoreApplication.translate('@default', string)
+
 
 def formatMgrsString(mgrs, add_spaces=False):
     if add_spaces:
@@ -34,12 +36,14 @@ def formatMgrsString(mgrs, add_spaces=False):
     else:
         return (mgrs.strip())
 
+
 def formatDmsString(lat, lon, dms_mode=0, prec=0, order=0, delimiter=', ', useDmsSpace=True, padZeros=False, nsewInFront=False):
     '''Return a DMS formated string.'''
     if order == 0:  # Y, X or Lat, Lon
         return convertDD2DMS(lat, True, dms_mode, prec, useDmsSpace, padZeros, nsewInFront) + str(delimiter) + convertDD2DMS(lon, False, dms_mode, prec, useDmsSpace, padZeros, nsewInFront)
     else:  # X, Y or Lon, Lat
         return convertDD2DMS(lon, False, dms_mode, prec, useDmsSpace, padZeros, nsewInFront) + str(delimiter) + convertDD2DMS(lat, True, dms_mode, prec, useDmsSpace, padZeros, nsewInFront)
+
 
 def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False, nsewInFront=False):
     '''Convert decimal degrees to DMS'''
@@ -115,6 +119,7 @@ def convertDD2DMS(coord, islat, dms_mode, prec, useDmsSpace=True, padZeros=False
             s = "{}{}{}".format(s, dmsSpace, unit)
     return (s)
 
+
 def parseDMSString(str, order=0):
     '''Parses a pair of coordinates that are in the order of
     "latitude, longitude". The string can be in DMS or decimal
@@ -178,6 +183,7 @@ def parseDMSString(str, order=0):
 
     return lat, lon
 
+
 def parseDMSStringSingle(str):
     '''Parse a single coordinate either DMS or decimal degrees.
     It simply returns the value but doesn't maintain any knowledge
@@ -203,6 +209,7 @@ def parseDMSStringSingle(str):
     except Exception:
         raise ValueError('Invalid Coordinates')
     return coord
+
 
 def parseDMS(str, hemisphere):
     '''Parse a DMS formatted string.'''

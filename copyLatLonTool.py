@@ -28,6 +28,7 @@ if H3_INSTALLED:
 
 # import traceback
 
+
 class CopyLatLonTool(QgsMapToolEmitPoint):
     '''Class to interact with the map canvas to capture the coordinate
     when the mouse button is pressed and to display the coordinate in

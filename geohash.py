@@ -29,6 +29,7 @@ for i in range(len(__base32)):
     __decodemap[__base32[i]] = i
 del i
 
+
 def decode_exactly(geohash):
     """
     Decode the geohash to its exact values, including the error
@@ -60,6 +61,7 @@ def decode_exactly(geohash):
     lon = (lon_interval[0] + lon_interval[1]) / 2
     return lat, lon, lat_err, lon_err
 
+
 def decode(geohash):
     """
     Decode geohash, returning two strings with latitude and longitude
@@ -74,6 +76,7 @@ def decode(geohash):
     if '.' in lons:
         lons = lons.rstrip('0')
     return lats, lons
+
 
 def encode(latitude, longitude, precision=12):
     """
@@ -109,6 +112,7 @@ def encode(latitude, longitude, precision=12):
             bit = 0
             ch = 0
     return ''.join(geohash)
+
 
 def decode_extent(geohash):
     """

@@ -1,3 +1,4 @@
+
 """
 /***************************************************************************
  *                                                                         *
@@ -8,6 +9,7 @@
  *                                                                         *
  ***************************************************************************/
 """
+
 
 def maidenGridCenter(maiden):
     """
@@ -61,6 +63,7 @@ def maidenGridCenter(maiden):
         lat += 2.5 / 1200
 
     return lat, lon
+
 
 def maidenGrid(maiden):
     """
@@ -131,6 +134,7 @@ def maidenGrid(maiden):
 
     return lat, lon, lat1, lon1, lat2, lon2
 
+
 def isValid(c, level):
     if level == 0:
         if not 'R' >= c >= 'A':
@@ -142,6 +146,7 @@ def isValid(c, level):
         if not 'X' >= c >= 'A':
             raise ValueError('Invalid maidenhead encoding')
     return (True)
+
 
 def toMaiden(lat, lon=None, precision=3):
     """

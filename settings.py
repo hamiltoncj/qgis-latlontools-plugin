@@ -33,6 +33,7 @@ from .util import epsg4326, tr
 FORM_CLASS, _ = loadUiType(os.path.join(
     os.path.dirname(__file__), 'ui/latLonSettings.ui'))
 
+
 @enum.unique
 class CopyExtent(enum.IntEnum):
     WSEN = 0
@@ -43,6 +44,7 @@ class CopyExtent(enum.IntEnum):
     PolyWkt = 5
     MapProxy = 6
     GeoServer = 7
+
 
 @enum.unique
 class CoordOrder(enum.IntEnum):

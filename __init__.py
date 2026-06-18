@@ -8,6 +8,8 @@
  *                                                                         *
  ***************************************************************************/
 """
+
+
 def classFactory(iface):
     if iface:
         from .latLonTools import LatLonTools

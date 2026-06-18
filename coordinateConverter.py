@@ -35,6 +35,7 @@ FORM_CLASS, _ = loadUiType(os.path.join(
 s_invalid = tr('Invalid')
 s_copied = tr('copied to the clipboard')
 
+
 class CoordinateConverterWidget(QDockWidget, FORM_CLASS):
     inputProjection = 0
     origPt = None

@@ -29,6 +29,7 @@ from qgis.core import (
 
 from .util import tr
 
+
 class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
     """
     Algorithm to convert a point layer with altitude to an ECEF table.
@@ -182,6 +183,7 @@ class LatLonToEcefAlgorithm(QgsProcessingAlgorithm):
 
     def createInstance(self):
         return LatLonToEcefAlgorithm()
+
 
 class EcefLatLonToAlgorithm(QgsProcessingAlgorithm):
     """

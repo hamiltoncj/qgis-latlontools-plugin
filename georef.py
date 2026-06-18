@@ -22,8 +22,10 @@ baselen_ = 4
 maxprec_ = 11
 maxlen_ = baselen_ + 2 * maxprec_
 
+
 class GeorefException(Exception):
     pass
+
 
 def find_first_not_of(s, s_set):
     for i, c in enumerate(s):
@@ -31,11 +33,13 @@ def find_first_not_of(s, s_set):
             return i
     return (-1)
 
+
 def lookup(s, c):
     r = s.find(c)
     if r < 0:
         return (-1)
     return (r)
+
 
 def encode(lat, lon, prec):
     if lat > 90 or lat < -90:
@@ -75,6 +79,7 @@ def encode(lat, lon, prec):
                 y = int(y / base_)
                 c = c - 1
     return (''.join(georef1))
+
 
 def decode(georef, centerp=False):
     if georef is None:
