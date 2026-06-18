@@ -20,7 +20,7 @@ from qgis.core import (
     QgsField, QgsFeature, QgsGeometry, QgsPointXY,
     QgsPalLayerSettings, QgsVectorLayerSimpleLabeling, QgsProject, Qgis)
 from qgis.gui import QgsVertexMarker
-from .captureCoordinate  import CaptureCoordinate
+from .captureCoordinate import CaptureCoordinate
 from .util import epsg4326, parseDMSStringSingle, parseDMSString, tr
 from .utm import utm2Point
 from .settings import CoordOrder, settings
@@ -416,7 +416,7 @@ class MultiZoomWidget(QDockWidget, FORM_CLASS):
                 self.resultsTable.setItem(rowcnt, i + 3, QTableWidgetItem(data[i]))
 
         self.resultsTable.blockSignals(False)
-        return(rowcnt)
+        return (rowcnt)
 
     def selectionChanged(self):
         '''There had been a change in what rows are selected in
