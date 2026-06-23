@@ -56,6 +56,8 @@ class ShowOnMapTool(QgsMapToolEmitPoint):
             self.removeMarker()
 
         button = event.button()
+        if not isinstance(button, int):
+            button = button.value
 
         canvasCRS = self.canvas.mapSettings().destinationCrs()
         transform = QgsCoordinateTransform(canvasCRS, epsg4326, QgsProject.instance())
