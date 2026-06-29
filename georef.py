@@ -11,8 +11,8 @@ import math
 import sys
 
 digits_ = "0123456789"
-lontile_ = "ABCDEFGHJKLMNPQRSTUVWXYZ"
-lattile_ = "ABCDEFGHJKLMM" # Repeat the last M for 90 degrees which rounds up - Prevents extra checks in the code
+lontile_ = "ABCDEFGHJKLMNPQRSTUVWXYZ"   # pragma: allowlist secret
+lattile_ = "ABCDEFGHJKLMM"  # Repeat the last M for 90 degrees which rounds up - Prevents extra checks in the code
 degrees_ = "ABCDEFGHJKLMNPQ"
 tile_ = 15
 lonorig_ = -180
@@ -22,29 +22,32 @@ baselen_ = 4
 maxprec_ = 11
 maxlen_ = baselen_ + 2 * maxprec_
 
+
 class GeorefException(Exception):
     pass
+
 
 def find_first_not_of(s, s_set):
     for i, c in enumerate(s):
         if c not in s_set:
             return i
-    return(-1)
+    return (-1)
+
 
 def lookup(s, c):
     r = s.find(c)
     if r < 0:
-        return( -1 )
-    return(r)
+        return (-1)
+    return (r)
+
 
 def encode(lat, lon, prec):
     if lat > 90 or lat < -90:
         raise GeorefException('Latitude not in -90 to 90 range')
     if lon < -180 or lon > 360:
         raise GeorefException('Longitude is out of range')
-    if lon >= 180: # make longitude in the range -180, 180
+    if lon >= 180:  # make longitude in the range -180, 180
         lon = lon - 360
-
 
     if lat == 90:
         lat = lat - sys.float_info.epsilon
@@ -75,7 +78,8 @@ def encode(lat, lon, prec):
                 georef1[baselen_ + c + prec] = digits_[y % base_]
                 y = int(y / base_)
                 c = c - 1
-    return(''.join(georef1))
+    return (''.join(georef1))
+
 
 def decode(georef, centerp=False):
     if georef is None:
@@ -84,7 +88,7 @@ def decode(georef, centerp=False):
     leng = len(georef)
     if leng >= 3 and georef[0] == 'I' and georef[1] == 'N' and georef[2] == 'V':
         raise GeorefException('Invalid Georef string')
-    if leng < baselen_ - 2 :
+    if leng < baselen_ - 2:
         raise GeorefException('Georef must start with at least 2 letters: {}'.format(georef))
     prec1 = int((2 + leng - baselen_) / 2 - 1)
     k = lookup(lontile_, georef[0])
@@ -116,7 +120,7 @@ def decode(georef, centerp=False):
             if prec1 == 1:
                 raise GeorefException('Georef needs at least 4 digits for minutes: {}'.format(georef[baselen_:]))
             if prec1 > maxprec_:
-                raise GeorefException('More than {} digits in georef: {}'.format(2*maxprec_, georef[baselen_:]))
+                raise GeorefException('More than {} digits in georef: {}'.format(2 * maxprec_, georef[baselen_:]))
             i = 0
             while i < prec1:
                 if i:
@@ -125,7 +129,7 @@ def decode(georef, centerp=False):
                     m = 6
                 unit = unit * m
                 x = lookup(digits_, georef[baselen_ + i])
-                y = lookup(digits_, georef[baselen_ + i + prec1])                
+                y = lookup(digits_, georef[baselen_ + i + prec1])
                 if not (i or (x < m and y < m)):
                     raise GeorefException('Minutes terms in georef must be less than 60: {}'.format(georef[baselen_:]))
                 lon1 = m * lon1 + x
@@ -138,4 +142,4 @@ def decode(georef, centerp=False):
     lat = (tile_ * lat1) / unit
     lon = (tile_ * lon1) / unit
     prec = prec1
-    return(lat, lon, prec)
+    return (lat, lon, prec)
