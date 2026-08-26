@@ -111,6 +111,8 @@ A number of the conversions can be accessed as field calculator functions. When 
     * <img src="images/customProjection.svg" alt="Custome Projection"> ***New/Custom Projection*** - This allows the user to select any projection for the input coordinates.
     * <img src="images/pluscodes.svg" alt="Plus Codes"> ***Plus Codes Coordinate*** - This specifies a Plus Code coordinate.
     
+    Geographic project and custom CRSs accept coordinates in decimal degrees or DMS notation. Projected CRSs require numeric Y,X or X,Y coordinates.
+
     The next drop down menu specifies whether the coordinates are listed as **Y,X (Latitude, Longitude)** or **X,Y (Longitude, Latitude)**. If the coordinate uses **N, S, E, W** then these take presidence and this setting is ignored.
     
     * <img src="images/yx.svg" width=24 height=24 alt="Y, X"> ***Y,X (Latitude, Longitude) Order***
@@ -236,8 +238,8 @@ The order in which the coordinates are captured is determined by ***Coordinate o
 The ***Zoom to Latitude, Longitude*** tool accepts the following input coordinates as specified by ***Zoom to Coordinate Type***:
 
 * **WGS 84 (Latitude & Longitude) / Auto Detect Format** - Input coordinates can be either in decimal degrees, DMS degrees, WKT, or GeoJSON. For decimal and DMS formats, the order of the coordinates are determined by ***Zoom to Coordinate Order***. It also auto detects MGRS, Plus Codes, Standard UTM, UPS, GEOREF, and Geohash formats so it is generally unnecessary to specify them separately.
-* **Project CRS** - This accepts coordinates formatted in the CRS of the QGIS project. The numbers can be formatted in decimal or WKT notation.
-* **Custom CRS** - You can specify any CRS for the input coordinates and QGIS zooms to that coordinate regardless of the project CRS. The numbers can be formatted in decimal or WKT notation.
+* **Project CRS** - This accepts coordinates formatted in the CRS of the QGIS project. Geographic project CRSs accept decimal degrees, DMS, or WKT notation. Projected project CRSs accept numeric coordinates or WKT notation.
+* **Custom CRS** - You can specify any CRS for the input coordinates and QGIS zooms to that coordinate regardless of the project CRS. Geographic custom CRSs accept decimal degrees, DMS, or WKT notation. Projected custom CRSs accept numeric coordinates or WKT notation.
 * **MGRS** - This only accepts [MGRS](https://en.wikipedia.org/wiki/Military_grid_reference_system) coordinates as input.
 * **Plus Codes** - This only accepts [Plus Codes](https://plus.codes/) coordinates as input.
 * **Standard UTM** - This only accepts **Standard UTM** coordinates as input.
