@@ -17,7 +17,7 @@ from qgis.PyQt.QtWidgets import QDialog, QMenu
 from qgis.PyQt.uic import loadUiType
 from qgis.core import Qgis, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsVectorDataProvider, QgsGeometry, QgsPointXY, QgsJsonUtils, QgsWkbTypes, QgsProject, QgsSettings
 from qgis.gui import QgsProjectionSelectionDialog
-from .util import epsg4326, parseDMSString, tr
+from .util import epsg4326, parseCoordinateString, tr
 # import traceback
 
 from . import mgrs
@@ -119,7 +119,7 @@ class DigitizerWidget(QDialog, FORM_CLASS):
                     lon = float(m[0][0])
                     lat = float(m[0][1])
                 else:
-                    lat, lon = parseDMSString(text, self.inputXYOrder)
+                    lat, lon = parseCoordinateString(text, epsg4326, self.inputXYOrder)
                 srcCrs = epsg4326
             elif self.inputProjection == 1:
                 # This is an MGRS coordinate
@@ -139,26 +139,18 @@ class DigitizerWidget(QDialog, FORM_CLASS):
                 lon = pt.x()
                 srcCrs = epsg4326
             else:  # Is either the project or custom CRS
+                if self.inputProjection == 2:  # Project CRS
+                    srcCrs = self.canvas.mapSettings().destinationCrs()
+                else:
+                    srcCrs = QgsCoordinateReferenceSystem(self.inputCustomCRS)
                 if re.search(r'POINT\(', text) is None:
-                    coords = re.split(r'[\s,;:]+', text, 1)
-                    if len(coords) < 2:
-                        raise ValueError('Invalid Coordinates')
-                    if self.inputXYOrder == 0:  # Y, X Order
-                        lat = float(coords[0])
-                        lon = float(coords[1])
-                    else:
-                        lon = float(coords[0])
-                        lat = float(coords[1])
+                    lat, lon = parseCoordinateString(text, srcCrs, self.inputXYOrder)
                 else:
                     m = re.findall(r'POINT\(\s*([+-]?\d*\.?\d*)\s+([+-]?\d*\.?\d*)', text)
                     if len(m) != 1:
                         raise ValueError(tr('Invalid Coordinates'))
                     lon = float(m[0][0])
                     lat = float(m[0][1])
-                if self.inputProjection == 2:  # Project CRS
-                    srcCrs = self.canvas.mapSettings().destinationCrs()
-                else:
-                    srcCrs = QgsCoordinateReferenceSystem(self.inputCustomCRS)
         except Exception:
             # traceback.print_exc()
             self.iface.messageBar().pushMessage("", tr("Invalid Coordinate"), level=Qgis.MessageLevel.Warning, duration=2)

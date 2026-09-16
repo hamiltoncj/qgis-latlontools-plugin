@@ -132,7 +132,7 @@ def parseDMSString(str, order=0):
             # There were no annotated dms coordinates so assume decimal degrees
             # Remove any characters that are not digits and decimal
             str = re.sub(r"[^\d.+-]+", " ", str).strip()
-            coords = re.split(r'\s+', str, 1)
+            coords = re.split(r'\s+', str, maxsplit=1)
             if len(coords) != 2:
                 raise ValueError('Invalid Coordinates')
             if order == 0:
@@ -182,6 +182,28 @@ def parseDMSString(str, order=0):
         raise ValueError('Invalid Coordinates')
 
     return lat, lon
+
+
+def parseCoordinateString(text, crs, order=0):
+    '''Parse a coordinate pair according to the units of its CRS.
+
+    Geographic CRSs accept decimal degrees or DMS notation. Projected CRSs
+    accept numeric coordinates only. The returned tuple is always (Y, X),
+    regardless of the input order.
+    '''
+    if crs.isGeographic():
+        return parseDMSString(text, order)
+
+    coords = re.split(r'[\s,;:]+', text.strip(), maxsplit=1)
+    if len(coords) != 2:
+        raise ValueError('Invalid Coordinates')
+    if order == 0:
+        y = float(coords[0])
+        x = float(coords[1])
+    else:
+        x = float(coords[0])
+        y = float(coords[1])
+    return y, x
 
 
 def parseDMSStringSingle(str):

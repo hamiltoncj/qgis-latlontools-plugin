@@ -16,8 +16,8 @@ from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QDockWidget, QApplication, QMenu
 from qgis.gui import QgsRubberBand, QgsProjectionSelectionDialog
 from qgis.core import Qgis, QgsJsonUtils, QgsWkbTypes, QgsPointXY, QgsGeometry, QgsCoordinateReferenceSystem, QgsCoordinateTransform, QgsProject, QgsRectangle
-from .util import epsg4326, parseDMSString, tr
-from .settings import settings, CoordOrder, H3_INSTALLED
+from .util import epsg4326, parseCoordinateString, tr
+from .settings import settings, H3_INSTALLED
 from .utm import isUtm, utm2Point
 from .ups import isUps, ups2Point
 import traceback
@@ -277,25 +277,15 @@ class ZoomToLatLon(QDockWidget, FORM_CLASS):
                     srcCrs = self.settings.zoomToCustomCRS()
                 return (lat, lon, None, srcCrs)
 
-            # We are left with either DMS or decimal degrees in one of the projections
+            # Parse DMS or decimal degrees for geographic CRSs. Projected CRSs
+            # continue to require numeric coordinates.
             if self.settings.zoomToProjIsWgs84():
-                lat, lon = parseDMSString(text, self.settings.zoomToCoordOrder)
-                return (lat, lon, None, epsg4326)
-
-            # We are left with a non WGS 84 decimal projection
-            coords = re.split(r'[\s,;:]+', text, 1)
-            if len(coords) < 2:
-                raise ValueError(tr('Invalid Coordinates'))
-            if self.settings.zoomToCoordOrder == CoordOrder.OrderYX:
-                lat = float(coords[0])
-                lon = float(coords[1])
-            else:
-                lon = float(coords[0])
-                lat = float(coords[1])
-            if self.settings.zoomToProjIsProjectCRS():
+                srcCrs = epsg4326
+            elif self.settings.zoomToProjIsProjectCRS():
                 srcCrs = self.canvas.mapSettings().destinationCrs()
             else:
                 srcCrs = self.settings.zoomToCustomCRS()
+            lat, lon = parseCoordinateString(text, srcCrs, self.settings.zoomToCoordOrder)
             return (lat, lon, None, srcCrs)
 
         except Exception:
